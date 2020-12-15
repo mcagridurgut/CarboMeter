@@ -1,5 +1,8 @@
 import java.sql.*;
+import java.util.ArrayList;
+
 public class DatabaseConnection {
+    static int ROWSIZE = 10;
     public static void createNewTableIfNotExists() {
         // SQLite connection string
         String wd = System.getProperty("user.dir").replace('\\','/');
@@ -9,11 +12,14 @@ public class DatabaseConnection {
         String sql = "CREATE TABLE IF NOT EXISTS users (\n"
                 + "	id integer PRIMARY KEY,\n"
                 + "	name text NOT NULL,\n"
+                + "	password text NOT NULL,\n"
                 + "	carbopoint real,\n"
                 + "	transport real,\n"
                 + "	housing real,\n"
                 + "	electronics real,\n"
-                + "	other real\n"
+                + "	other real,\n"
+                + "	userType integer,\n"
+                + "	familyNumber integer\n"
                 + ");";
 
         try (Connection conn = DriverManager.getConnection(url);
@@ -37,25 +43,35 @@ public class DatabaseConnection {
         }
         return conn;
     }
-    public static void insert(String name, double carbopoint, double transport,double housing,double electronic,double other) {
-        createNewTableIfNotExists();
-        String sql = "INSERT INTO users(name,carbopoint,transport,housing,electronics,other) VALUES(?,?,?,?,?,?)";
-
-        try (Connection conn = connect();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, name);
-            pstmt.setDouble(2, carbopoint);
-            pstmt.setDouble(3, transport);
-            pstmt.setDouble(4, housing);
-            pstmt.setDouble(5, electronic);
-            pstmt.setDouble(6, other);
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
+    public static void updateUser(String name, double carbopoint, double transport,double housing,double electronic,double other ){
+       Object[] user =  select(name);
+       createNewUser((String)user[1]+"-old-",(String)user[2],(double)user[3],(double)user[4],(double)user[5],(double)user[6],(double)user[7],(Integer)user[8],(Integer)user[9]);
+       createNewUser((String)user[1],(String) user[2], carbopoint,transport,housing,electronic,other,(Integer)user[8],(Integer)user[9]);
     }
-    public static void selectAll(){
+    public static void createNewUser(String name, String password, double carbopoint, double transport,double housing,double electronic,double other, int userType, int familyNumber ) {
         createNewTableIfNotExists();
+        Object[] array = new Object[ROWSIZE];
+
+            String sql = "INSERT INTO users(name, password, carbopoint,transport,housing,electronics,other,userType,familyNumber ) VALUES(?,?,?,?,?,?,?,?,?)";
+            try (Connection conn = connect();
+                 PreparedStatement pstmt  = conn.prepareStatement(sql)) {
+                pstmt.setString(1, name);
+                pstmt.setString(2, password);
+                pstmt.setDouble(3, carbopoint);
+                pstmt.setDouble(4, transport);
+                pstmt.setDouble(5, housing);
+                pstmt.setDouble(6, electronic);
+                pstmt.setDouble(7, other);
+                pstmt.setInt(8, userType);
+                pstmt.setInt(9, familyNumber);
+                pstmt.executeUpdate();
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+    }
+    public static ArrayList<Object[]> selectAll(){
+        createNewTableIfNotExists();
+        ArrayList<Object[]> arrayList = new ArrayList<>();
         String sql = "SELECT * FROM users";
 
         try (Connection conn = connect();
@@ -64,21 +80,28 @@ public class DatabaseConnection {
 
             // loop through the result set
             while (rs.next()) {
-                System.out.println(rs.getInt("id") +  "\t" +
-                        rs.getString("name") + "\t" +
-                        rs.getDouble("carbopoint") + "\t" +
-                        rs.getDouble("transport") + "\t" +
-                        rs.getDouble("housing") + "\t" +
-                        rs.getDouble("electronics") + "\t" +
-                        rs.getDouble("other"));
+                Object[] array = new Object[ROWSIZE];
+                array[0]= rs.getInt("id");
+                array[1]= rs.getString("name");
+                array[2]= rs.getString("password");
+                array[3]= rs.getDouble("carbopoint");
+                array[4]= rs.getDouble("transport");
+                array[5]= rs.getDouble("housing");
+                array[6]= rs.getDouble("electronics");
+                array[7]= rs.getDouble("other");
+                array[8]= rs.getInt("userType");
+                array[9]= rs.getInt("familyNumber");
+                arrayList.add(array);
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            return null;
         }
+        return arrayList;
     }
-    public static void select(String name){
+    public static Object[] select(String name){
         createNewTableIfNotExists();
-        String sql = "SELECT * FROM users ORDER BY carbopoint DESC";
+        Object[] array = new Object[ROWSIZE];
+        String sql = "SELECT * FROM users WHERE name = '"+name+"'";
 
         try (Connection conn = connect();
              Statement stmt  = conn.createStatement();
@@ -86,18 +109,21 @@ public class DatabaseConnection {
 
             // loop through the result set
             while (rs.next()) {
-                System.out.println(
-                        rs.getInt("id") +  "\t" +
-                        rs.getString("name") + "\t" +
-                        rs.getDouble("carbopoint") + "\t" +
-                        rs.getDouble("transport") + "\t" +
-                        rs.getDouble("housing") + "\t" +
-                        rs.getDouble("electronics") + "\t" +
-                        rs.getDouble("other"));
+                array[0]= rs.getInt("id");
+                array[1]= rs.getString("name");
+                array[2]= rs.getString("password");
+                array[3]= rs.getDouble("carbopoint");
+                array[4]= rs.getDouble("transport");
+                array[5]= rs.getDouble("housing");
+                array[6]= rs.getDouble("electronics");
+                array[7]= rs.getDouble("other");
+                array[8]= rs.getInt("userType");
+                array[9]= rs.getInt("familyNumber");
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+        return array;
     }
 
 }

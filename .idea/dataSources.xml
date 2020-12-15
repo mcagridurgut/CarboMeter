@@ -7,5 +7,11 @@
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:C:\projects\SQLiteTest\carbopoints.db</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="carbopoints [2]" uuid="0fa084ed-a877-48df-9ce7-3dfd0d3c603d">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\projects\CarboPoint\carbopoints.db</jdbc-url>
+    </data-source>
   </component>
 </project>
