@@ -65,10 +65,16 @@ public class DatabaseConnection {
 
     private static void update(String name, String password, double carbopoint, double transport, double housing, double electronics, double other, int userType, int familyNumber) {
         Object[] array = new Object[ROWSIZE];
-        String sql = "UPDATE users SET password = '"+password+"' WHERE name  = '" + name + "';";
-//                "carbopoint = "+ carbopoint +1
-//                ",transport = "+ transport +",housing = "+ housing +",electronics = "+electronics+", other = "+ other +",userType = "+ userType +
-//                ",familyNumber = "+familyNumber+" WHERE name = "+name;
+        String sql = "UPDATE users SET " +
+                "password = '"+password+"'," +
+                "carbopoint = '"+ carbopoint + "',"+
+                "transport = '"+ transport + "',"+
+                "housing = '"+ housing + "',"+
+                "electronics = '"+ electronics + "',"+
+                "other = '"+ other + "',"+
+                "userType = '"+ userType + "',"+
+                "familyNumber = '"+ familyNumber + "'"+
+                " WHERE name  = '" + name + "';";
         try (Connection conn = DriverManager.getConnection(url);
              Statement stmt = conn.createStatement()) {
             stmt.execute(sql);
