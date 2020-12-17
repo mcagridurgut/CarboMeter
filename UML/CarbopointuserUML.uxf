@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text>//@author Uygar Onat Erol
+//UML for the users package</help_text>
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>300</x>
+      <y>80</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>/AbstractClass/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>300</x>
+      <y>110</y>
+      <w>190</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>_user_
+--
+- String username
+- String password
+- String email
+-
++ getUsername():String
++ getPassword():String
++ getEmail():String
++ setPassword(String):void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>300</y>
+      <w>330</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>_superUser_
+--
+- ArrayList&lt;normalUser&gt; referralEnteredUsers
+- String referralCode
+- double totalDonations
+- ArrayList&lt;Challenge&gt; challenges
+-
++ getReferralCode():String
++ getUsers():ArrayList&lt;NormalUser&gt;
++ getTotalDonations():double
++ getChallenges():ArrayList&lt;Challenge&gt;
++ setReferralCode( String ):void
++ addUser( normalUser ):void
++ kickUser( normalUser user ):void
++ createNewReferralCode( String ):void
++ addChallenge( Challenge ):void
++ addToSuperUser( String, normalUser ):boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>300</y>
+      <w>350</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>_normalUser_
+--
+- ArrayList&lt;Report&gt; reportsCompleted
+- ArrayList&lt;Challenge&gt; challenges
+- ArrayList&lt;normalUser&gt; friends
+- ArrayList&lt;Recommendations&gt; recommendations
+- String referenceCode
+- double donations
+--
++ getReports():ArrayList&lt;Report&gt;
++ getChallenges():ArrayList&lt;Challenge&gt;
++ getRecommendations():ArrayList&lt;Recommendations&gt;
++ getFriends():ArrayList&lt;User&gt;
++ getReferenceCode():String
++ getDonations():double
++ setDonations( double ):void
++ setRecommendations( Recommendation ):void
++ createReport():void
++ newChallenge( Challenge ):void
++ addFriend( Friend ):void
++ referral( String ):void
++ challengeCompleted( Challenge ):void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>120</x>
+      <y>170</y>
+      <w>200</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>170</y>
+      <w>180</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0;160.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>440</y>
+      <w>110</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+
+               0..*</panel_attributes>
+    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>20</x>
+      <y>630</y>
+      <w>290</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Challenge, Report, Recommendations are
+classes in other package
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>120</x>
+      <y>550</y>
+      <w>30</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>300</x>
+      <y>640</y>
+      <w>350</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;30.0;330.0;30.0;330.0;10.0</additional_attributes>
+  </element>
+</diagram>
