@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+
+package others;
+
+/**
+ * Categories class 
+ * @author Alper Mumcular
+ * @version 17.12.2020
+ */ 
+public abstract class Home extends Category {
+  
+  //data members
+  
+  public Home() {
+    addQuestions();
+  }
+
+  public void addQuestions() {
+    //QUESTIONS TO BE ADDED
+  }
+}

@@ -1,0 +1,27 @@
+package others;
+
+public class Challenge {
+  
+  private static final 
+  private String nameOfTheSuperUser;
+  private String challengeTitle;
+  private String details;
+  
+  public Challenge(String title, String details, String superUser ) {
+    this.challengeTitle = title;
+    this.details = details;
+    this.nameOfTheSuperUser = superUser;
+  }
+  
+  public String getTitle() {
+    return challengeTitle;
+  }
+  
+  public String getDetails() {
+    return this.details;
+  }
+  
+  public getSuperUser() {
+    return this.nameOfTheSuperUser;
+  }
+}

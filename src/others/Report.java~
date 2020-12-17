@@ -1,0 +1,49 @@
+import java.util.ArrayList;
+
+package others;
+
+public class Report {
+  
+  public static final CARBOPOINT_DEFAULT = 50; // ????? can be changed
+
+  // instance data members
+  Category house, transportation, food, others;
+  double carbopoint;
+  
+  public Report( boolean h, boolean t, boolean f, boolean o ) { // true means personalized category
+    personalizeCategories(h, t, f, o);
+  }
+  
+  public void personalizeCategories( boolean h, boolean t, boolean f, boolean o ) {
+    if(h) {
+      this.house = new Category();
+      Category.getHouseQuestions();
+    }
+    if(t) {
+      this.transportation = new Category();
+      Category.getTransportationQuestions();
+    }
+    if(f) {
+      this.food = new Category();
+      Category.getFoodQuestions();
+    }
+    if(o) {
+      this.others = new Category();
+      Category.getOthersQuestions();
+    }
+  }
+  
+  public ArrayList<Categories> getPersonalizedCategories() {
+    ArrayList<Categories> personalized;
+    if(house != null) 
+      personalized.add(house);
+    if(transportation != null) 
+      personalized.add(transportation);
+    if(food != null) 
+      personalized.add(food);
+    if(others != null) 
+      personalized.add(others);
+    
+    return personalized;
+  }
+}

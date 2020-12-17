@@ -1,0 +1,19 @@
+import java.util.ArrayList;
+
+package others;
+
+/**
+ * Transportation class 
+ * @author Alper Mumcular
+ * @version 17.12.2020
+ */ 
+public abstract class Transportation extends Category {
+  
+  public Transportation() {
+    addQuestions();
+  }
+
+  public void addQuestions() {
+    //QUESTIONS TO BE ADDED
+  }
+}
