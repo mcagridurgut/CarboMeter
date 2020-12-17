@@ -1,6 +1,5 @@
 package user;
 
-import question.*;
 import others.*;
 import java.util.ArrayList;
 
@@ -17,7 +16,7 @@ public class NormalUser extends User {
   private ArrayList<Report> reportsCompleted;
   private ArrayList<Challenge> challenges;
   private ArrayList<User> friends;
-  private ArrayList<Recommendations> recommendations;
+  //private ArrayList<Recommendations> recommendations;
   private String referenceCode;
   private double donations;
   
@@ -28,7 +27,7 @@ public class NormalUser extends User {
     this.referral(referenceCode);
     this.reportsCompleted = new ArrayList<Report>();
     this.challenges = new ArrayList<Challenge>();
-    this.recommendations = new ArrayList<Recommendations>();
+    //this.recommendations = new ArrayList<Recommendations>();
     this.donations = 0;
     allNormalUsers.add(this);
     allUsers.add(this);
@@ -40,7 +39,7 @@ public class NormalUser extends User {
     this.referenceCode = "";
     this.reportsCompleted = new ArrayList<Report>();
     this.challenges = new ArrayList<Challenge>();
-    this.recommendations = new ArrayList<Recommendations>();
+    //this.recommendations = new ArrayList<Recommendations>();
     this.donations = 0;
     allNormalUsers.add(this);
   }
@@ -52,9 +51,9 @@ public class NormalUser extends User {
   public ArrayList<Challenge> getChallenges() {
     return this.challenges;
   }
-  public ArrayList<Recommendations> getRecommendations() {
-    return this.recommendations;
-  }
+  //public ArrayList<Recommendations> getRecommendations() {
+    //return this.recommendations;
+  //}
   public ArrayList<User> getFriends() {
    return this.friends; 
   }
@@ -69,13 +68,13 @@ public class NormalUser extends User {
   public void setDonations( double x) {
     this.donations = x;
   }
-  public void setRecommendations( Recommendation r ) {
-    this.recommendations = r;
-  }
+  //public void setRecommendations( Recommendation r ) {
+   //this.recommendations = r;
+  //}
   
   //methods
   public void createReport() {
-    Report newReport; // DEFAULT / PERSONALIZED 
+    Report newReport = new Report(true,true,true,true); // DEFAULT / PERSONALIZED
     for( Category c : newReport.getPersonalizedCategories() ){
       for(Question q : c.getQuestions() ) {
         c.updateScore( q );

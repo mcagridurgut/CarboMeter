@@ -1,6 +1,5 @@
 package user;
 
-import question.*;
 import others.*;
 import java.util.ArrayList;
 

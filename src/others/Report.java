@@ -1,6 +1,5 @@
 package others;
 
-import question.*;
 import user.*;
 import java.util.ArrayList;
 
@@ -42,8 +41,8 @@ public class Report {
   }
   
   public ArrayList<Category> getPersonalizedCategories() {
-    ArrayList<Category> personalized;
-    if(home != null) 
+    ArrayList<Category> personalized = new ArrayList<>();
+    if(home != null )
       personalized.add(home);
     if(transportation != null) 
       personalized.add(transportation);

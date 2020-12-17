@@ -1,6 +1,5 @@
 package others;
 
-import question.*;
 import user.*;
 
 public class Challenge {

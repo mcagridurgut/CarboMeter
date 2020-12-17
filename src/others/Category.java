@@ -1,7 +1,6 @@
 package others;
 
 import java.util.ArrayList;
-import question.*;
 import user.*;
 /**
  * Categories class 
@@ -21,7 +20,7 @@ public abstract class Category {
     score = DEFAULT;
   }
   
-  public Question[] getQuestions() {
+  public ArrayList<Question> getQuestions() {
     return this.questions;
   }
   public void updateScore( Question q ) {
