@@ -240,4 +240,51 @@ public class DatabaseConnection {
         }
         return superUsers;
     }
+
+    public static boolean addChallenge( String superUsername, int challengeID){
+        if(!isSuchUserExists(superUsername) )
+            return false;
+        Object[] superUser = select(superUsername);
+        if( (Integer) superUser[9] != 2)
+            return false;
+        for( Object[] user: getSubUsers(superUsername) ){
+            update((String) user[1], (String) user[2], (String) user[3], (double) user[4], (double) user[5], (double) user[6], (double) user[7], (double) user[8], (Integer) user[9], (String) user[10]+"-"+challengeID, (String) user[11],(String) user[12], (Double) user[13]);
+        }
+        return true;
+    }
+
+    private static ArrayList<Object[]> getSubUsers(String name){
+        ArrayList<Object[]> subUsers = new ArrayList<>();
+        String refCode = (String) select(name)[12];
+        String sql = "SELECT * FROM users WHERE refCode = '"+refCode+"'";
+
+        try (Connection conn = connect();
+             Statement stmt  = conn.createStatement();
+             ResultSet rs    = stmt.executeQuery(sql)){
+
+            // loop through the result set
+            while (rs.next()) {
+                Object[] array = new Object[ROWSIZE];
+                array[0]= rs.getInt("id");
+                array[1]= rs.getString("name");
+                array[2]= rs.getString("email");
+                array[3]= rs.getString("password");
+                array[4]= rs.getDouble("carbopoint");
+                array[5]= rs.getDouble("transport");
+                array[6]= rs.getDouble("housing");
+                array[7]= rs.getDouble("electronics");
+                array[8]= rs.getDouble("other");
+                array[9]= rs.getInt("userType");
+                array[10]= rs.getString("challenges");
+                array[11]= rs.getString("friends");
+                array[12]= rs.getString("refCode");
+                array[13]= rs.getDouble("donate");
+                subUsers.add(array);
+            }
+        } catch (SQLException e) {
+            return null;
+        }
+        return subUsers;
+    }
+
 }
