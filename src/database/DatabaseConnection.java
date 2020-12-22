@@ -373,6 +373,11 @@ public class DatabaseConnection {
         }
     }
 
-
+    public static void updateData( String name, double transport, double  housing, double electronics, double others ){
+        if ( isSuchUserExists(name) ){
+            Object[] user = select(name);
+            updateUser((String) user[1], (String) user[2], (String) user[3], (transport+housing+electronics+others), transport, housing, electronics, others, (Integer) user[9], (String) user[10], (String) user[11],(String) user[12], (Double) user[13]);
+        }
+    }
 
 }
