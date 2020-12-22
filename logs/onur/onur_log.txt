@@ -1,1 +1,1 @@
-Main frame, greeting panel(login screen), sign in panel(for new users), recommendations panel and about us panel added. Test classes were written. JMenuBar issue not fixed.
+database.Main frame, greeting panel(login screen), sign in panel(for new users), recommendations panel and about us panel added. Test classes were written. JMenuBar issue not fixed.

@@ -1,9 +1,13 @@
-import java.sql.SQLException;
+package database;
+
+import database.DatabaseConnection;
+
 import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        DatabaseConnection.createNewUser("second", "second",312,4.21,32,44,51,6,7);
+        //DatabaseConnection.createNewUser("besinci", "besinci@gmail.com", "besinci", 0,0,0,0,0,1,"","","ucuncu111",0);
+        DatabaseConnection.updatePassword("besinci","girisgen123","girisgen123");
         ArrayList<Object[]> arrayList = DatabaseConnection.selectAll();
         for(int j = 0; j<arrayList.size();j++ ) {
             Object[] arr = arrayList.get(j);

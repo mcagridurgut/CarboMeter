@@ -1,5 +1,6 @@
 package user;
 
+import database.DatabaseConnection;
 import others.*;
 import java.util.ArrayList;
 
@@ -10,7 +11,7 @@ import java.util.ArrayList;
  */ 
 public class NormalUser extends User {
   
-  private static ArrayList<NormalUser> allNormalUsers = new ArrayList<NormalUser>();
+  private static ArrayList<NormalUser> allNormalUsers = new ArrayList<>();
   
   //instance data members
   private ArrayList<Report> reportsCompleted;
@@ -36,6 +37,7 @@ public class NormalUser extends User {
   //constructor
   public NormalUser( String username, String password, String email) {
     super(username, password, email);
+    //DatabaseConnection.createNewUser(username,email, password,0,0,0,0,0,0,"","");
     this.referenceCode = "";
     this.reportsCompleted = new ArrayList<Report>();
     this.challenges = new ArrayList<Challenge>();
@@ -89,6 +91,7 @@ public class NormalUser extends User {
   
   public void addFriend( User f ) {
     friends.add(f);
+
   }
   
   public void referral( String referenceCode ) {
