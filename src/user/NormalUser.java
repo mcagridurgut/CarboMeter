@@ -24,6 +24,7 @@ public class NormalUser extends User {
   //constructors
   public NormalUser( String username, String password, String email, String referenceCode ) {
     super(username, password, email);
+    DatabaseConnection.createNewUser(username,email, password,0,0,0,0,0,1,"","",referenceCode,0);
     this.referenceCode = referenceCode;
     this.referral(referenceCode);
     this.reportsCompleted = new ArrayList<Report>();
@@ -37,7 +38,7 @@ public class NormalUser extends User {
   //constructor
   public NormalUser( String username, String password, String email) {
     super(username, password, email);
-    //DatabaseConnection.createNewUser(username,email, password,0,0,0,0,0,0,"","");
+    DatabaseConnection.createNewUser(username,email, password,0,0,0,0,0,1,"","","",0);
     this.referenceCode = "";
     this.reportsCompleted = new ArrayList<Report>();
     this.challenges = new ArrayList<Challenge>();
@@ -91,7 +92,6 @@ public class NormalUser extends User {
   
   public void addFriend( User f ) {
     friends.add(f);
-
   }
   
   public void referral( String referenceCode ) {

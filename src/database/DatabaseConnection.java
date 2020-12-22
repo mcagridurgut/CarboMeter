@@ -5,10 +5,12 @@ import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
 public class DatabaseConnection {
+
     public static int ROWSIZE = 14;
 
     static String wd = System.getProperty("user.dir").replace('\\','/');
     static String url = "jdbc:sqlite:"+ wd +"/carbopoints.db";
+
     public static void createNewTableIfNotExists() {
 
         // SQL statement for creating a new table
@@ -48,10 +50,12 @@ public class DatabaseConnection {
         }
         return conn;
     }
+
     public static boolean isSuchUserExists(String name){
         Object[] arr  = select(name);
         return (arr != null && arr[0] != null);
     }
+
     public static void updateUser(String name, String email, String password, double carbopoint, double transport,double housing,double electronics,double other, int userType, String challenges, String friends,String refCode, double donate ) throws NoSuchElementException{
         if(isSuchUserExists(name)) {
             Object[] user = select(name);
@@ -119,6 +123,7 @@ public class DatabaseConnection {
             }
         }
     }
+
     public static ArrayList<Object[]> selectAll(){
         createNewTableIfNotExists();
         ArrayList<Object[]> arrayList = new ArrayList<>();
@@ -152,10 +157,43 @@ public class DatabaseConnection {
         }
         return arrayList;
     }
+
     public static Object[] select(String name)  {
         createNewTableIfNotExists();
         Object[] array = new Object[ROWSIZE];
         String sql = "SELECT * FROM users WHERE name = '"+name+"'";
+
+        try (Connection conn = connect();
+             Statement stmt  = conn.createStatement();
+             ResultSet rs    = stmt.executeQuery(sql)){
+
+            // loop through the result set
+            while (rs.next()) {
+                array[0]= rs.getInt("id");
+                array[1]= rs.getString("name");
+                array[2]= rs.getString("email");
+                array[3]= rs.getString("password");
+                array[4]= rs.getDouble("carbopoint");
+                array[5]= rs.getDouble("transport");
+                array[6]= rs.getDouble("housing");
+                array[7]= rs.getDouble("electronics");
+                array[8]= rs.getDouble("other");
+                array[9]= rs.getInt("userType");
+                array[10]= rs.getString("challenges");
+                array[11]= rs.getString("friends");
+                array[12]= rs.getString("refCode");
+                array[13]= rs.getDouble("donate");
+            }
+        } catch (SQLException e) {
+            return null;
+        }
+        return array;
+    }
+
+    public static Object[] selectWithId(int id)  {
+        createNewTableIfNotExists();
+        Object[] array = new Object[ROWSIZE];
+        String sql = "SELECT * FROM users WHERE id = '"+id+"'";
 
         try (Connection conn = connect();
              Statement stmt  = conn.createStatement();
@@ -195,18 +233,29 @@ public class DatabaseConnection {
         return false;
     }
 
+    private static void addFriendHelper( String name, String friend){
+        Object[] user = select(name);
+        int friendNumber = (Integer) select(friend)[0];
+        String friends = (String) user[11] +"-"+ friendNumber;
+        update((String) user[1], (String) user[2], (String) user[3], (double) user[4], (double) user[5], (double) user[6], (double) user[7], (double) user[8], (Integer) user[9], (String) user[10], friends,(String) user[12], (Double) user[13]);
+    }
+
     public static boolean addFriend (String name, String friend){
         if(isSuchUserExists(name)) {
             if ( !isSuchUserExists(friend) )
                 return false;
-            Object[] user = select(name);
-            int friendNumber = (Integer) select(friend)[0];
-            String friends = (String) user[11] +"-"+ friendNumber;
-            update((String) user[1], (String) user[2], (String) user[3], (double) user[4], (double) user[5], (double) user[6], (double) user[7], (double) user[8], (Integer) user[9], (String) user[10], friends,(String) user[12], (Double) user[13]);
+            ArrayList<Object[]> friends = getFriends(name);
+            for(Object[] frnd: friends){
+                if ( ((String) frnd[1]).equals(friend) )
+                    return false;
+            }
+            addFriendHelper(name,friend);
+            addFriendHelper(friend,name);
             return true;
         }
         return false;
     }
+
     public static ArrayList<Object[]> getSuperUsers(){
         ArrayList<Object[]> superUsers = new ArrayList<>();
         createNewTableIfNotExists();
@@ -286,5 +335,44 @@ public class DatabaseConnection {
         }
         return subUsers;
     }
+
+    public static ArrayList<Object[]> getFriends(String name){
+        ArrayList<Object[]> friends = new ArrayList<>();
+        if( isSuchUserExists(name) ) {
+            String[] friendIds = ((String) select(name)[11]).split("(?=-)");;
+            for( String str: friendIds){
+                friends.add( selectWithId( Integer.parseInt(str.substring(1))));
+            }
+        }
+        return friends;
+    }
+
+    public static ArrayList<String> getAllUsernames(){
+        ArrayList<Object[]> users = selectAll();
+        ArrayList<String> usernames =new ArrayList<>();
+        for( Object[] user: users){
+            usernames.add((String)user[1]);
+        }
+        return usernames;
+    }
+
+    public static void completeChallenge( String name, int challengeID ){
+        if( isSuchUserExists( name ) ){
+            Object[] user = select(name);
+            if( ((String) select(name)[10]).length() == 0 )
+                return;
+            String[] taskIds = ((String) select(name)[10]).split("(?=-)");;
+            String newTask = "";
+            for( String str: taskIds){
+                int id = Integer.parseInt(str.substring(1));
+                if( id == challengeID )
+                    continue;
+                newTask += "-"+id;
+            }
+            update((String) user[1], (String) user[2], (String) user[3], (double) user[4], (double) user[5], (double) user[6], (double) user[7], (double) user[8], (Integer) user[9], newTask, (String) user[11],(String) user[12], (Double) user[13]);
+        }
+    }
+
+
 
 }
