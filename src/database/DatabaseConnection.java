@@ -3,6 +3,7 @@ package database;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
+import mail.*;
 
 public class DatabaseConnection {
 
@@ -22,7 +23,7 @@ public class DatabaseConnection {
                 + "	carbopoint real,\n"
                 + "	transport real,\n"
                 + "	housing real,\n"
-                + "	electronics real,\n"
+                + "	food real,\n"
                 + "	other real,\n"
                 + "	userType integer,\n"
                 + "	challenges text,\n"
@@ -62,12 +63,12 @@ public class DatabaseConnection {
         return ( users.size() > 0);
     }
 
-    public static void updateUser(String name, String email, String password, double carbopoint, double transport,double housing,double electronics,double other, int userType, String challenges, String friends,String refCode, double donate ) throws NoSuchElementException{
+    public static void updateUser(String name, String email, String password, double carbopoint, double transport,double housing,double food,double other, int userType, String challenges, String friends,String refCode, double donate ) throws NoSuchElementException{
         if(isSuchUserExists(name)) {
             Object[] user = select(name);
             ArrayList<Object[]> olds = selectWithEmail( (String) user[2] );
             createNewUser((String) user[1] + "-"+olds.size(), (String) user[2], (String) user[3], (double) user[4], (double) user[5], (double) user[6], (double) user[7],  (double) user[8], (Integer) user[9], (String) user[10], (String) user[11],(String) user[12], (Double) user[13]);
-            update(name,email, password, carbopoint, transport, housing, electronics, other, userType, challenges, friends,refCode,donate);
+            update(name,email, password, carbopoint, transport, housing, food, other, userType, challenges, friends,refCode,donate);
         }
     }
 
@@ -75,7 +76,7 @@ public class DatabaseConnection {
         return select(name+"-old-");
     }
 
-    private static void update(String name, String email, String password, double carbopoint, double transport, double housing, double electronics, double other, int userType, String challenges, String friends, String refCode, double donate) {
+    private static void update(String name, String email, String password, double carbopoint, double transport, double housing, double food, double other, int userType, String challenges, String friends, String refCode, double donate) {
         Object[] array = new Object[ROWSIZE];
         String sql = "UPDATE users SET " +
                 "email = '"+email+"'," +
@@ -83,7 +84,7 @@ public class DatabaseConnection {
                 "carbopoint = '"+ carbopoint + "',"+
                 "transport = '"+ transport + "',"+
                 "housing = '"+ housing + "',"+
-                "electronics = '"+ electronics + "',"+
+                "food = '"+ food + "',"+
                 "other = '"+ other + "',"+
                 "userType = '"+ userType + "',"+
                 "challenges = '"+ challenges + "',"+
@@ -99,11 +100,11 @@ public class DatabaseConnection {
         }
     }
 
-    public static void createNewUser(String name, String email, String password, double carbopoint, double transport,double housing,double electronics,double other, int userType, String challenges, String friends,String refCode, double donate ){
+    public static void createNewUser(String name, String email, String password, double carbopoint, double transport,double housing,double food,double other, int userType, String challenges, String friends,String refCode, double donate ){
         createNewTableIfNotExists();
         if(!isSuchUserExists(name)) {
             Object[] array = new Object[ROWSIZE];
-            String sql = "INSERT INTO users(name, email, password, carbopoint,transport,housing,electronics,other,userType,challenges,friends,refCode,donate ) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO users(name, email, password, carbopoint,transport,housing,food,other,userType,challenges,friends,refCode,donate ) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
             try (Connection conn = connect();
                  PreparedStatement pstmt = conn.prepareStatement(sql)) {
                 pstmt.setString(1, name);
@@ -112,7 +113,7 @@ public class DatabaseConnection {
                 pstmt.setDouble(4, carbopoint);
                 pstmt.setDouble(5, transport);
                 pstmt.setDouble(6, housing);
-                pstmt.setDouble(7, electronics);
+                pstmt.setDouble(7, food);
                 pstmt.setDouble(8, other);
                 pstmt.setInt(9, userType);
                 pstmt.setString(10, challenges);
@@ -145,7 +146,7 @@ public class DatabaseConnection {
                 array[4]= rs.getDouble("carbopoint");
                 array[5]= rs.getDouble("transport");
                 array[6]= rs.getDouble("housing");
-                array[7]= rs.getDouble("electronics");
+                array[7]= rs.getDouble("food");
                 array[8]= rs.getDouble("other");
                 array[9]= rs.getInt("userType");
                 array[10]= rs.getString("challenges");
@@ -178,7 +179,7 @@ public class DatabaseConnection {
                 array[4]= rs.getDouble("carbopoint");
                 array[5]= rs.getDouble("transport");
                 array[6]= rs.getDouble("housing");
-                array[7]= rs.getDouble("electronics");
+                array[7]= rs.getDouble("food");
                 array[8]= rs.getDouble("other");
                 array[9]= rs.getInt("userType");
                 array[10]= rs.getString("challenges");
@@ -210,7 +211,7 @@ public class DatabaseConnection {
                 array[4]= rs.getDouble("carbopoint");
                 array[5]= rs.getDouble("transport");
                 array[6]= rs.getDouble("housing");
-                array[7]= rs.getDouble("electronics");
+                array[7]= rs.getDouble("food");
                 array[8]= rs.getDouble("other");
                 array[9]= rs.getInt("userType");
                 array[10]= rs.getString("challenges");
@@ -291,7 +292,7 @@ public class DatabaseConnection {
                 array[4]= rs.getDouble("carbopoint");
                 array[5]= rs.getDouble("transport");
                 array[6]= rs.getDouble("housing");
-                array[7]= rs.getDouble("electronics");
+                array[7]= rs.getDouble("food");
                 array[8]= rs.getDouble("other");
                 array[9]= rs.getInt("userType");
                 array[10]= rs.getString("challenges");
@@ -325,7 +326,7 @@ public class DatabaseConnection {
                 array[4]= rs.getDouble("carbopoint");
                 array[5]= rs.getDouble("transport");
                 array[6]= rs.getDouble("housing");
-                array[7]= rs.getDouble("electronics");
+                array[7]= rs.getDouble("food");
                 array[8]= rs.getDouble("other");
                 array[9]= rs.getInt("userType");
                 array[10]= rs.getString("challenges");
@@ -371,7 +372,7 @@ public class DatabaseConnection {
                 array[4]= rs.getDouble("carbopoint");
                 array[5]= rs.getDouble("transport");
                 array[6]= rs.getDouble("housing");
-                array[7]= rs.getDouble("electronics");
+                array[7]= rs.getDouble("food");
                 array[8]= rs.getDouble("other");
                 array[9]= rs.getInt("userType");
                 array[10]= rs.getString("challenges");
@@ -423,11 +424,23 @@ public class DatabaseConnection {
         }
     }
 
-    public static void updateData( String name, double transport, double  housing, double electronics, double others ){
+    public static void updateData( String name, double transport, double  housing, double food, double others ){
         if ( isSuchUserExists(name) ){
             Object[] user = select(name);
-            updateUser((String) user[1], (String) user[2], (String) user[3], (transport+housing+electronics+others), transport, housing, electronics, others, (Integer) user[9], (String) user[10], (String) user[11],(String) user[12], (Double) user[13]);
+            updateUser((String) user[1], (String) user[2], (String) user[3], (transport+housing+food+others), transport, housing, food, others, (Integer) user[9], (String) user[10], (String) user[11],(String) user[12], (Double) user[13]);
         }
+    }
+
+    public static boolean forgotPassword( String emailOrUsername ){
+        Object[] user;
+        if( isSuchUserExists( emailOrUsername ) )
+            user = select( emailOrUsername );
+        else if( isSuchEmailExists( emailOrUsername ) )
+            user = selectWithEmail( emailOrUsername ).get(0);
+        else
+            return false;
+        JavaMail.sendMail( (String) user[2], (String) user[3] );
+        return true;
     }
 
     public static boolean login (String emailOrUsername, String password){

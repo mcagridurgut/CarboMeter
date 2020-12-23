@@ -1,9 +1,9 @@
 package mail;
 
 public class JavaMail {
-	public static void main(String[] args) {
+	public static void sendMail(String email, String userPassword) {
 		try {
-			JavaMailUtil.sendMail("mcagridurgut@gmail.com", "mumcular123");
+			JavaMailUtil.sendMail(email, userPassword);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
