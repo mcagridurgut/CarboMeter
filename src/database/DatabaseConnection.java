@@ -56,17 +56,19 @@ public class DatabaseConnection {
         return (arr != null && arr[0] != null);
     }
 
+
+    public static boolean isSuchEmailExists(String email){
+        ArrayList<Object[]> users  = selectWithEmail(email);
+        return ( users.size() > 0);
+    }
+
     public static void updateUser(String name, String email, String password, double carbopoint, double transport,double housing,double electronics,double other, int userType, String challenges, String friends,String refCode, double donate ) throws NoSuchElementException{
         if(isSuchUserExists(name)) {
             Object[] user = select(name);
-            if (!isSuchUserExists((String) user[1] + "-old-"))
-                createNewUser((String) user[1] + "-old-", (String) user[2], (String) user[3], (double) user[4], (double) user[5], (double) user[6], (double) user[7],  (double) user[8], (Integer) user[9], (String) user[10], (String) user[11],(String) user[12], (Double) user[13]);
-            else
-                update((String) user[1] + "-old-", (String) user[2], (String) user[3], (double) user[4], (double) user[5], (double) user[6], (double) user[7],  (double) user[8], (Integer) user[9], (String) user[10], (String) user[11],(String) user[12], (Double) user[13] );
+            ArrayList<Object[]> olds = selectWithEmail( (String) user[2] );
+            createNewUser((String) user[1] + "-"+olds.size(), (String) user[2], (String) user[3], (double) user[4], (double) user[5], (double) user[6], (double) user[7],  (double) user[8], (Integer) user[9], (String) user[10], (String) user[11],(String) user[12], (Double) user[13]);
             update(name,email, password, carbopoint, transport, housing, electronics, other, userType, challenges, friends,refCode,donate);
-            return;
         }
-        throw new NoSuchElementException("no such user");
     }
 
     public static Object[] getOldValues(String name){
@@ -222,12 +224,26 @@ public class DatabaseConnection {
         return array;
     }
 
-    public static boolean updatePassword( String name, String oldPassword, String newPassword ){
+    public static boolean changePassword( String name, String oldPassword, String newPassword ){
         if(isSuchUserExists(name)) {
             Object[] user = select(name);
             if ( !user[3].equals(oldPassword) )
                 return false;
             update((String) user[1], (String) user[2], newPassword, (double) user[4], (double) user[5], (double) user[6], (double) user[7], (double) user[8], (Integer) user[9], (String) user[10], (String) user[11],(String) user[12], (Double) user[13]);
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean changeEmail( String name, String password, String newEmail ){
+        if(isSuchUserExists(name)) {
+            Object[] usr = select(name);
+            if ( !usr[3].equals(password) )
+                return false;
+
+            ArrayList<Object[]> users = selectWithEmail((String) usr[2] );
+            for( Object[] user : users )
+                update((String) user[1], newEmail, (String) user[3], (double) user[4], (double) user[5], (double) user[6], (double) user[7], (double) user[8], (Integer) user[9], (String) user[10], (String) user[11],(String) user[12], (Double) user[13]);
             return true;
         }
         return false;
@@ -288,6 +304,40 @@ public class DatabaseConnection {
             return null;
         }
         return superUsers;
+    }
+
+    public static ArrayList<Object[]> selectWithEmail( String email ){
+        ArrayList<Object[]> users = new ArrayList<>();
+        createNewTableIfNotExists();
+        String sql = "SELECT * FROM users WHERE email = '"+email+"'";
+
+        try (Connection conn = connect();
+             Statement stmt  = conn.createStatement();
+             ResultSet rs    = stmt.executeQuery(sql)){
+
+            // loop through the result set
+            while (rs.next()) {
+                Object[] array = new Object[ROWSIZE];
+                array[0]= rs.getInt("id");
+                array[1]= rs.getString("name");
+                array[2]= rs.getString("email");
+                array[3]= rs.getString("password");
+                array[4]= rs.getDouble("carbopoint");
+                array[5]= rs.getDouble("transport");
+                array[6]= rs.getDouble("housing");
+                array[7]= rs.getDouble("electronics");
+                array[8]= rs.getDouble("other");
+                array[9]= rs.getInt("userType");
+                array[10]= rs.getString("challenges");
+                array[11]= rs.getString("friends");
+                array[12]= rs.getString("refCode");
+                array[13]= rs.getDouble("donate");
+                users.add(array);
+            }
+        } catch (SQLException e) {
+            return null;
+        }
+        return users;
     }
 
     public static boolean addChallenge( String superUsername, int challengeID){
@@ -378,6 +428,17 @@ public class DatabaseConnection {
             Object[] user = select(name);
             updateUser((String) user[1], (String) user[2], (String) user[3], (transport+housing+electronics+others), transport, housing, electronics, others, (Integer) user[9], (String) user[10], (String) user[11],(String) user[12], (Double) user[13]);
         }
+    }
+
+    public static boolean login (String emailOrUsername, String password){
+        Object[] user;
+        if( isSuchUserExists( emailOrUsername ) )
+            user = select( emailOrUsername );
+        else if( isSuchEmailExists( emailOrUsername ) )
+            user = selectWithEmail( emailOrUsername ).get(0);
+        else
+            return false;
+        return ( (String) user[3] ).equals(password);
     }
 
 }
