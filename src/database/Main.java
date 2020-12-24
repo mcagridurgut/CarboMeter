@@ -2,7 +2,8 @@ package database;
 
 import database.DatabaseConnection;
 import mail.*;
-
+import others.Report;
+import user.*;
 import java.util.ArrayList;
 
 public class Main {
@@ -15,6 +16,19 @@ public class Main {
 //        if( DatabaseConnection.login( "newbie", "newChallenger" ) )
 //           System.out.println("succesfly logged in");
         //DatabaseConnection.forgotPassword("newbie");
+        try{
+            NormalUser user = Login.NormalLogin("newCagri", "sadasa");
+            user.addFriend("ucuncu");
+            for( Report r: user.getFriends() ){
+                System.out.println(r.getUser());
+                System.out.println(r.getScore());
+            }
+            //user.createReport(143, 113, 313, 233);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        //Login.forgotMyPassword("newbie");
         ArrayList<Object[]> arrayList = DatabaseConnection.selectAll();
         for(int j = 0; j<arrayList.size();j++ ) {
             Object[] arr = arrayList.get(j);
@@ -22,6 +36,5 @@ public class Main {
                 System.out.print(arr[i] + "\t");
             }System.out.println("");
         }
-
     }
 }

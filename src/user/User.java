@@ -10,9 +10,9 @@ import database.DatabaseConnection;
  * @version 16.12.2020
  */ 
 public abstract class User {
-  
+
   public static ArrayList<User> allUsers = new ArrayList<User>();
-  
+
   //instance data members
   private String username;
   private String password;
@@ -33,7 +33,7 @@ public abstract class User {
   public String getPassword() {
     return this.password;
   }
-  
+
   public String getEmail(){
     return this.email;
   }
@@ -41,5 +41,11 @@ public abstract class User {
   //needed setters
   public void setPassword( String p ) {
     this.password = p;
+  }
+
+  public void setEmail (String email) { this.email =email; }
+
+  public void setUsername( String un ) {
+    this.username = un;
   }
 }

@@ -9,13 +9,12 @@ import user.*;
  * @version 17.12.2020
  */ 
 public class Home extends Category {
-  
-  public Home() {
-    addQuestions();
+
+  private final double DEFAULT = 24.3;
+
+  public Home(boolean h){
+    super(h);
+    setDef( DEFAULT );
   }
 
-  public void addQuestions() {
-    //QUESTIONS TO BE ADDED
-    
-  }
 }

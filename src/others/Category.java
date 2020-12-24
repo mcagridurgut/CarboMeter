@@ -8,30 +8,31 @@ import user.*;
  * @version 17.12.2020
  */ 
 public abstract class Category {
-  
-  private static final int DEFAULT = 50; ///// ?????
-  
+
+  private Double def = 0.0;
+  private boolean isPersonalized;
   //data members
-  private ArrayList<Question> questions;
+  //private ArrayList<Question> questions;
   private double score;
-  
-  public Category() {
-    questions = new ArrayList<Question>();
-    score = DEFAULT;
+
+  public Category(boolean isPersonalized) {
+    //questions = new ArrayList<Question>();
+    score = def;
+    this.isPersonalized = isPersonalized;
   }
-  
-  public ArrayList<Question> getQuestions() {
-    return this.questions;
+
+  public void setDef( double def){
+    this.def = def;
   }
-  public void updateScore( Question q ) {
-    score = (questions.size() * score-q.getDefault()+q.getScore() ) / questions.size();
+
+  public void updateScore(double score) {
+    this.score = score;
+    //score = (questions.size() * score-q.getDefault()+q.getScore() ) / questions.size();
   }
-  
+
   public double getScore() {
-    return this.score;
-  }
-  
-  public double getDefault() {
-    return DEFAULT;
+    if (isPersonalized)
+      return this.score;
+    return def;
   }
 }

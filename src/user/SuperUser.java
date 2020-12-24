@@ -66,13 +66,13 @@ public class SuperUser extends User {
     this.referralCode = newCode;
   }
   
-  public void addChallenge( Challenge newChallenge ) {
-    challenges.add(newChallenge);
-    for(NormalUser user : referralEnteredUsers ) {
-      user.newChallenge( newChallenge );
-    }
-  }
-  
+//  public void addChallenge( Challenge newChallenge ) {
+//    challenges.add(newChallenge);
+//    for(NormalUser user : referralEnteredUsers ) {
+//      user.newChallenge( newChallenge );
+//    }
+//  }
+//
   public static boolean addToSuperUser( String code, NormalUser user ) {
     for( SuperUser u : allSuperUsers) {
       if( u.getReferralCode().equals(code) ) {

@@ -57,7 +57,6 @@ public class DatabaseConnection {
         return (arr != null && arr[0] != null);
     }
 
-
     public static boolean isSuchEmailExists(String email){
         ArrayList<Object[]> users  = selectWithEmail(email);
         return ( users.size() > 0);
@@ -389,7 +388,7 @@ public class DatabaseConnection {
 
     public static ArrayList<Object[]> getFriends(String name){
         ArrayList<Object[]> friends = new ArrayList<>();
-        if( isSuchUserExists(name) ) {
+        if( isSuchUserExists(name) && ((String) select(name)[11]).length()>0 ) {
             String[] friendIds = ((String) select(name)[11]).split("(?=-)");;
             for( String str: friendIds){
                 friends.add( selectWithId( Integer.parseInt(str.substring(1))));
@@ -454,4 +453,11 @@ public class DatabaseConnection {
         return ( (String) user[3] ).equals(password);
     }
 
+    public static Object[] selectWithEmailOrUsername (String emailOrUserName ){
+        if( isSuchUserExists(emailOrUserName) )
+            return select(emailOrUserName);
+        else if( isSuchEmailExists(emailOrUserName) )
+            return selectWithEmail(emailOrUserName).get(0);
+        return null;
+    }
 }

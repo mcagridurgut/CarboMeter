@@ -14,51 +14,47 @@ public class Report {
 
   // instance data members
   private Category home, transportation, food, others;
+  private String user;
   private double carbopoint;
   
-  public Report( boolean h, boolean t, boolean f, boolean o ) { // true means personalized category
-    personalizeCategories(h, t, f, o);
+  public Report( String user, boolean h, boolean t, boolean f, boolean o ) { // true means personalized category
+    this.home = new Home (h);
+    this.transportation = new Transportation(t);
+    this.food = new Food(f);
+    this.others = new Others(o);
+    this.user = user;
     this.carbopoint = CARBOPOINT_DEFAULT;
   }
-  
-  public void personalizeCategories( boolean h, boolean t, boolean f, boolean o ) {
-    if(h) {
-      this.home = new Home();
-      home.getQuestions();
-    }
-    if(t) {
-      this.transportation = new Transportation();
-      transportation.getQuestions();
-    }
-    if(f) {
-      this.food = new Food();
-      food.getQuestions();
-    }
-    if(o) {
-      this.others = new Others();
-      others.getQuestions();
-    }
+
+  public void setHomeScore( double score ){
+    this.home.updateScore(score);
   }
-  
-  public ArrayList<Category> getPersonalizedCategories() {
-    ArrayList<Category> personalized = new ArrayList<>();
-    if(home != null )
-      personalized.add(home);
-    if(transportation != null) 
-      personalized.add(transportation);
-    if(food != null) 
-      personalized.add(food);
-    if(others != null) 
-      personalized.add(others);
-    
-    return personalized;
+
+
+  public void setFoodScore( double score ){
+    this.food.updateScore(score);
   }
+
+
+  public void setTransportationScore( double score ){
+    this.transportation.updateScore(score);
+  }
+
+
+  public void setOthersScore( double score ){
+    this.others.updateScore(score);
+  }
+
   
   public double getScore() {
     return this.carbopoint;
   }
-  
-  public void updateScore(Category c) {
-    carbopoint = (4 * carbopoint - c.getDefault() + c.getScore()) / 4;
+
+  public String getUser() {
+    return user;
+  }
+
+  public void updateScore() {
+    carbopoint = food.getScore()+transportation.getScore()+ others.getScore()+home.getScore();
   }
 }

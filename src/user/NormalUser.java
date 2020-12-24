@@ -10,43 +10,32 @@ import java.util.ArrayList;
  * @version 16.12.2020
  */ 
 public class NormalUser extends User {
-  
-  private static ArrayList<NormalUser> allNormalUsers = new ArrayList<>();
-  
-  //instance data members
+
   private ArrayList<Report> reportsCompleted;
   private ArrayList<Challenge> challenges;
-  private ArrayList<User> friends;
-  //private ArrayList<Recommendations> recommendations;
+  private ArrayList<Report> friends;
   private String referenceCode;
   private double donations;
-  
+
+
   //constructors
-  public NormalUser( String username, String password, String email, String referenceCode ) {
-    super(username, password, email);
-    DatabaseConnection.createNewUser(username,email, password,0,0,0,0,0,1,"","",referenceCode,0);
-    this.referenceCode = referenceCode;
-    this.referral(referenceCode);
-    this.reportsCompleted = new ArrayList<Report>();
-    this.challenges = new ArrayList<Challenge>();
-    //this.recommendations = new ArrayList<Recommendations>();
-    this.donations = 0;
-    allNormalUsers.add(this);
-    allUsers.add(this);
+  public NormalUser( String username, String email, String password, String referenceCode)  {
+    super(username, email, password);
+    if ( !DatabaseConnection.isSuchUserExists(username) && !DatabaseConnection.isSuchEmailExists(email) ){
+      DatabaseConnection.createNewUser(username,email, password,0,0,0,0,0,1,"","",referenceCode,0);
+      this.referenceCode = referenceCode;
+      this.reportsCompleted = new ArrayList<Report>();
+      this.challenges = new ArrayList<Challenge>();
+      this.donations = 0;
+      allUsers.add(this);
+    }
+    else{
+      this.setUsername("");
+      this.setEmail("");
+      this.setPassword("");
+    }
   }
-  
-  //constructor
-  public NormalUser( String username, String password, String email) {
-    super(username, password, email);
-    DatabaseConnection.createNewUser(username,email, password,0,0,0,0,0,1,"","","",0);
-    this.referenceCode = "";
-    this.reportsCompleted = new ArrayList<Report>();
-    this.challenges = new ArrayList<Challenge>();
-    //this.recommendations = new ArrayList<Recommendations>();
-    this.donations = 0;
-    allNormalUsers.add(this);
-  }
-  
+
   // getters
   public ArrayList<Report> getReports() {
     return this.reportsCompleted;
@@ -54,11 +43,8 @@ public class NormalUser extends User {
   public ArrayList<Challenge> getChallenges() {
     return this.challenges;
   }
-  //public ArrayList<Recommendations> getRecommendations() {
-    //return this.recommendations;
-  //}
-  public ArrayList<User> getFriends() {
-   return this.friends; 
+  public ArrayList<Report> getFriends() {
+   return this.friends;
   }
   public String getReferenceCode() {
     return this.referenceCode;
@@ -66,38 +52,55 @@ public class NormalUser extends User {
   public double getDonations() {
     return this.donations;
   }
-  
+
   // setters
   public void setDonations( double x) {
     this.donations = x;
   }
-  //public void setRecommendations( Recommendation r ) {
-   //this.recommendations = r;
-  //}
-  
-  //methods
-  public void createReport() {
-    Report newReport = new Report(true,true,true,true); // DEFAULT / PERSONALIZED
-    for( Category c : newReport.getPersonalizedCategories() ){
-      for(Question q : c.getQuestions() ) {
-        c.updateScore( q );
-      } 
-    }
+  public void setReports( ArrayList<Report> reports) {
+    this.reportsCompleted = reports;
+  }
+  public void setFriends ( ArrayList<Report> friends){
+    this.friends = friends;
+  }
+  public void setReferenceCode(String referenceCode){
+    this.referenceCode = referenceCode;
+  }
+
+  public void createReport(double home, double transportation, double food, double others) {
+    Report newReport = new Report(getUsername(),true,true,true,true); // DEFAULT / PERSONALIZED
+    newReport.setFoodScore(food);
+    newReport.setHomeScore(home);
+    newReport.setOthersScore(others);
+    newReport.setTransportationScore(transportation);
+    DatabaseConnection.updateData( getUsername(), transportation,home,food,others );
     reportsCompleted.add(newReport);
   }
-  
-  public void newChallenge( Challenge challenge ){
-    challenges.add(challenge);
+
+
+  public void addFriend( String name ) {
+    if( DatabaseConnection.isSuchUserExists(name) && !isSuchFriendExists(name) ) {
+      DatabaseConnection.addFriend(getUsername(), name);
+      Report friend = new Report( name, true, true, true, true);
+      Object[] frnd = DatabaseConnection.select(name);
+
+      friend.setTransportationScore( (double)frnd[5] );
+      friend.setHomeScore( (double)frnd[6] );
+      friend.setFoodScore( (double)frnd[7] );
+      friend.setOthersScore( (double)frnd[8] );
+      friend.updateScore();
+      friends.add(friend);
+    }
   }
-  
-  public void addFriend( User f ) {
-    friends.add(f);
+
+  private boolean isSuchFriendExists (String name){
+    for( Report friend : friends ){
+      if( friend.getUser().equals(name) )
+        return true;
+    }
+    return false;
   }
-  
-  public void referral( String referenceCode ) {
-    SuperUser.addToSuperUser( referenceCode, this );
-  }
-  
+
   public void challengeCompleted( Challenge c ) {
     c.challengeCompleted();
   }
