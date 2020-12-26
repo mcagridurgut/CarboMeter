@@ -1,1 +1,3 @@
-
+12 panels created, old panels updated.
+22 licensed image used, 1 edited.
+The programming of the main gui class, which uses the card layout for the connection of the panels, is half finished.
