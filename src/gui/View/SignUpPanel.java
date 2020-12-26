@@ -1,5 +1,7 @@
 package gui.View;
 
+import java.awt.*;
+
 public class SignUpPanel extends javax.swing.JPanel {
 
     public SignUpPanel() {
@@ -48,7 +50,7 @@ public class SignUpPanel extends javax.swing.JPanel {
 
         userNameField.setBackground(new java.awt.Color(240, 240, 240));
         userNameField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        userNameField.setText("Username");
+        userNameField.setUI(new JTextFieldHintUI("Username", Color.gray));
         userNameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userNameFieldActionPerformed(evt);
@@ -59,24 +61,24 @@ public class SignUpPanel extends javax.swing.JPanel {
 
         passwordField.setBackground(new java.awt.Color(240, 240, 240));
         passwordField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        passwordField.setText("Password");
+        passwordField.setUI(new JTextFieldHintUI("Password", Color.gray));
         add(passwordField);
         passwordField.setBounds(470, 300, 180, 30);
 
         confirmPasswordField.setBackground(new java.awt.Color(240, 240, 240));
-        confirmPasswordField.setText("Confirm password");
+        confirmPasswordField.setUI(new JTextFieldHintUI("Password", Color.gray));
         add(confirmPasswordField);
         confirmPasswordField.setBounds(470, 350, 180, 30);
 
         emailField.setBackground(new java.awt.Color(240, 240, 240));
         emailField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        emailField.setText("E-mail");
+        emailField.setUI(new JTextFieldHintUI("E-mail", Color.gray));
         add(emailField);
         emailField.setBounds(470, 400, 180, 30);
 
         superUserCodeField.setBackground(new java.awt.Color(240, 240, 240));
         superUserCodeField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        superUserCodeField.setText("Super User Code (Optional)");
+        superUserCodeField.setUI(new JTextFieldHintUI("Super User Code (optional)", Color.gray));
         add(superUserCodeField);
         superUserCodeField.setBounds(470, 450, 180, 30);
 
@@ -169,13 +171,13 @@ public class SignUpPanel extends javax.swing.JPanel {
     private javax.swing.JLabel emailLabel;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JButton loginButton;
-    private javax.swing.JPasswordField passwordField;
+    public javax.swing.JPasswordField passwordField;
     private javax.swing.JLabel passwordLabel;
     public javax.swing.JButton signUpButton;
     private javax.swing.JLabel signUpSignatureLabel;
-    private javax.swing.JTextField superUserCodeField;
+    public javax.swing.JTextField superUserCodeField;
     private javax.swing.JLabel superuserLabel;
-    private javax.swing.JTextField userNameField;
+    public javax.swing.JTextField userNameField;
     private javax.swing.JComboBox<String> userTypeCombo;
     private javax.swing.JLabel userTypeLabel;
     private javax.swing.JLabel usernameLabel;

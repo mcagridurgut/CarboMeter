@@ -65,11 +65,12 @@ public class Gui extends JFrame{
 
             if(src.equals(loginPanel.loginButton)){
                 try{
-                    Login.NormalLogin(loginPanel.userNameField.getText(),loginPanel.passwordField.getText());
+                    normalUser = Login.NormalLogin(loginPanel.userNameField.getText(),loginPanel.passwordField.getText());
                     if( !normalUser.getUsername().equals(""))
                         cardLayout.show(contentPanel,"normalUserHomePanel");
                 }catch (Exception e){
-
+                    //NO SUCH USER
+                    System.out.println("no such user");
                 }
             }
 
@@ -87,6 +88,32 @@ public class Gui extends JFrame{
             if(src.equals(reportPanel.backPageButton)) cardLayout.show(contentPanel,"othersQuestionPanel");
             if(src.equals(reportPanel.nextPageButton)) cardLayout.show(contentPanel,"donationPanel");
             if(src.equals(signUpPanel.loginButton)) cardLayout.show(contentPanel,"loginPanel");
+            if(src.equals(signUpPanel.signUpButton)){
+                if ( !signUpPanel.passwordField.getText().equals(signUpPanel.confirmPasswordField.getText()) )
+                {
+                    // POP UP PASSWORDS DOESNT MATCH
+                    System.out.println("passwords doesnt match");
+                }
+                else{
+                    try{
+                        normalUser = Login.register(signUpPanel.userNameField.getText(),signUpPanel.emailField.getText(),signUpPanel.passwordField.getText(),signUpPanel.superUserCodeField.getText());
+                        cardLayout.show(contentPanel,"normalUserHomePanel");
+                    }catch(Exception e){
+                        // POP UP USER ALREADY EXİSTS
+                        System.out.println("already exists");
+                    }
+                }
+            }
+
+            if(src.equals(normalUserHomePanel.logOutButton)){
+                cardLayout.show(contentPanel,"loginPanel");
+            }
+
+
+            if(src.equals(superUserHomePanel.logOutButton)){
+                cardLayout.show(contentPanel,"loginPanel");
+            }
+
             if(src.equals(superUserHomePanel.challengesButton)) cardLayout.show(contentPanel,"superChallengesPanel");
             if(src.equals(transportationQuestion2Panel.goBackButton)) cardLayout.show(contentPanel,"transportationQuestionPanel");
             if(src.equals(transportationQuestion2Panel.nextButton)) cardLayout.show(contentPanel,"houseQuestionPanel");
