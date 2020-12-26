@@ -1,8 +1,29 @@
 package gui.View;
-
+import javax.swing.*;
 import java.awt.*;
 
-public class SignUpPanel extends javax.swing.JPanel {
+public class SignUpPanel extends JPanel {
+
+
+    private JLabel background;
+    private JLabel carbometerLabel;
+    public JPasswordField confirmPasswordField;
+    private JLabel confirmPasswordLabel;
+    public JTextField emailField;
+    private JLabel emailLabel;
+    private JLabel jLabel1;
+    public JButton loginButton;
+    public JPasswordField passwordField;
+    private JLabel passwordLabel;
+    public JButton signUpButton;
+    private JLabel signUpSignatureLabel;
+    public JTextField superUserCodeField;
+    private JLabel superuserLabel;
+    public JTextField userNameField;
+    private JComboBox<String> userTypeCombo;
+    private JLabel userTypeLabel;
+    private JLabel usernameLabel;
+    private JTextField verificationCodeLabel;
 
     public SignUpPanel() {
         initComponents();
@@ -10,25 +31,25 @@ public class SignUpPanel extends javax.swing.JPanel {
 
     private void initComponents() {
 
-        carbometerLabel = new javax.swing.JLabel();
-        signUpSignatureLabel = new javax.swing.JLabel();
-        userNameField = new javax.swing.JTextField();
-        passwordField = new javax.swing.JPasswordField();
-        confirmPasswordField = new javax.swing.JPasswordField();
-        emailField = new javax.swing.JTextField();
-        superUserCodeField = new javax.swing.JTextField();
-        userTypeCombo = new javax.swing.JComboBox<>();
-        signUpButton = new javax.swing.JButton();
-        userTypeLabel = new javax.swing.JLabel();
-        usernameLabel = new javax.swing.JLabel();
-        passwordLabel = new javax.swing.JLabel();
-        confirmPasswordLabel = new javax.swing.JLabel();
-        emailLabel = new javax.swing.JLabel();
-        superuserLabel = new javax.swing.JLabel();
-        verificationCodeLabel = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        loginButton = new javax.swing.JButton();
-        background = new javax.swing.JLabel();
+        JLabel carbometerLabel = new JLabel();
+        signUpSignatureLabel = new JLabel();
+        userNameField = new JTextField();
+        passwordField = new JPasswordField();
+        confirmPasswordField = new JPasswordField();
+        emailField = new JTextField();
+        superUserCodeField = new JTextField();
+        userTypeCombo = new JComboBox<>();
+        signUpButton = new JButton();
+        userTypeLabel = new JLabel();
+        usernameLabel = new JLabel();
+        passwordLabel = new JLabel();
+        confirmPasswordLabel = new JLabel();
+        emailLabel = new JLabel();
+        superuserLabel = new JLabel();
+        verificationCodeLabel = new JTextField();
+        jLabel1 = new JLabel();
+        loginButton = new JButton();
+        background = new JLabel();
 
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setPreferredSize(new java.awt.Dimension(1280, 700));
@@ -61,12 +82,10 @@ public class SignUpPanel extends javax.swing.JPanel {
 
         passwordField.setBackground(new java.awt.Color(240, 240, 240));
         passwordField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        passwordField.setUI(new JTextFieldHintUI("Password", Color.gray));
         add(passwordField);
         passwordField.setBounds(470, 300, 180, 30);
 
         confirmPasswordField.setBackground(new java.awt.Color(240, 240, 240));
-        confirmPasswordField.setUI(new JTextFieldHintUI("Password", Color.gray));
         add(confirmPasswordField);
         confirmPasswordField.setBounds(470, 350, 180, 30);
 
@@ -162,25 +181,5 @@ public class SignUpPanel extends javax.swing.JPanel {
     private void userNameFieldActionPerformed(java.awt.event.ActionEvent evt) {
 
     }
-
-    private javax.swing.JLabel background;
-    private javax.swing.JLabel carbometerLabel;
-    public javax.swing.JPasswordField confirmPasswordField;
-    private javax.swing.JLabel confirmPasswordLabel;
-    public javax.swing.JTextField emailField;
-    private javax.swing.JLabel emailLabel;
-    private javax.swing.JLabel jLabel1;
-    public javax.swing.JButton loginButton;
-    public javax.swing.JPasswordField passwordField;
-    private javax.swing.JLabel passwordLabel;
-    public javax.swing.JButton signUpButton;
-    private javax.swing.JLabel signUpSignatureLabel;
-    public javax.swing.JTextField superUserCodeField;
-    private javax.swing.JLabel superuserLabel;
-    public javax.swing.JTextField userNameField;
-    private javax.swing.JComboBox<String> userTypeCombo;
-    private javax.swing.JLabel userTypeLabel;
-    private javax.swing.JLabel usernameLabel;
-    private javax.swing.JTextField verificationCodeLabel;
 
 }

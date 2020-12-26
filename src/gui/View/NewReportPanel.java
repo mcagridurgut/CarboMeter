@@ -41,7 +41,7 @@ public class NewReportPanel extends javax.swing.JPanel {
         newReportLabel.setBounds(505, 80, 270, 40);
 
         comboBoxFood.setBackground(new java.awt.Color(240, 240, 240));
-        comboBoxFood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Default", "Personalise" }));
+        comboBoxFood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Default", "Personalize" }));
         comboBoxFood.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboBoxFoodActionPerformed(evt);
@@ -69,7 +69,7 @@ public class NewReportPanel extends javax.swing.JPanel {
         nextPageButton.setBounds(1120, 620, 110, 35);
 
         homeComboBox.setBackground(new java.awt.Color(240, 240, 240));
-        homeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Default", "Personalise" }));
+        homeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Default", "Personalize" }));
         homeComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 homeComboBoxActionPerformed(evt);
@@ -79,7 +79,7 @@ public class NewReportPanel extends javax.swing.JPanel {
         homeComboBox.setBounds(650, 380, 100, 40);
 
         stuffComboBox.setBackground(new java.awt.Color(240, 240, 240));
-        stuffComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Default", "Personalise" }));
+        stuffComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Default", "Personalize" }));
         stuffComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 stuffComboBoxActionPerformed(evt);
@@ -89,7 +89,7 @@ public class NewReportPanel extends javax.swing.JPanel {
         stuffComboBox.setBounds(650, 440, 100, 40);
 
         travelComboBox.setBackground(new java.awt.Color(240, 240, 240));
-        travelComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Default", "Personalise" }));
+        travelComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Default", "Personalize" }));
         travelComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 travelComboBoxActionPerformed(evt);
@@ -153,18 +153,18 @@ public class NewReportPanel extends javax.swing.JPanel {
     private javax.swing.JLabel background;
     private javax.swing.JLabel carbobarLabel;
     private javax.swing.JProgressBar carbobarProgressBar;
-    private javax.swing.JComboBox<String> comboBoxFood;
+    public javax.swing.JComboBox<String> comboBoxFood;
     private javax.swing.JLabel foodIcon;
-    private javax.swing.JComboBox<String> homeComboBox;
+    public javax.swing.JComboBox<String> homeComboBox;
     private javax.swing.JLabel homeIcon;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel newReportLabel;
     private javax.swing.JScrollPane newReportPane;
     private javax.swing.JTextArea newReportTextArea;
     public javax.swing.JButton nextPageButton;
-    private javax.swing.JComboBox<String> stuffComboBox;
+    public javax.swing.JComboBox<String> stuffComboBox;
     private javax.swing.JLabel stuffIcon;
-    private javax.swing.JComboBox<String> travelComboBox;
+    public javax.swing.JComboBox<String> travelComboBox;
     private javax.swing.JLabel travelIcon;
 
 }

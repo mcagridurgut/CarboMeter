@@ -23,6 +23,7 @@ public class Gui extends JFrame{
     private FQPanel faqPanel = new FQPanel();
     private FriendsPanel friendsPanel = new FriendsPanel();
     private HouseQuestionPanel houseQuestionPanel = new HouseQuestionPanel();
+    private FoodQuestionPanel foodQuestionPanel = new FoodQuestionPanel();
     private LoginPanel loginPanel = new LoginPanel();
     private NewReportPanel newReportPanel = new NewReportPanel();
     private NormalChallengesPanel normalChallengesPanel = new NormalChallengesPanel();
@@ -37,7 +38,7 @@ public class Gui extends JFrame{
     private TransportationQuestionPanel transportationQuestionPanel = new TransportationQuestionPanel();
     private TransportationQuestion2Panel transportationQuestion2Panel = new TransportationQuestion2Panel();
     private UsersPanel usersPanel = new UsersPanel();
-
+    Boolean food, home, transportation, others;
     NormalUser normalUser;
     SuperUser superUser;
 
@@ -60,8 +61,20 @@ public class Gui extends JFrame{
 
             //if(src.equals(accountPanel.changePasswordButton)) cardLayout.show(contentPanel,"aboutUsPanel");
             if(src.equals(donationPanel.backPageButton)) cardLayout.show(contentPanel,"reportPanel");
-            if(src.equals(houseQuestionPanel.goBackButton)) cardLayout.show(contentPanel,"transportationQuestion2Panel");
-            if(src.equals(houseQuestionPanel.nextButton)) cardLayout.show(contentPanel,"othersQuestionPanel");
+            if(src.equals(houseQuestionPanel.goBackButton)) {
+                if( transportation )
+                    cardLayout.show(contentPanel,"transportationQuestion2Panel");
+                else if ( food )
+                    cardLayout.show(contentPanel,"foodQuestionPanel");
+                else
+                    cardLayout.show(contentPanel,"reportPanel");
+            }
+            if(src.equals(houseQuestionPanel.nextButton)){
+                if( others )
+                    cardLayout.show(contentPanel,"othersQuestionPanel");
+                else
+                    cardLayout.show(contentPanel,"reportPanel");
+            }
 
             if(src.equals(loginPanel.loginButton)){
                 try{
@@ -75,19 +88,79 @@ public class Gui extends JFrame{
             }
 
             if(src.equals(loginPanel.signUpButton)) cardLayout.show(contentPanel,"signUpPanel");
+
             //if(src.equals(newReportPanel.nextPageButton)) cardLayout.show(contentPanel,"foodQuestionPanel");
-            if(src.equals(newReportPanel.nextPageButton)) cardLayout.show(contentPanel,"transportationQuestionPanel");
-            if(src.equals(normalUserHomePanel.newReportButton)) cardLayout.show(contentPanel,"newReportPanel");
+
+            if(src.equals(newReportPanel.nextPageButton)) {
+                food = newReportPanel.comboBoxFood.getItemAt(newReportPanel.comboBoxFood.getSelectedIndex()).equals("Personalize");
+                home = newReportPanel.comboBoxFood.getItemAt(newReportPanel.homeComboBox.getSelectedIndex()).equals("Personalize");
+                transportation = newReportPanel.comboBoxFood.getItemAt(newReportPanel.travelComboBox.getSelectedIndex()).equals("Personalize");
+                others = newReportPanel.comboBoxFood.getItemAt(newReportPanel.stuffComboBox.getSelectedIndex()).equals("Personalize");
+                if( food )
+                    cardLayout.show(contentPanel,"foodQuestionPanel");
+                else if( transportation )
+                    cardLayout.show(contentPanel,"transportationQuestionPanel");
+                else if( home )
+                    cardLayout.show(contentPanel,"houseQuestionPanel");
+                else if ( others )
+                    cardLayout.show(contentPanel,"othersQuestionPanel");
+                else
+                    cardLayout.show(contentPanel,"reportPanel");
+            }
+
+            if(src.equals(foodQuestionPanel.nextButton)) {
+                if( transportation )
+                    cardLayout.show(contentPanel,"transportationQuestionPanel");
+                else if( home )
+                    cardLayout.show(contentPanel,"houseQuestionPanel");
+                else if ( others )
+                    cardLayout.show(contentPanel,"othersQuestionPanel");
+                else
+                    cardLayout.show(contentPanel,"reportPanel");
+            }
+
+            if(src.equals(foodQuestionPanel.goBackButton) ) {
+                cardLayout.show(contentPanel,"newReportPanel");
+            }
+
+            if(src.equals(normalUserHomePanel.newReportButton)){
+                cardLayout.show(contentPanel,"newReportPanel");
+            }
+
             if(src.equals(normalUserHomePanel.oldReportButton)) cardLayout.show(contentPanel,"oldReportsPanel");
             if(src.equals(normalUserHomePanel.challengesButton)) cardLayout.show(contentPanel,"normalChallengesPanel");
             if(src.equals(normalUserHomePanel.donationButton)) cardLayout.show(contentPanel,"donationPanel");
             if(src.equals(normalUserHomePanel.friendsButton)) cardLayout.show(contentPanel,"friendsPanel");
             if(src.equals(normalUserHomePanel.recommendationsButton)) cardLayout.show(contentPanel,"recommendationsPanel");
-            if(src.equals(othersQuestionPanel.goBackButton)) cardLayout.show(contentPanel,"houseQuestionPanel");
+
+            if(src.equals(othersQuestionPanel.goBackButton)){
+                if( home )
+                    cardLayout.show(contentPanel,"houseQuestionPanel");
+                else if( transportation )
+                    cardLayout.show(contentPanel,"transportationQuestion2Panel");
+                else if( food )
+                    cardLayout.show(contentPanel,"foodQuestionPanel");
+                else
+                    cardLayout.show(contentPanel,"reportPanel");
+
+            }
             if(src.equals(othersQuestionPanel.showTheReportButton)) cardLayout.show(contentPanel,"reportPanel");
-            if(src.equals(reportPanel.backPageButton)) cardLayout.show(contentPanel,"othersQuestionPanel");
+
+            if(src.equals(reportPanel.backPageButton)){
+                if( others )
+                    cardLayout.show(contentPanel,"othersQuestionPanel");
+                else if ( home )
+                    cardLayout.show(contentPanel,"houseQuestionPanel");
+                else if ( transportation )
+                    cardLayout.show(contentPanel,"transportationQuestion2Panel");
+                else if ( food )
+                    cardLayout.show(contentPanel,"foodQuestionPanel");
+                else
+                    cardLayout.show(contentPanel, "newReportPanel");
+            }
             if(src.equals(reportPanel.nextPageButton)) cardLayout.show(contentPanel,"donationPanel");
             if(src.equals(signUpPanel.loginButton)) cardLayout.show(contentPanel,"loginPanel");
+
             if(src.equals(signUpPanel.signUpButton)){
                 if ( !signUpPanel.passwordField.getText().equals(signUpPanel.confirmPasswordField.getText()) )
                 {
@@ -116,8 +189,24 @@ public class Gui extends JFrame{
 
             if(src.equals(superUserHomePanel.challengesButton)) cardLayout.show(contentPanel,"superChallengesPanel");
             if(src.equals(transportationQuestion2Panel.goBackButton)) cardLayout.show(contentPanel,"transportationQuestionPanel");
-            if(src.equals(transportationQuestion2Panel.nextButton)) cardLayout.show(contentPanel,"houseQuestionPanel");
-            if(src.equals(transportationQuestionPanel.goBackButton)) cardLayout.show(contentPanel,"newReportPanel");
+
+            if(src.equals(transportationQuestion2Panel.nextButton)){
+                if( home )
+                    cardLayout.show(contentPanel,"houseQuestionPanel");
+                else if ( others )
+                    cardLayout.show(contentPanel,"othersQuestionPanel");
+                else
+                    cardLayout.show(contentPanel,"reportPanel");
+
+            }
+
+            if(src.equals(transportationQuestionPanel.goBackButton)){
+                if( food )
+                    cardLayout.show(contentPanel,"foodQuestionPanel");
+                else
+                    cardLayout.show(contentPanel,"newReportPanel");
+            }
+
             if(src.equals(transportationQuestionPanel.nextButton)) cardLayout.show(contentPanel,"transportationQuestion2Panel");
         }
     }
@@ -163,6 +252,8 @@ public class Gui extends JFrame{
         transportationQuestionPanel.goBackButton.addActionListener(al);
         transportationQuestionPanel.nextButton.addActionListener(al);
         usersPanel.kickUserButton.addActionListener(al);
+        foodQuestionPanel.goBackButton.addActionListener(al);
+        foodQuestionPanel.nextButton.addActionListener(al);
     }
 
     private void panelAdder(){
@@ -187,6 +278,7 @@ public class Gui extends JFrame{
         contentPanel.add(transportationQuestionPanel, "transportationQuestionPanel");
         contentPanel.add(transportationQuestion2Panel,"transportationQuestion2Panel");
         contentPanel.add(usersPanel, "usersPanel");
+        contentPanel.add(foodQuestionPanel,"foodQuestionPanel");
 
     }
 

@@ -63,7 +63,6 @@ public class LoginPanel extends javax.swing.JPanel {
 
         passwordField.setBackground(new java.awt.Color(240, 240, 240));
         passwordField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        passwordField.setUI(new JTextFieldHintUI("Password", Color.gray));
         add(passwordField);
         passwordField.setBounds(550, 320, 180, 30);
 

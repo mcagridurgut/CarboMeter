@@ -1,20 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package foodquestions;
-
+package gui.View;
 /**
  *
  * @author User
  */
-public class foodQuestionPanel extends javax.swing.JPanel {
+public class FoodQuestionPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form foodQuestionPanel
      */
-    public foodQuestionPanel() {
+    public FoodQuestionPanel() {
         initComponents();
     }
 
@@ -162,13 +156,11 @@ public class foodQuestionPanel extends javax.swing.JPanel {
         jTextField8.setBounds(530, 560, 150, 30);
 
         nextButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        nextButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons and backgrounds/right-arrow.png"))); // NOI18N
         nextButton.setText("Next");
         add(nextButton);
         nextButton.setBounds(1110, 610, 110, 35);
 
         goBackButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        goBackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons and backgrounds/left Arrow.png"))); // NOI18N
         goBackButton.setText("Go Back");
         add(goBackButton);
         goBackButton.setBounds(80, 620, 110, 35);
@@ -221,7 +213,7 @@ public class foodQuestionPanel extends javax.swing.JPanel {
         add(caloriesLabel8);
         caloriesLabel8.setBounds(710, 560, 50, 30);
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons and backgrounds/final.jpg"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("../icons and backgrounds/final.jpg"))); // NOI18N
         background.setMaximumSize(new java.awt.Dimension(1280, 700));
         background.setMinimumSize(new java.awt.Dimension(1280, 700));
         background.setPreferredSize(new java.awt.Dimension(1280, 700));
@@ -245,18 +237,18 @@ public class foodQuestionPanel extends javax.swing.JPanel {
     private javax.swing.JLabel fishAndSeafoodLabel;
     private javax.swing.JLabel foodLabel;
     private javax.swing.JLabel fruitsAndVegetablesLabel;
-    private javax.swing.JButton goBackButton;
     private javax.swing.JLabel grainsAndBakedLabel;
     private javax.swing.JLabel howMuchConsumeLabel;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JButton nextButton;
+    public javax.swing.JButton goBackButton;
+    public javax.swing.JTextField jTextField1;
+    public javax.swing.JTextField jTextField2;
+    public javax.swing.JTextField jTextField3;
+    public javax.swing.JTextField jTextField4;
+    public javax.swing.JTextField jTextField5;
+    public javax.swing.JTextField jTextField6;
+    public javax.swing.JTextField jTextField7;
+    public javax.swing.JTextField jTextField8;
+    public javax.swing.JButton nextButton;
     private javax.swing.JLabel otherMeatLabel;
     private javax.swing.JLabel poultryAndEggsLabel;
     private javax.swing.JLabel snacksLabel;
