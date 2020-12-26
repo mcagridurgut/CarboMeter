@@ -1,8 +1,6 @@
 package user;
 
-import others.*;
 import java.util.ArrayList;
-import database.DatabaseConnection;
 
 /**
  * abstract user class 

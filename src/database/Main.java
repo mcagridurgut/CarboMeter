@@ -1,8 +1,5 @@
 package database;
 
-import database.DatabaseConnection;
-import mail.*;
-import others.Report;
 import user.*;
 import java.util.ArrayList;
 
@@ -17,13 +14,13 @@ public class Main {
 //           System.out.println("succesfly logged in");
         //DatabaseConnection.forgotPassword("newbie");
         try{
-            NormalUser user = Login.NormalLogin("newCagri", "sadasa");
-            user.addFriend("ucuncu");
-            for( Report r: user.getFriends() ){
-                System.out.println(r.getUser());
-                System.out.println(r.getScore());
-            }
-            //user.createReport(143, 113, 313, 233);
+            NormalUser user = Login.NormalLogin("newbie", "cagridurgut123");
+//            user.addFriend("ucuncu");
+//            for( Report r: user.getReports() ){
+//                System.out.println(r.getUser());
+//                System.out.println(r.getScore());
+//            }
+//            user.createReport(143, 113, 313, 233);
         }catch (Exception e){
             e.printStackTrace();
         }

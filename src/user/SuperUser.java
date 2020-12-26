@@ -1,6 +1,6 @@
 package user;
 
-import others.*;
+import Model.*;
 import java.util.ArrayList;
 
 /**

@@ -139,7 +139,7 @@
     <panel_attributes>_Report_
 --
 - CARBOPOINT_DEFAULT:int = 50
-- Category home, transportation,food, others
+- Category home, transportation,food, Model
 - double carbopoint
 -
 -personalizeCategories( boolean, boolean, 

@@ -1,1 +1,1 @@
-user package and others package have been completed.
+user package and Model package have been completed.

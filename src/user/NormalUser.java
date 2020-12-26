@@ -1,7 +1,7 @@
 package user;
 
 import database.DatabaseConnection;
-import others.*;
+import Model.*;
 import java.util.ArrayList;
 
 /**
@@ -34,6 +34,10 @@ public class NormalUser extends User {
       this.setEmail("");
       this.setPassword("");
     }
+  }
+
+  public Report getPreviousReport(){
+    return this.reportsCompleted.get(this.reportsCompleted.size()-1);
   }
 
   // getters

@@ -1,7 +1,7 @@
 package user;
 
 import database.DatabaseConnection;
-import others.Report;
+import Model.Report;
 
 import javax.management.InstanceAlreadyExistsException;
 import java.util.ArrayList;
