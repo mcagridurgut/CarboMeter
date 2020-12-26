@@ -438,7 +438,9 @@ public class DatabaseConnection {
             user = selectWithEmail( emailOrUsername ).get(0);
         else
             return false;
-        JavaMail.sendMail( (String) user[2], "Carbometer Forgot Password","Your password is: " + (String) user[3] );
+        String temp = randomCodeGenerator();
+        changePassword((String) user[1],(String) user[3],temp);
+        JavaMail.sendMail( (String) user[2], "Carbometer Forgot Password","Your temporary password is: " + temp );
         return true;
     }
 
@@ -459,5 +461,15 @@ public class DatabaseConnection {
         else if( isSuchEmailExists(emailOrUserName) )
             return selectWithEmail(emailOrUserName).get(0);
         return null;
+    }
+    private static String randomCodeGenerator(){
+        String str = "";
+        String randoms = "wertyuıopasdfghjklizxcvbnm1234567890";
+        for(int i = 0; i<8; i++){
+            int rndm = (int) (Math.random()*randoms.length());
+            char random = randoms.charAt(rndm);
+            str += random;
+        }
+        return str;
     }
 }

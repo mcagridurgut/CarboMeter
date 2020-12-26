@@ -71,8 +71,8 @@ public class NormalUser extends User {
     this.referenceCode = referenceCode;
   }
 
-  public void createReport(double home, double transportation, double food, double others) {
-    Report newReport = new Report(getUsername(),true,true,true,true); // DEFAULT / PERSONALIZED
+  public void createReport(double home, double transportation, double food, double others,boolean f1,boolean f2,boolean f3,boolean f4 ) {
+    Report newReport = new Report(getUsername(),f1,f2,f3,f4); // DEFAULT / PERSONALIZED
     newReport.setFoodScore(food);
     newReport.setHomeScore(home);
     newReport.setOthersScore(others);

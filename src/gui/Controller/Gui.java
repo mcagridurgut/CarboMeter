@@ -1,4 +1,5 @@
 package gui.Controller;
+import Model.Food;
 import gui.View.*;
 import mail.JavaMail;
 import user.Login;
@@ -43,6 +44,10 @@ public class Gui extends JFrame{
     Boolean food, home, transportation, others;
     NormalUser normalUser;
     SuperUser superUser;
+    Double housingValue = 0.0;
+    Double travelValue= 0.0;
+    Double foodValue= 0.0;
+    Double othersValue= 0.0;
 
     public Gui() {
         super("Carbometer");
@@ -50,7 +55,12 @@ public class Gui extends JFrame{
         superUser = new SuperUser("","","","");
         this.setJMenuBar(menuBar);
 
+        // menu item listeners
         menuBar.exit.addActionListener(handler);
+        menuBar.home.addActionListener(handler);
+        menuBar.about.addActionListener(handler);
+        menuBar.faq.addActionListener(handler);
+        menuBar.account.addActionListener(handler);
 
         buttonCreator();
         panelAdder();
@@ -77,8 +87,9 @@ public class Gui extends JFrame{
             if(src.equals(houseQuestionPanel.nextButton)){
                 if( others )
                     cardLayout.show(contentPanel,"othersQuestionPanel");
-                else
-                    cardLayout.show(contentPanel,"reportPanel");
+                else {
+                    cardLayout.show(contentPanel, "reportPanel");
+                }
             }
 
             if(src.equals(loginPanel.loginButton)){
@@ -110,19 +121,38 @@ public class Gui extends JFrame{
                     cardLayout.show(contentPanel,"houseQuestionPanel");
                 else if ( others )
                     cardLayout.show(contentPanel,"othersQuestionPanel");
-                else
-                    cardLayout.show(contentPanel,"reportPanel");
+                else {
+                    // YOU HAVE TO Personalize at least one field
+                    //POP UP
+                }
             }
 
             if(src.equals(foodQuestionPanel.nextButton)) {
-                if( transportation )
-                    cardLayout.show(contentPanel,"transportationQuestionPanel");
-                else if( home )
-                    cardLayout.show(contentPanel,"houseQuestionPanel");
-                else if ( others )
-                    cardLayout.show(contentPanel,"othersQuestionPanel");
-                else
-                    cardLayout.show(contentPanel,"reportPanel");
+                try{
+                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField1.getText());
+                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField2.getText());
+                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField3.getText());
+                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField4.getText());
+                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField5.getText());
+                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField6.getText());
+                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField7.getText());
+                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField8.getText());
+                    if (transportation)
+                        cardLayout.show(contentPanel, "transportationQuestionPanel");
+                    else if (home)
+                        cardLayout.show(contentPanel, "houseQuestionPanel");
+                    else if (others)
+                        cardLayout.show(contentPanel, "othersQuestionPanel");
+                    else {
+                        normalUser.createReport(housingValue, travelValue, foodValue, othersValue, home, transportation, food, others);
+                        reportPanel.function(foodValue,travelValue,othersValue,housingValue,1.1,1.1,1.2,1.3);
+                        cardLayout.show(contentPanel, "reportPanel");
+                    }
+                }catch(Exception e){
+                    //Pop Up
+                    //Düzgü
+                    System.out.println("düzgün sayı gir ibne");
+                }
             }
 
             if(src.equals(foodQuestionPanel.goBackButton) ) {
@@ -132,7 +162,10 @@ public class Gui extends JFrame{
             if(src.equals(normalUserHomePanel.newReportButton)){
                 cardLayout.show(contentPanel,"newReportPanel");
             }
-
+            if(src.equals(loginPanel.forgotPasswordLabel)){
+                String str = JOptionPane.showInputDialog(this, "Lütfen kullanıcı adınızı veya e postanızı giriniz");
+                Login.forgotMyPassword(str);
+            }
             if(src.equals(normalUserHomePanel.oldReportButton)) cardLayout.show(contentPanel,"oldReportsPanel");
             if(src.equals(normalUserHomePanel.challengesButton)) cardLayout.show(contentPanel,"normalChallengesPanel");
             if(src.equals(normalUserHomePanel.donationButton)) cardLayout.show(contentPanel,"donationPanel");
@@ -177,12 +210,15 @@ public class Gui extends JFrame{
                     try{
                         normalUser = Login.register(signUpPanel.userNameField.getText(),signUpPanel.emailField.getText(),signUpPanel.passwordField.getText(),signUpPanel.superUserCodeField.getText());
                         String str = randomCodeGenerator();
-
+                        String input = JOptionPane.showInputDialog(this, "13 haneli güvenlik kodunuzu giriniz");
                         try{
                             JavaMail.sendMail(normalUser.getEmail(), "CarboMeter E-Mail Verification", "Your code is: "+str);
                         }catch (Exception e){
                             e.printStackTrace();
                         }
+                        while( !str.equals(input) )
+                            input = JOptionPane.showInputDialog(this, "13 haneli güvenlik kodunuzu giriniz");
+
                         cardLayout.show(contentPanel,"normalUserHomePanel");
                     }catch(Exception e){
                         // POP UP USER ALREADY EXİSTS
@@ -269,9 +305,8 @@ public class Gui extends JFrame{
         usersPanel.kickUserButton.addActionListener(al);
         foodQuestionPanel.goBackButton.addActionListener(al);
         foodQuestionPanel.nextButton.addActionListener(al);
+        loginPanel.forgotPasswordLabel.addActionListener(al);
 
-        // menubar listener
-        //menuBar.exit.addActionListener(al);
     }
 
     private void panelAdder(){
@@ -299,6 +334,11 @@ public class Gui extends JFrame{
         contentPanel.add(foodQuestionPanel,"foodQuestionPanel");
 
     }
+
+    /*
+     * creates random codes for email verification
+     * @return random code
+     */
     private String randomCodeGenerator(){
         String str = "";
         String randoms = "wertyuıopasdfghjklizxcvbnm1234567890";
@@ -310,10 +350,21 @@ public class Gui extends JFrame{
         return str;
     }
 
+    /**
+     * implements act
+     */
     private class TheHandler implements ActionListener {
 
+        /**
+         *
+         * @param event
+         */
         public void actionPerformed(ActionEvent event) {
             if( event.getSource()== menuBar.exit) System.exit(0);
+            if( event.getSource()== menuBar.about ) cardLayout.show(contentPanel,"aboutUsPanel");
+            if( event.getSource()== menuBar.home ) cardLayout.show(contentPanel,"normalUserHomePanel");
+            if( event.getSource()== menuBar.faq ) cardLayout.show(contentPanel,"faqPanel");
+            if( event.getSource()== menuBar.account ) cardLayout.show(contentPanel,"accountPanel");
         }
     }
 }

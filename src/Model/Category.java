@@ -24,13 +24,12 @@ public abstract class Category {
   }
 
   public void updateScore(double score) {
-    this.score = score;
+    if(isPersonalized)
+      this.score = score;
     //score = (questions.size() * score-q.getDefault()+q.getScore() ) / questions.size();
   }
 
   public double getScore() {
-    if (isPersonalized)
-      return this.score;
-    return def;
+    return this.score;
   }
 }

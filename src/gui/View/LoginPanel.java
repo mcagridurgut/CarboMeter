@@ -23,7 +23,7 @@ public class LoginPanel extends javax.swing.JPanel {
         welcomeLabel = new javax.swing.JLabel();
         userNameField = new javax.swing.JTextField();
         passwordField = new javax.swing.JPasswordField();
-        forgotPasswordLabel = new javax.swing.JLabel();
+        forgotPasswordLabel = new javax.swing.JButton();
         loginButton = new javax.swing.JButton();
         signUpButton = new javax.swing.JButton();
         noAccountLabel = new javax.swing.JLabel();
@@ -112,7 +112,7 @@ public class LoginPanel extends javax.swing.JPanel {
     private javax.swing.JLabel background;
     private javax.swing.JLabel carbometerLabel;
     private javax.swing.JLabel forAGreenFutureLabel;
-    private javax.swing.JLabel forgotPasswordLabel;
+    public javax.swing.JButton forgotPasswordLabel;
     public javax.swing.JButton loginButton;
     private javax.swing.JLabel noAccountLabel;
     public javax.swing.JPasswordField passwordField;

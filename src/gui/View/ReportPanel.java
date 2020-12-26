@@ -1,5 +1,7 @@
 package gui.View;
 
+import user.NormalUser;
+
 /**
  * @author Eren Özen, Onur Ertunç
  */
@@ -8,11 +10,40 @@ public class ReportPanel extends javax.swing.JPanel {
 
 
     public ReportPanel() {
-        initComponents();
+       initComponents();
+    }
+
+    public void function(Double newHome,Double newTravel,Double newFood,Double newOthers,Double oldHome,Double oldTravel,Double oldFood,Double oldOthers){
+        reportTable.setModel(new javax.swing.table.DefaultTableModel(
+                new Object [][] {
+                        {"Total", newFood+newTravel+newHome+newOthers, 123.11, oldFood+oldTravel+oldHome+oldOthers},
+                        {"Food", newFood, 123.123, oldFood},
+                        {"Transportation", newTravel, 45.45, oldTravel},
+                        {"Home", newHome, 874.4, oldHome},
+                        {"Others", newOthers, 541.5, oldOthers}
+                },
+                new String [] {
+                        "", "My Carbopoint", "Average", "My Old Data"
+                }
+        ) {
+            Class[] types = new Class [] {
+                    java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                    false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
     }
 
     private void initComponents() {
-
         reportLabel = new javax.swing.JLabel();
         reportBar = new javax.swing.JProgressBar();
         carbobarLabel = new javax.swing.JLabel();
@@ -47,33 +78,9 @@ public class ReportPanel extends javax.swing.JPanel {
         reportTable.setBackground(new java.awt.Color(88, 78, 69));
         reportTable.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         reportTable.setForeground(new java.awt.Color(255, 255, 255));
-        reportTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Total", null, null, null},
-                {"Food", null, null, null},
-                {"Transportation", null, null, null},
-                {"Home", null, null, null},
-                {"Others", null, null, null}
-            },
-            new String [] {
-                "", "My Carbopoint", "Average", "My Old Data"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
+        function (0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0);
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
         reportTable.setRowHeight(72);
         reportPane.setViewportView(reportTable);
         if (reportTable.getColumnModel().getColumnCount() > 0) {
