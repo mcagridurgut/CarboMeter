@@ -1,3 +1,6 @@
-database.Main frame, greeting panel(login screen), sign in panel(for new users), recommendations panel and about us panel added. Test classes were written. JMenuBar issue not fixed.
+all previously completed panels are improved in terms of styling and view, in addition, all panels completed. background added. icons added to buttons and some of the labels. pages are being prepared to connect via buttons. To provide a pure connection between pages, CardLayout will be used.
 
-all previously completed panels are improved in terms of styling and view, in addition, all panels completed. background added. icons added to buttons and some of the labels. pages are being prepared to connect via buttons. to provide a pure connection between pages, CardLayout will be used.
+Connection between panels completed by Eren.
+
+JMenuMenu bar completed.
+10 more panels uploaded. (Total 22 panels were created for the GUI by Eren and Onur) Connection issue between Frame, container panel and MenuBar have not been fixed yet.
