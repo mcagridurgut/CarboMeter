@@ -16,6 +16,8 @@ import java.awt.event.*;
 public class Gui extends JFrame{
     private JPanel contentPanel = new JPanel();
     private CardLayout cardLayout = new CardLayout();
+    private CarbometerMenuBar menuBar = new CarbometerMenuBar();
+    private TheHandler handler = new TheHandler();
 
     private AccountPanel accountPanel = new AccountPanel();
     private AboutUsPanel aboutUsPanel = new AboutUsPanel();
@@ -46,6 +48,10 @@ public class Gui extends JFrame{
         super("Carbometer");
         normalUser = new NormalUser("","","","");
         superUser = new SuperUser("","","","");
+        this.setJMenuBar(menuBar);
+
+        menuBar.exit.addActionListener(handler);
+
         buttonCreator();
         panelAdder();
         this.setContentPane(contentPanel);
@@ -80,6 +86,7 @@ public class Gui extends JFrame{
                     normalUser = Login.NormalLogin(loginPanel.userNameField.getText(),loginPanel.passwordField.getText());
                     if( !normalUser.getUsername().equals(""))
                         cardLayout.show(contentPanel,"normalUserHomePanel");
+                    menuBar.addMenu();
                 }catch (Exception e){
                     //NO SUCH USER
                     System.out.println("no such user");
@@ -262,6 +269,9 @@ public class Gui extends JFrame{
         usersPanel.kickUserButton.addActionListener(al);
         foodQuestionPanel.goBackButton.addActionListener(al);
         foodQuestionPanel.nextButton.addActionListener(al);
+
+        // menubar listener
+        //menuBar.exit.addActionListener(al);
     }
 
     private void panelAdder(){
@@ -298,5 +308,12 @@ public class Gui extends JFrame{
             str += random;
         }
         return str;
+    }
+
+    private class TheHandler implements ActionListener {
+
+        public void actionPerformed(ActionEvent event) {
+            if( event.getSource()== menuBar.exit) System.exit(0);
+        }
     }
 }

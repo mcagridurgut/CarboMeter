@@ -51,5 +51,5 @@ public class JavaMailUtil {
 			ex.printStackTrace();
 		}
 		return null;
-	}	
+	}
 }
