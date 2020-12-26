@@ -29,7 +29,7 @@ public class NormalUserHomePanel extends javax.swing.JPanel {
         normalHomeLabel.setForeground(new java.awt.Color(255, 255, 255));
         normalHomeLabel.setText("HOME");
         add(normalHomeLabel);
-        normalHomeLabel.setBounds(575, 80, 130, 40);
+        normalHomeLabel.setBounds(575, 80, 130, 60);
 
         newReportButton.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         newReportButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons and backgrounds/report.png"))); // NOI18N

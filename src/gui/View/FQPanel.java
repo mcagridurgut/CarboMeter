@@ -26,7 +26,7 @@ public class FQPanel extends javax.swing.JPanel {
         FAQLabel.setForeground(new java.awt.Color(255, 255, 255));
         FAQLabel.setText("FREQUENTLY ASKED QUESTIONS");
         add(FAQLabel);
-        FAQLabel.setBounds(315, 80, 650, 40);
+        FAQLabel.setBounds(315, 80, 650, 60);
 
         FAQTextArea.setEditable(false);
         FAQTextArea.setBackground(new java.awt.Color(88, 78, 69));

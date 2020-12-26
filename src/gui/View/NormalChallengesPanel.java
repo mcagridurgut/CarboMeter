@@ -27,7 +27,7 @@ public class NormalChallengesPanel extends javax.swing.JPanel {
         normalChallengesLabel.setForeground(new java.awt.Color(255, 255, 255));
         normalChallengesLabel.setText("CHALLENGES");
         add(normalChallengesLabel);
-        normalChallengesLabel.setBounds(505, 80, 270, 40);
+        normalChallengesLabel.setBounds(505, 80, 270, 60);
 
         currentChallengesLabel.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         currentChallengesLabel.setForeground(new java.awt.Color(255, 255, 255));

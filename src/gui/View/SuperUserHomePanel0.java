@@ -34,7 +34,7 @@ public class SuperUserHomePanel0 extends javax.swing.JPanel {
         superHomeLabel.setForeground(new java.awt.Color(255, 255, 255));
         superHomeLabel.setText("HOME");
         add(superHomeLabel);
-        superHomeLabel.setBounds(575, 80, 130, 40);
+        superHomeLabel.setBounds(575, 80, 130, 60);
 
         challengesButton.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         challengesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons and backgrounds/note.png"))); // NOI18N

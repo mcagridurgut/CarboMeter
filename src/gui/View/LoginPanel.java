@@ -39,25 +39,25 @@ public class LoginPanel extends javax.swing.JPanel {
         carbometerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         carbometerLabel.setText("CARBOMETER");
         add(carbometerLabel);
-        carbometerLabel.setBounds(500, 80, 280, 40);
+        carbometerLabel.setBounds(500, 80, 280, 60);
 
         forAGreenFutureLabel.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         forAGreenFutureLabel.setForeground(new java.awt.Color(255, 255, 255));
         forAGreenFutureLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         forAGreenFutureLabel.setText("For a Green Future");
         add(forAGreenFutureLabel);
-        forAGreenFutureLabel.setBounds(545, 130, 190, 20);
+        forAGreenFutureLabel.setBounds(545, 130, 190, 25);
 
         welcomeLabel.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         welcomeLabel.setForeground(new java.awt.Color(255, 255, 255));
         welcomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         welcomeLabel.setText("Welcome");
         add(welcomeLabel);
-        welcomeLabel.setBounds(590, 160, 100, 20);
+        welcomeLabel.setBounds(590, 160, 100, 25);
 
         userNameField.setBackground(new java.awt.Color(240, 240, 240));
         userNameField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        userNameField.setUI(new JTextFieldHintUI("Username or Email", Color.gray));
+        //userNameField.setUI(new JTextFieldHintUI("Username or Email", Color.gray));
         add(userNameField);
         userNameField.setBounds(550, 280, 180, 30);
 

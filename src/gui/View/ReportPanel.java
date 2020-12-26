@@ -30,7 +30,7 @@ public class ReportPanel extends javax.swing.JPanel {
         reportLabel.setForeground(new java.awt.Color(255, 255, 255));
         reportLabel.setText("REPORT");
         add(reportLabel);
-        reportLabel.setBounds(575, 80, 160, 40);
+        reportLabel.setBounds(575, 80, 160, 60);
 
         reportBar.setValue(45);
         reportBar.setPreferredSize(new java.awt.Dimension(300, 20));

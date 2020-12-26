@@ -60,14 +60,14 @@ public class SignUpPanel extends JPanel {
         carbometerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         carbometerLabel.setText("CARBOMETER");
         add(carbometerLabel);
-        carbometerLabel.setBounds(500, 80, 280, 40);
+        carbometerLabel.setBounds(500, 80, 280, 60);
 
         signUpSignatureLabel.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         signUpSignatureLabel.setForeground(new java.awt.Color(255, 255, 255));
         signUpSignatureLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         signUpSignatureLabel.setText("Sign Up for Payback");
         add(signUpSignatureLabel);
-        signUpSignatureLabel.setBounds(540, 130, 200, 20);
+        signUpSignatureLabel.setBounds(540, 130, 200, 25);
 
         userNameField.setBackground(new java.awt.Color(240, 240, 240));
         userNameField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N

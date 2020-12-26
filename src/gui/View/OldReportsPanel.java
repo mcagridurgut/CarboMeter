@@ -29,7 +29,7 @@ public class OldReportsPanel extends javax.swing.JPanel {
         oldReportLabel.setForeground(new java.awt.Color(255, 255, 255));
         oldReportLabel.setText("OLD REPORTS");
         add(oldReportLabel);
-        oldReportLabel.setBounds(500, 80, 280, 40);
+        oldReportLabel.setBounds(500, 80, 280, 60);
 
         carbobarProgressBar.setValue(10);
         carbobarProgressBar.setPreferredSize(new java.awt.Dimension(300, 20));

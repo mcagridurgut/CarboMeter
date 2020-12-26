@@ -26,7 +26,7 @@ public class UsersPanel extends javax.swing.JPanel {
         usersLabel.setForeground(new java.awt.Color(255, 255, 255));
         usersLabel.setText("USERS");
         add(usersLabel);
-        usersLabel.setBounds(575, 80, 130, 40);
+        usersLabel.setBounds(575, 80, 130, 60);
 
         usersTable.setBackground(new java.awt.Color(88, 78, 69));
         usersTable.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N

@@ -23,7 +23,7 @@ public class AboutUsPanel extends javax.swing.JPanel {
         aboutUsLabel.setForeground(new java.awt.Color(255, 255, 255));
         aboutUsLabel.setText("ABOUT US");
         add(aboutUsLabel);
-        aboutUsLabel.setBounds(535, 80, 210, 40);
+        aboutUsLabel.setBounds(535, 80, 210, 60);
 
         aboutUsTextArea.setEditable(false);
         aboutUsTextArea.setBackground(new java.awt.Color(88, 78, 69));

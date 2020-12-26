@@ -32,7 +32,7 @@ public class FriendsPanel extends javax.swing.JPanel {
         friendsLabel.setForeground(new java.awt.Color(255, 255, 255));
         friendsLabel.setText("FRIENDS");
         add(friendsLabel);
-        friendsLabel.setBounds(575, 80, 180, 40);
+        friendsLabel.setBounds(575, 80, 180, 60);
 
         frinedsTable.setBackground(new java.awt.Color(88, 78, 69));
         frinedsTable.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N

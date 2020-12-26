@@ -38,7 +38,7 @@ public class NewReportPanel extends javax.swing.JPanel {
         newReportLabel.setForeground(new java.awt.Color(255, 255, 255));
         newReportLabel.setText("NEW REPORT");
         add(newReportLabel);
-        newReportLabel.setBounds(505, 80, 270, 40);
+        newReportLabel.setBounds(505, 80, 270, 60);
 
         comboBoxFood.setBackground(new java.awt.Color(240, 240, 240));
         comboBoxFood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Default", "Personalize" }));

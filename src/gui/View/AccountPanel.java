@@ -53,7 +53,7 @@ public class AccountPanel extends javax.swing.JPanel {
         accountLabel.setText("ACCOUNT");
         accountLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(accountLabel);
-        accountLabel.setBounds(540, 80, 200, 50);
+        accountLabel.setBounds(540, 80, 200, 60);
 
         donationsLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         donationsLabel.setForeground(new java.awt.Color(255, 255, 255));

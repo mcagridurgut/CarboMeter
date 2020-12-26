@@ -32,7 +32,7 @@ public class DonationPanel extends javax.swing.JPanel {
         donationLabel.setForeground(new java.awt.Color(255, 255, 255));
         donationLabel.setText("DONATION");
         add(donationLabel);
-        donationLabel.setBounds(525, 80, 230, 40);
+        donationLabel.setBounds(525, 80, 230, 60);
 
         carbopointLabel.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         carbopointLabel.setForeground(new java.awt.Color(255, 255, 255));

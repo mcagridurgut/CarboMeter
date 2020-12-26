@@ -53,7 +53,7 @@ public class OthersQuestionPanel extends javax.swing.JPanel {
         othersLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         othersLabel.setText("OTHERS");
         add(othersLabel);
-        othersLabel.setBounds(555, 80, 170, 40);
+        othersLabel.setBounds(555, 80, 170, 60);
 
         pharmaLabel.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
         pharmaLabel.setForeground(new java.awt.Color(255, 255, 255));

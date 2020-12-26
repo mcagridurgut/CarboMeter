@@ -30,7 +30,7 @@ public class SuperChallengesPanel extends javax.swing.JPanel {
         superChallengesLabel.setForeground(new java.awt.Color(255, 255, 255));
         superChallengesLabel.setText("CHALLENGES");
         add(superChallengesLabel);
-        superChallengesLabel.setBounds(505, 80, 270, 40);
+        superChallengesLabel.setBounds(505, 80, 270, 60);
 
         currentChallengesLabel.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         currentChallengesLabel.setForeground(new java.awt.Color(255, 255, 255));

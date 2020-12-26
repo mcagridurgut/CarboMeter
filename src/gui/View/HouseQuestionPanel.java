@@ -50,7 +50,7 @@ public class HouseQuestionPanel extends javax.swing.JPanel {
         houseLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         houseLabel.setText("HOUSE");
         add(houseLabel);
-        houseLabel.setBounds(560, 80, 160, 40);
+        houseLabel.setBounds(560, 80, 160, 60);
 
         electricityLabel.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
         electricityLabel.setForeground(new java.awt.Color(255, 255, 255));

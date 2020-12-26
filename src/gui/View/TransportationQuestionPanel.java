@@ -47,7 +47,7 @@ public class TransportationQuestionPanel extends javax.swing.JPanel {
         transportationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         transportationLabel.setText("TRANSPORTATION");
         add(transportationLabel);
-        transportationLabel.setBounds(455, 80, 374, 40);
+        transportationLabel.setBounds(455, 80, 374, 60);
 
         flightsLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         flightsLabel.setForeground(new java.awt.Color(255, 255, 255));
