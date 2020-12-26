@@ -15,7 +15,7 @@ public class CarbometerMenuBar extends JMenuBar {
 
         // JMenu on the JMenuBar
         menu = new JMenu( "Menu" );
-        exitMenu = new JMenu( "ExitMenu");
+        exitMenu = new JMenu( "Exit");
 
         // MenuItems
         home = new JMenuItem("Home");
