@@ -438,7 +438,7 @@ public class DatabaseConnection {
             user = selectWithEmail( emailOrUsername ).get(0);
         else
             return false;
-        JavaMail.sendMail( (String) user[2], (String) user[3] );
+        JavaMail.sendMail( (String) user[2], "Carbometer Forgot Password","Your password is: " + (String) user[3] );
         return true;
     }
 

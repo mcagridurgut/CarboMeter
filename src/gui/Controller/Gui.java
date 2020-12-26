@@ -1,5 +1,6 @@
 package gui.Controller;
 import gui.View.*;
+import mail.JavaMail;
 import user.Login;
 import user.NormalUser;
 import user.SuperUser;
@@ -15,7 +16,6 @@ import java.awt.event.*;
 public class Gui extends JFrame{
     private JPanel contentPanel = new JPanel();
     private CardLayout cardLayout = new CardLayout();
-
 
     private AccountPanel accountPanel = new AccountPanel();
     private AboutUsPanel aboutUsPanel = new AboutUsPanel();
@@ -41,7 +41,6 @@ public class Gui extends JFrame{
     Boolean food, home, transportation, others;
     NormalUser normalUser;
     SuperUser superUser;
-
 
     public Gui() {
         super("Carbometer");
@@ -170,6 +169,13 @@ public class Gui extends JFrame{
                 else{
                     try{
                         normalUser = Login.register(signUpPanel.userNameField.getText(),signUpPanel.emailField.getText(),signUpPanel.passwordField.getText(),signUpPanel.superUserCodeField.getText());
+                        String str = randomCodeGenerator();
+
+                        try{
+                            JavaMail.sendMail(normalUser.getEmail(), "CarboMeter E-Mail Verification", "Your code is: "+str);
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
                         cardLayout.show(contentPanel,"normalUserHomePanel");
                     }catch(Exception e){
                         // POP UP USER ALREADY EXİSTS
@@ -281,5 +287,14 @@ public class Gui extends JFrame{
         contentPanel.add(foodQuestionPanel,"foodQuestionPanel");
 
     }
-
+    private String randomCodeGenerator(){
+        String str = "";
+        String randoms = "wertyuıopğüasdfghjklşizxcvbnmöç.,-*1234567890";
+        for(int i = 0; i<13; i++){
+            int rndm = (int) (Math.random()*randoms.length());
+            char random = randoms.charAt(rndm);
+            str += random;
+        }
+        return str;
+    }
 }

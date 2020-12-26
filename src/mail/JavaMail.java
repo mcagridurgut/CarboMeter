@@ -1,11 +1,10 @@
 package mail;
 
 public class JavaMail {
-	public static void sendMail(String email, String userPassword) {
+	public static void sendMail(String email, String subject, String mail) {
 		try {
-			JavaMailUtil.sendMail(email, userPassword);
+			JavaMailUtil.sendMail(email, subject, mail);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

@@ -14,7 +14,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class JavaMailUtil {
-	public static void sendMail(String recipient, String userPassword) throws Exception {
+	public static void sendMail(String recipient, String subject, String mail) throws Exception {
 		System.out.println("Preparing to send email");
 		Properties properties = new Properties();
 		
@@ -33,19 +33,19 @@ public class JavaMailUtil {
 			}						
 		});
 		
-		Message message = prepareMessage(session, myAccountEmail, userPassword, recipient);
+		Message message = prepareMessage(session,subject, mail, myAccountEmail , recipient);
 		
 		Transport.send(message);
 		System.out.println("Message sent successfully.");
 	}
 	
-	private static Message prepareMessage(Session session, String myAccountEmail, String userPassword, String recipient) {
+	private static Message prepareMessage(Session session, String subject, String mail, String myAccountEmail, String recipient) {
 		try {
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress(myAccountEmail));
 			message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
-			message.setSubject("Carbometer forget password");
-			message.setText("Your password is: "+ userPassword );
+			message.setSubject(subject);
+			message.setText(mail);
 			return message;
 		} catch (Exception ex) {
 			ex.printStackTrace();

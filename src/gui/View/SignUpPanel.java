@@ -152,11 +152,11 @@ public class SignUpPanel extends JPanel {
         add(superuserLabel);
         superuserLabel.setBounds(310, 450, 150, 30);
 
-        verificationCodeLabel.setBackground(new java.awt.Color(240, 240, 240));
-        verificationCodeLabel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        verificationCodeLabel.setText("E-mail Verification Code");
-        add(verificationCodeLabel);
-        verificationCodeLabel.setBounds(690, 400, 180, 30);
+//        verificationCodeLabel.setBackground(new java.awt.Color(240, 240, 240));
+//        verificationCodeLabel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+//        verificationCodeLabel.setText("E-mail Verification Code");
+//        add(verificationCodeLabel);
+//        verificationCodeLabel.setBounds(690, 400, 180, 30);
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
