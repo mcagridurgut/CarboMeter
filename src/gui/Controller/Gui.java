@@ -301,7 +301,7 @@ public class Gui extends JFrame{
     }
     private String randomCodeGenerator(){
         String str = "";
-        String randoms = "wertyuıopğüasdfghjklşizxcvbnmöç.,-*1234567890";
+        String randoms = "wertyuıopasdfghjklizxcvbnm1234567890";
         for(int i = 0; i<13; i++){
             int rndm = (int) (Math.random()*randoms.length());
             char random = randoms.charAt(rndm);
