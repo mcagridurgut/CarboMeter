@@ -185,6 +185,8 @@ public class Gui extends JFrame{
             }
 
             if(src.equals(normalUserHomePanel.logOutButton)){
+                loginPanel.userNameField.setText("");
+                loginPanel.passwordField.setText("");
                 cardLayout.show(contentPanel,"loginPanel");
             }
 
