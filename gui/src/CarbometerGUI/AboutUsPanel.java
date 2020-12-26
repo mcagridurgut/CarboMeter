@@ -1,91 +1,51 @@
-package CarbometerGUI;
+package gui;
 
 /**
- *
- * @author Onur Ertunc, Eren Özen
- * @version 17.12.2020
+ * @author Eren Özen, Onur Ertunç
  */
 public class AboutUsPanel extends javax.swing.JPanel {
 
-    // Variables declaration
-    private javax.swing.JButton aboutPageHomeScreenButton;
-    private javax.swing.JLabel aboutUsPage;
-    private javax.swing.JTextArea informationField;
-    private javax.swing.JScrollPane jScrollPane1;
-    // End of variables declaration
-    
-    /**
-     * Creates new form AboutUsPanel
-     */
     public AboutUsPanel() {
         initComponents();
     }
 
-    @SuppressWarnings("unchecked")
-
     private void initComponents() {
 
-        aboutPageHomeScreenButton = new javax.swing.JButton();
-        aboutUsPage = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        informationField = new javax.swing.JTextArea();
+        aboutUsLabel = new javax.swing.JLabel();
+        aboutUsPane = new javax.swing.JScrollPane();
+        aboutUsTextArea = new javax.swing.JTextArea();
+        background = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(75, 139, 59));
         setPreferredSize(new java.awt.Dimension(1280, 700));
+        setLayout(null);
 
-        aboutPageHomeScreenButton.setText("Back to Home Screen");
-        aboutPageHomeScreenButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aboutPageHomeScreenButtonActionPerformed(evt);
-            }
-        });
+        aboutUsLabel.setFont(new java.awt.Font("Calibri", 1, 48)); // NOI18N
+        aboutUsLabel.setForeground(new java.awt.Color(255, 255, 255));
+        aboutUsLabel.setText("ABOUT US");
+        add(aboutUsLabel);
+        aboutUsLabel.setBounds(535, 80, 210, 40);
 
-        aboutUsPage.setFont(new java.awt.Font("Georgia", 1, 48)); 
-        aboutUsPage.setText("About Us");
+        aboutUsTextArea.setEditable(false);
+        aboutUsTextArea.setBackground(new java.awt.Color(88, 78, 69));
+        aboutUsTextArea.setColumns(20);
+        aboutUsTextArea.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        aboutUsTextArea.setForeground(new java.awt.Color(255, 255, 255));
+        aboutUsTextArea.setRows(5);
+        aboutUsTextArea.setText("          Carbometer is a desktop application that utilizes information about the consumption of users to \n       measure environmental damage and gives recommendations based on the information. The program \n           gets the user data with a series of questions depending on their user type. As the user answers \n         the questions, Carbometer makes calculations to calculate users' environmental damage. After the \n      calculations,Carbometer shows their carbopoint and gives recommendations todiminish their Carbopoint\n           level, and directs users to donateto payback their environmental damage if they want to. With this\n        project, our aim is to make people aware of the damage they gave to the environment, and help them\n          to reduce their harm by giving recommendations or directing them to donate any non-governmental \n\t\t                    environmental organizations.\n\n\n\t\t                  Creators of the Carbometer              \n\t\t\t  Alper Mumcular           \n\t\t                       Mustafa Çağrı Durgut    \t\n\t\t\t    Onur Ertunç             \n\t\t                        Şeyhmus Eren Özen                  \n\t\t\t Uygar Onat Erol");
+        aboutUsTextArea.setBorder(null);
+        aboutUsPane.setViewportView(aboutUsTextArea);
 
-        informationField.setEditable(false);
-        informationField.setBackground(new java.awt.Color(75, 139, 59));
-        informationField.setColumns(20);
-        informationField.setFont(new java.awt.Font("Calibri", 0, 14)); 
-        informationField.setRows(5);
-        informationField.setText("Carbometer is a desktop application that utilizes information about the consumption of users to measure environmental damage and gives \nrecommendations based on the information. The program gets the user data with a series of questions depending on their user type.\n As the user answers the questions, Carbometer makes calculations to calculate users' environmental damage. After the calculations, \nCarbometer shows their carbopoint and gives recommendations todiminish their Carbopoint level, and directs users to donateto payback \ntheir environmental damage if they want to. With this project, our aim is to make people aware of the damage they gave to the \nenvironment, and help them to reduce their harm by giving recommendations or directing them to donate any non-governmental \nenvironmental organizations.\n\n                                                                                                Creators of the Carbometer\n\n\t\t\t                  Alper Mumcular\n\t\t\t             Mustafa Çağrı Durgut\n\t\t\t                       Onur Ertunç\n\t\t\t                Şeyhmus Eren Özen \n\t\t\t                    Uygar Onat Erol");
-        jScrollPane1.setViewportView(informationField);
+        add(aboutUsPane);
+        aboutUsPane.setBounds(255, 240, 770, 360);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(527, 527, 527)
-                .addComponent(aboutUsPage)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(248, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(aboutPageHomeScreenButton)
-                        .addGap(113, 113, 113))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 786, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(246, 246, 246))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(aboutUsPage)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(106, 106, 106)
-                .addComponent(aboutPageHomeScreenButton)
-                .addContainerGap(71, Short.MAX_VALUE))
-        );
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons and backgrounds/final.jpg"))); // NOI18N
+        add(background);
+        background.setBounds(0, 0, 1280, 700);
     }
 
-    private void aboutPageHomeScreenButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
-
+    private javax.swing.JLabel aboutUsLabel;
+    private javax.swing.JScrollPane aboutUsPane;
+    private javax.swing.JTextArea aboutUsTextArea;
+    private javax.swing.JLabel background;
 
 }
