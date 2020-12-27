@@ -42,6 +42,11 @@ public class CarbometerMenuBar extends JMenuBar {
 
     public void addMenu() {
         this.add(menu);
+        repaint();
+    }
+    public void removeMenu() {
+        this.remove(menu);
+        repaint();
     }
 
 }

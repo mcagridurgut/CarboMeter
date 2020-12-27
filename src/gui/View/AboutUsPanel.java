@@ -1,30 +1,46 @@
 package gui.View;
-
+import javax.swing.*;
 /**
  * @author Eren Özen, Onur Ertunç
  */
-public class AboutUsPanel extends javax.swing.JPanel {
+public class AboutUsPanel extends JPanel {
 
+    // Properties
+    private JLabel aboutUsLabel;
+    private JScrollPane aboutUsPane;
+    private JTextArea aboutUsTextArea;
+    private JLabel background;
+
+    /**
+     * Constructor of the class
+     */
     public AboutUsPanel() {
         initComponents();
     }
 
+    /**
+     * initializes the instances of the class and makes allignments on the panel
+     */
     private void initComponents() {
 
-        aboutUsLabel = new javax.swing.JLabel();
-        aboutUsPane = new javax.swing.JScrollPane();
-        aboutUsTextArea = new javax.swing.JTextArea();
-        background = new javax.swing.JLabel();
+        //initialization of the components
+        aboutUsLabel = new JLabel();
+        aboutUsPane = new JScrollPane();
+        aboutUsTextArea = new JTextArea();
+        background = new JLabel();
 
+        // size of the panel and layout adjusted
         setPreferredSize(new java.awt.Dimension(1280, 700));
         setLayout(null);
 
+        // about us label font, size and content adjusted
         aboutUsLabel.setFont(new java.awt.Font("Calibri", 1, 48)); // NOI18N
         aboutUsLabel.setForeground(new java.awt.Color(255, 255, 255));
         aboutUsLabel.setText("ABOUT US");
         add(aboutUsLabel);
         aboutUsLabel.setBounds(535, 80, 210, 60);
 
+        // text label and components are adjusted
         aboutUsTextArea.setEditable(false);
         aboutUsTextArea.setBackground(new java.awt.Color(88, 78, 69));
         aboutUsTextArea.setColumns(20);
@@ -35,17 +51,14 @@ public class AboutUsPanel extends javax.swing.JPanel {
         aboutUsTextArea.setBorder(null);
         aboutUsPane.setViewportView(aboutUsTextArea);
 
+        // added to the panel
         add(aboutUsPane);
         aboutUsPane.setBounds(255, 240, 770, 360);
 
+        // background adjusted and added
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg"))); // NOI18N
         add(background);
         background.setBounds(0, 0, 1280, 700);
     }
-
-    private javax.swing.JLabel aboutUsLabel;
-    private javax.swing.JScrollPane aboutUsPane;
-    private javax.swing.JTextArea aboutUsTextArea;
-    private javax.swing.JLabel background;
 
 }

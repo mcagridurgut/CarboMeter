@@ -81,6 +81,7 @@ public class AccountPanel extends javax.swing.JPanel {
                 donationsFieldActionPerformed(evt);
             }
         });
+        donationsField.setEditable(false);
         add(donationsField);
         donationsField.setBounds(400, 390, 180, 30);
 
@@ -126,11 +127,11 @@ public class AccountPanel extends javax.swing.JPanel {
     private javax.swing.JLabel accountLabel;
     private javax.swing.JLabel background;
     public javax.swing.JButton changePasswordButton;
-    private javax.swing.JTextField donationsField;
+    public javax.swing.JTextField donationsField;
     private javax.swing.JLabel donationsLabel;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JButton logOutButton;
-    private javax.swing.JTextField usernameField;
-    private javax.swing.JLabel usernameLabel;
+    public javax.swing.JTextField usernameField;
+    public javax.swing.JLabel usernameLabel;
 
 }

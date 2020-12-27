@@ -74,7 +74,16 @@ public class Gui extends JFrame{
         public void actionPerformed(ActionEvent event) {
             JButton src = (JButton) event.getSource();
 
-            //if(src.equals(accountPanel.changePasswordButton)) cardLayout.show(contentPanel,"aboutUsPanel");
+            if(src.equals(accountPanel.changePasswordButton)){
+                String input = JOptionPane.showInputDialog(null, "Please enter new Password");
+                String input2 = JOptionPane.showInputDialog(null, "Please enter new Password again");
+                if( input.equals(input2) ){
+                    normalUser.changePassword(input);
+                }
+                else{
+                    //POP UP PASSWORDS SHOULD MATCH
+                }
+            }
             if(src.equals(donationPanel.backPageButton)) cardLayout.show(contentPanel,"reportPanel");
             if(src.equals(houseQuestionPanel.goBackButton)) {
                 if( transportation )
@@ -95,8 +104,11 @@ public class Gui extends JFrame{
             if(src.equals(loginPanel.loginButton)){
                 try{
                     normalUser = Login.NormalLogin(loginPanel.userNameField.getText(),loginPanel.passwordField.getText());
-                    if( !normalUser.getUsername().equals(""))
+                    if( !normalUser.getUsername().equals("")){
                         cardLayout.show(contentPanel,"normalUserHomePanel");
+                        loginPanel.userNameField.setText("");
+                        loginPanel.passwordField.setText("");
+                    }
                     menuBar.addMenu();
                 }catch (Exception e){
                     //NO SUCH USER
@@ -217,9 +229,14 @@ public class Gui extends JFrame{
                             e.printStackTrace();
                         }
                         while( !str.equals(input) )
-                            input = JOptionPane.showInputDialog(this, "13 haneli güvenlik kodunuzu giriniz");
+                            input = JOptionPane.showInputDialog("13 haneli güvenlik kodunuzu giriniz", "enter here");
 
                         cardLayout.show(contentPanel,"normalUserHomePanel");
+                        signUpPanel.superUserCodeField.setText("");
+                        signUpPanel.emailField.setText("");
+                        signUpPanel.passwordField.setText("");
+                        signUpPanel.confirmPasswordField.setText("");
+                        signUpPanel.userNameField.setText("");
                     }catch(Exception e){
                         // POP UP USER ALREADY EXİSTS
                         System.out.println("already exists");
@@ -227,15 +244,17 @@ public class Gui extends JFrame{
                 }
             }
 
+            if(src.equals(accountPanel.logOutButton)){
+                logout();
+            }
+
             if(src.equals(normalUserHomePanel.logOutButton)){
-                loginPanel.userNameField.setText("");
-                loginPanel.passwordField.setText("");
-                cardLayout.show(contentPanel,"loginPanel");
+                logout();
             }
 
 
             if(src.equals(superUserHomePanel.logOutButton)){
-                cardLayout.show(contentPanel,"loginPanel");
+                logout();
             }
 
             if(src.equals(superUserHomePanel.challengesButton)) cardLayout.show(contentPanel,"superChallengesPanel");
@@ -364,7 +383,15 @@ public class Gui extends JFrame{
             if( event.getSource()== menuBar.about ) cardLayout.show(contentPanel,"aboutUsPanel");
             if( event.getSource()== menuBar.home ) cardLayout.show(contentPanel,"normalUserHomePanel");
             if( event.getSource()== menuBar.faq ) cardLayout.show(contentPanel,"faqPanel");
-            if( event.getSource()== menuBar.account ) cardLayout.show(contentPanel,"accountPanel");
+            if( event.getSource()== menuBar.account ) {
+                cardLayout.show(contentPanel,"accountPanel");
+                accountPanel.usernameField.setText(normalUser.getUsername());
+                accountPanel.donationsField.setText("Default");
+            }
         }
+    }
+    private void logout(){
+        cardLayout.show(contentPanel,"loginPanel");
+        menuBar.removeMenu();
     }
 }

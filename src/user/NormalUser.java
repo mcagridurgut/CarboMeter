@@ -109,5 +109,8 @@ public class NormalUser extends User {
     c.challengeCompleted();
   }
   
-
+  public void changePassword ( String password ){
+    DatabaseConnection.changePassword(getUsername(),getPassword(),password);
+    setPassword(password);
+  }
 }

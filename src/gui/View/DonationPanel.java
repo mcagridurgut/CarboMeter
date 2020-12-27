@@ -80,18 +80,18 @@ public class DonationPanel extends javax.swing.JPanel {
         donationTable.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         donationTable.setForeground(new java.awt.Color(255, 255, 255));
         donationTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"TEMA", "https://www.tema.org.tr/bagislar"},
-                {"WWF", "https://destek.wwf.org.tr/"},
-                {"Greenpeace", "https://destek.greenpeace.org/"},
-                {"ÇEKÜL", "https://fonzip.com/cekul/bagis#/"}
-            },
-            new String [] {
-                "Organization", "Link"
-            }
+                new Object [][] {
+                        {"TEMA", "https://www.tema.org.tr/bagislar"},
+                        {"WWF", "https://destek.wwf.org.tr/"},
+                        {"Greenpeace", "https://destek.greenpeace.org/"},
+                        {"ÇEKÜL", "https://fonzip.com/cekul/bagis#/"}
+                },
+                new String [] {
+                        "Organization", "Link"
+                }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true
+                    false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
