@@ -13,7 +13,7 @@ public class ReportPanel extends javax.swing.JPanel {
        initComponents();
     }
 
-    public void function(Double newHome,Double newTravel,Double newFood,Double newOthers,Double oldHome,Double oldTravel,Double oldFood,Double oldOthers){
+    public void function(Double newFood,Double newTravel,Double newHome,Double newOthers,Double oldHome,Double oldTravel,Double oldFood,Double oldOthers){
         reportTable.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
                         {"Total", (double)(newFood.intValue()+newTravel.intValue()+newHome.intValue()+newOthers.intValue())/1000, 48.721, (double) (oldFood.intValue()+oldTravel.intValue()+oldHome.intValue()+oldOthers.intValue() )/1000 },
