@@ -7,7 +7,18 @@ import javax.management.InstanceAlreadyExistsException;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
+/**
+ * Login class
+ * @author Mustafa Çağrı Durgut
+ * @version 27.12.2020
+ */
 public class Login {
+    /**
+     * Login for normal users
+     * @param emailOrUserName --> email or username of the user
+     * @param password --> password of the user
+     * @return the user
+     */
     public static NormalUser NormalLogin ( String emailOrUserName, String password ) throws NoSuchElementException{
         NormalUser user = null;
         if ( DatabaseConnection.login( emailOrUserName, password ) ){
@@ -24,6 +35,12 @@ public class Login {
         throw new NoSuchElementException();
     }
 
+    /**
+     * Login for super users
+     * @param emailOrUserName --> email or username of the super user
+     * @param password --> password of the super user
+     * @return the super user
+     */
     public static SuperUser SuperLogin ( String emailOrUserName, String password ) throws NoSuchElementException{
         SuperUser user = null;
         if ( DatabaseConnection.login( emailOrUserName, password ) ){
@@ -37,6 +54,14 @@ public class Login {
         throw new NoSuchElementException();
     }
 
+    /**
+     * Register for normal users
+     * @param username --> username of the normal user
+     * @param email --> email of the normal user
+     * @param password --> password of the normal user
+     * @param refCode --> referral code of the super user
+     * @return the normal user
+     */
     public static NormalUser register ( String username, String email, String password, String refCode) throws Exception{
         NormalUser user = new NormalUser(username,email,password,refCode);
         if( user.getUsername().equals(""))
@@ -44,9 +69,19 @@ public class Login {
         return user;
     }
 
+    /**
+     * Helps the user if they forgot their password
+     * @param emailOrUsername --> email or username of the user
+     */
     public static void forgotMyPassword( String emailOrUsername ){
         DatabaseConnection.forgotPassword( emailOrUsername );
     }
+
+    /**
+     * Sets the Reports
+     * @param reports --> ArrayList of the reports
+     * @return the reports
+     */
     private static ArrayList<Report> setReports ( ArrayList<Object[]> reports){
         ArrayList<Report> reports1 = new ArrayList<Report>();
         for( Object[] obje : reports){

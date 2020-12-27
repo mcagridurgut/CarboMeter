@@ -1,5 +1,5 @@
 package gui.View;
-
+import javax.swing.*;
 import javax.swing.plaf.basic.BasicTextFieldUI;
 import javax.swing.text.JTextComponent;
 import java.awt.*;
@@ -10,7 +10,7 @@ import java.awt.event.FocusListener;
  * @author Eren Özen, Onur Ertunç
  */
 
-public class LoginPanel extends javax.swing.JPanel {
+public class LoginPanel extends JPanel {
 
     public LoginPanel() {
         initComponents();
@@ -18,45 +18,45 @@ public class LoginPanel extends javax.swing.JPanel {
 
     private void initComponents() {
 
-        carbometerLabel = new javax.swing.JLabel();
-        forAGreenFutureLabel = new javax.swing.JLabel();
-        welcomeLabel = new javax.swing.JLabel();
-        userNameField = new javax.swing.JTextField();
-        passwordField = new javax.swing.JPasswordField();
-        forgotPasswordLabel = new javax.swing.JButton();
-        loginButton = new javax.swing.JButton();
-        signUpButton = new javax.swing.JButton();
-        noAccountLabel = new javax.swing.JLabel();
-        usernameSignature = new javax.swing.JLabel();
-        passwordSignature = new javax.swing.JLabel();
-        background = new javax.swing.JLabel();
+        carbometerLabel = new JLabel();
+        forAGreenFutureLabel = new JLabel();
+        welcomeLabel = new JLabel();
+        userNameField = new JTextField();
+        passwordField = new JPasswordField();
+        forgotPasswordLabel = new JButton();
+        loginButton = new JButton();
+        signUpButton = new JButton();
+        noAccountLabel = new JLabel();
+        usernameSignature = new JLabel();
+        passwordSignature = new JLabel();
+        background = new JLabel();
 
-        setPreferredSize(new java.awt.Dimension(1280, 700));
+        setPreferredSize(new Dimension(1280, 700));
         setLayout(null);
 
-        carbometerLabel.setFont(new java.awt.Font("Calibri", 1, 48)); // NOI18N
-        carbometerLabel.setForeground(new java.awt.Color(255, 255, 255));
-        carbometerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        carbometerLabel.setFont(new Font("Calibri", 1, 48));
+        carbometerLabel.setForeground(new Color(255, 255, 255));
+        carbometerLabel.setHorizontalAlignment(SwingConstants.CENTER);
         carbometerLabel.setText("CARBOMETER");
         add(carbometerLabel);
         carbometerLabel.setBounds(500, 80, 280, 60);
 
-        forAGreenFutureLabel.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        forAGreenFutureLabel.setForeground(new java.awt.Color(255, 255, 255));
-        forAGreenFutureLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        forAGreenFutureLabel.setFont(new Font("Calibri", 0, 24));
+        forAGreenFutureLabel.setForeground(new Color(255, 255, 255));
+        forAGreenFutureLabel.setHorizontalAlignment(SwingConstants.CENTER);
         forAGreenFutureLabel.setText("For a Green Future");
         add(forAGreenFutureLabel);
         forAGreenFutureLabel.setBounds(545, 130, 190, 25);
 
-        welcomeLabel.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        welcomeLabel.setForeground(new java.awt.Color(255, 255, 255));
-        welcomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        welcomeLabel.setFont(new Font("Calibri", 0, 24)); // NOI18N
+        welcomeLabel.setForeground(new Color(255, 255, 255));
+        welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
         welcomeLabel.setText("Welcome");
         add(welcomeLabel);
         welcomeLabel.setBounds(590, 160, 100, 25);
 
-        userNameField.setBackground(new java.awt.Color(240, 240, 240));
-        userNameField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        userNameField.setBackground(new Color(240, 240, 240));
+        userNameField.setFont(new Font("Arial", 1, 12)); // NOI18N
         //userNameField.setUI(new JTextFieldHintUI("Username or Email", Color.gray));
         add(userNameField);
         userNameField.setBounds(550, 280, 180, 30);

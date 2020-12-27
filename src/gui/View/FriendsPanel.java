@@ -171,7 +171,7 @@ public class FriendsPanel extends JPanel {
      * addFrinedField action performed method. check the gui class.
      * @param evt action event
      */
-    private void addFrinedFieldActionPerformed(java.awt.event.ActionEvent evt) {
+    private void addFrinedFieldActionPerformed(ActionEvent evt) {
 
     }
 

@@ -85,7 +85,7 @@ public class Gui extends JFrame{
                     normalUser.changePassword(input);
                 }
                 else{
-                    //POP UP PASSWORDS SHOULD MATCH
+                    JOptionPane.showMessageDialog(null, "Passwords should match." );
                 }
             }
             if(src.equals(donationPanel.backPageButton)) cardLayout.show(contentPanel,"reportPanel");
@@ -120,9 +120,7 @@ public class Gui extends JFrame{
                         reportDone();
                     }
                 }catch(Exception e){
-                    //Pop Up
-                    //Düzgü
-                    System.out.println("düzgün sayı giriniz");
+                    JOptionPane.showMessageDialog(null, "Please enter valid inputs!" );
                 }
             }
 
@@ -136,8 +134,7 @@ public class Gui extends JFrame{
                     }
                     menuBar.addMenu();
                 }catch (Exception e){
-                    //NO SUCH USER
-                    System.out.println("no such user");
+                    JOptionPane.showMessageDialog(null, "There is no such user" );
                 }
             }
 
@@ -168,8 +165,7 @@ public class Gui extends JFrame{
                     housingValue = Home.DEFAULT;
                 }
                 else {
-                    // YOU HAVE TO Personalize at least one field
-                    //POP UP
+                    JOptionPane.showMessageDialog(null, "You have to personalize at least one category!" );
                 }
             }
 
@@ -202,9 +198,7 @@ public class Gui extends JFrame{
                         reportDone();
                     }
                 }catch(Exception e){
-                    //Pop Up
-                    //Düzgü
-                    System.out.println("düzgün sayı giriniz");
+                    JOptionPane.showMessageDialog(null, "Please enter valid inputs!" );
                 }
             }
 
@@ -266,9 +260,7 @@ public class Gui extends JFrame{
                     othersValue += Double.parseDouble(othersQuestionPanel.pharmaceuticalsTextField.getText())*Others.PHARMACEUTICALS;
                     reportDone();
                 }catch(Exception e){
-                    //Pop Up
-                    //Düzgü
-                    System.out.println("düzgün sayı giriniz");
+                    JOptionPane.showMessageDialog(null, "Please enter valid inputs!" );
                 }
             }
 
@@ -281,8 +273,7 @@ public class Gui extends JFrame{
             if(src.equals(signUpPanel.signUpButton)){
                 if ( !signUpPanel.passwordField.getText().equals(signUpPanel.confirmPasswordField.getText()) )
                 {
-                    // POP UP PASSWORDS DOESNT MATCH
-                    System.out.println("passwords doesnt match");
+                    JOptionPane.showMessageDialog(null, "Passwords did not match!" );
                 }
                 else{
                     try{
@@ -304,8 +295,7 @@ public class Gui extends JFrame{
                         signUpPanel.confirmPasswordField.setText("");
                         signUpPanel.userNameField.setText("");
                     }catch(Exception e){
-                        // POP UP USER ALREADY EXİSTS
-                        System.out.println("already exists");
+                        JOptionPane.showMessageDialog(null, "This username was taken before" );
                     }
                 }
             }
