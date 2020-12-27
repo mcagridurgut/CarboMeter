@@ -21,7 +21,7 @@ public class Others extends Category {
   private final double INSURANCE = 0.1264; // kgCO2 usd dollar
   private final double EDUCATION = 0.1791; // kgCO2 usd dollar
 
-  private final double DEFAULT = 54.1;
+  private final double DEFAULT = 14000;
 
   public Others(boolean h){
     super(h);

@@ -29,7 +29,7 @@ public class Transportation extends Category {
   private final double FLIGHT_CO2_FACTOR = 0.643736;
 
   //Constant average
-  private final double DEFAULT = 12.4;
+  private final double DEFAULT = 15000;
 
   public Transportation(boolean h){
     super(h);

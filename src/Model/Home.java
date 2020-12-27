@@ -16,7 +16,7 @@ public class Home extends Category {
   private final double PROPANE_FACTOR = 1.665; // kgCO2 per litre
   private final double WOODEN_PELLETS = 1008; // kgCO2 per tonnes
 
-  private final double DEFAULT = 24.3;
+  private final double DEFAULT = 12000;
 
   public Home(boolean h){
     super(h);
