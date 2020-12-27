@@ -35,9 +35,26 @@ public class NormalUser extends User {
       this.setPassword("");
     }
   }
+  public Report getCurrentReport(){
 
+    Report friend = new Report( getUsername(), true, true, true, true);
+    Object[] frnd = DatabaseConnection.select(getUsername());
+    friend.setTransportationScore( (double)frnd[5] );
+    friend.setHomeScore( (double)frnd[6] );
+    friend.setFoodScore( (double)frnd[7] );
+    friend.setOthersScore( (double)frnd[8] );
+    friend.updateScore();
+    return friend;
+  }
   public Report getPreviousReport(){
-    return this.reportsCompleted.get(this.reportsCompleted.size()-1);
+    Report friend = new Report( getUsername(), true, true, true, true);
+    Object[] frnd = DatabaseConnection.selectWithEmail(getEmail()).get(DatabaseConnection.selectWithEmail(getEmail()).size()-1);
+    friend.setTransportationScore( (double)frnd[5] );
+    friend.setHomeScore( (double)frnd[6] );
+    friend.setFoodScore( (double)frnd[7] );
+    friend.setOthersScore( (double)frnd[8] );
+    friend.updateScore();
+    return friend;
   }
 
   // getters

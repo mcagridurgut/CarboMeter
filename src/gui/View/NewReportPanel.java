@@ -56,7 +56,7 @@ public class NewReportPanel extends javax.swing.JPanel {
         add(carbobarLabel);
         carbobarLabel.setBounds(1000, 320, 100, 30);
 
-        carbobarProgressBar.setValue(60);
+        setBar(60);
         carbobarProgressBar.setPreferredSize(new java.awt.Dimension(300, 20));
         carbobarProgressBar.setRequestFocusEnabled(false);
         add(carbobarProgressBar);
@@ -148,6 +148,10 @@ public class NewReportPanel extends javax.swing.JPanel {
 
     private void travelComboBoxActionPerformed(java.awt.event.ActionEvent evt) {
 
+    }
+
+    public void setBar (int num){
+        carbobarProgressBar.setValue(num);
     }
 
     private javax.swing.JLabel background;

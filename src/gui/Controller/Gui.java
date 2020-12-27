@@ -1,5 +1,8 @@
 package gui.Controller;
 import Model.Food;
+import Model.Home;
+import Model.Others;
+import Model.Transportation;
 import gui.View.*;
 import mail.JavaMail;
 import user.Login;
@@ -94,10 +97,31 @@ public class Gui extends JFrame{
                     cardLayout.show(contentPanel,"reportPanel");
             }
             if(src.equals(houseQuestionPanel.nextButton)){
-                if( others )
-                    cardLayout.show(contentPanel,"othersQuestionPanel");
-                else {
-                    cardLayout.show(contentPanel, "reportPanel");
+                try {
+                    housingValue += Double.parseDouble(houseQuestionPanel.electricityTextField.getText()) *Home.ELECTRICITY_FACTOR;
+                    housingValue += Double.parseDouble(houseQuestionPanel.LPGTextField.getText()) *Home.LPG_FACTOR;
+                    housingValue += Double.parseDouble(houseQuestionPanel.naturalGasTextField.getText()) *Home.NATURAL_GAS_FACTOR;
+                    housingValue += Double.parseDouble(houseQuestionPanel.coalTextField.getText()) *Home.COAL_FACTOR;
+                    housingValue += Double.parseDouble(houseQuestionPanel.heatingOilTextField.getText()) *Home.HEATING_OIL_FACTOR;
+                    housingValue += Double.parseDouble(houseQuestionPanel.woodenPelletsTextField.getText()) *Home.WOODEN_PELLETS;
+                    housingValue += Double.parseDouble(houseQuestionPanel.propaneTextField.getText()) *Home.PROPANE_FACTOR;
+                    housingValue *= Home.MONTHS_IN_A_YEAR;
+                    int numberOfPeople = Integer.parseInt(houseQuestionPanel.numOfPeople.getText());
+                    if( numberOfPeople != 0)
+                        housingValue /= numberOfPeople;
+                    else
+                        throw new Exception("division by zero");
+                    if (others) {
+                        cardLayout.show(contentPanel, "othersQuestionPanel");
+                    }
+                    else {
+                        othersValue = Others.DEFAULT;
+                        reportDone();
+                    }
+                }catch(Exception e){
+                    //Pop Up
+                    //Düzgü
+                    System.out.println("düzgün sayı giriniz");
                 }
             }
 
@@ -125,14 +149,22 @@ public class Gui extends JFrame{
                 home = newReportPanel.comboBoxFood.getItemAt(newReportPanel.homeComboBox.getSelectedIndex()).equals("Personalize");
                 transportation = newReportPanel.comboBoxFood.getItemAt(newReportPanel.travelComboBox.getSelectedIndex()).equals("Personalize");
                 others = newReportPanel.comboBoxFood.getItemAt(newReportPanel.stuffComboBox.getSelectedIndex()).equals("Personalize");
-                if( food )
+                if( food ){
                     cardLayout.show(contentPanel,"foodQuestionPanel");
-                else if( transportation )
-                    cardLayout.show(contentPanel,"transportationQuestionPanel");
-                else if( home )
-                    cardLayout.show(contentPanel,"houseQuestionPanel");
-                else if ( others )
-                    cardLayout.show(contentPanel,"othersQuestionPanel");
+                }
+                else if( transportation ) {
+                    cardLayout.show(contentPanel, "transportationQuestionPanel");
+                    foodValue =  Food.DEFAULT;
+                }
+                else if( home ) {
+                    cardLayout.show(contentPanel, "houseQuestionPanel");
+                    foodValue = Food.DEFAULT;
+                    travelValue = Transportation.DEFAULT;
+                }else if ( others ) {
+                    cardLayout.show(contentPanel, "othersQuestionPanel");
+                    foodValue = Food.DEFAULT;
+                    travelValue = Transportation.DEFAULT;
+                }
                 else {
                     // YOU HAVE TO Personalize at least one field
                     //POP UP
@@ -140,30 +172,37 @@ public class Gui extends JFrame{
             }
 
             if(src.equals(foodQuestionPanel.nextButton)) {
-                try{
-                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField1.getText());
-                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField2.getText());
-                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField3.getText());
-                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField4.getText());
-                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField5.getText());
-                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField6.getText());
-                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField7.getText());
-                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField8.getText());
+                try {
+                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField1.getText()) * Food.BEEF_LAMB_VEAL;
+                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField2.getText()) * Food.FISH_SEAFOOD;
+                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField3.getText()) * Food.OTHER_MEAT;
+                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField4.getText()) * Food.DAIRY;
+                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField5.getText()) * Food.GRAINS;
+                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField6.getText()) * Food.FRUITS;
+                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField7.getText()) * Food.SNACKS;
+                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField8.getText()) * Food.POULTRY_EGGS;
+                    foodValue *= Food.DAYS_IN_A_YEAR;
                     if (transportation)
                         cardLayout.show(contentPanel, "transportationQuestionPanel");
-                    else if (home)
+                    else if (home){
+                        travelValue = Transportation.DEFAULT;
                         cardLayout.show(contentPanel, "houseQuestionPanel");
-                    else if (others)
+                    }
+                    else if (others) {
+                        travelValue = Transportation.DEFAULT;
+                        housingValue = Home.DEFAULT;
                         cardLayout.show(contentPanel, "othersQuestionPanel");
+                    }
                     else {
-                        normalUser.createReport(housingValue, travelValue, foodValue, othersValue, home, transportation, food, others);
-                        reportPanel.function(foodValue,travelValue,othersValue,housingValue,1.1,1.1,1.2,1.3);
-                        cardLayout.show(contentPanel, "reportPanel");
+                        travelValue = Transportation.DEFAULT;
+                        housingValue = Home.DEFAULT;
+                        othersValue = Others.DEFAULT;
+                        reportDone();
                     }
                 }catch(Exception e){
                     //Pop Up
                     //Düzgü
-                    System.out.println("düzgün sayı gir ibne");
+                    System.out.println("düzgün sayı giriniz");
                 }
             }
 
@@ -173,6 +212,7 @@ public class Gui extends JFrame{
 
             if(src.equals(normalUserHomePanel.newReportButton)){
                 cardLayout.show(contentPanel,"newReportPanel");
+                newReportPanel.setBar(50);
             }
             if(src.equals(loginPanel.forgotPasswordLabel)){
                 String str = JOptionPane.showInputDialog(this, "Lütfen kullanıcı adınızı veya e postanızı giriniz");
@@ -195,9 +235,30 @@ public class Gui extends JFrame{
                     cardLayout.show(contentPanel,"reportPanel");
 
             }
-            if(src.equals(othersQuestionPanel.showTheReportButton)) cardLayout.show(contentPanel,"reportPanel");
+            if(src.equals(othersQuestionPanel.showTheReportButton)) {
+                try{
+                    othersValue += Double.parseDouble(othersQuestionPanel.furnitureSpendingTextField.getText())*Others.FURNITURE_OTHER;
+                    othersValue += Double.parseDouble(othersQuestionPanel.vehicleSpendingTextField.getText())*Others.MOTOR_VEHICLES;
+                    othersValue += Double.parseDouble(othersQuestionPanel.educationSpendingTextField.getText())*Others.EDUCATION;
+                    othersValue += Double.parseDouble(othersQuestionPanel.culturalSpendingTextField.getText())*Others.ACTIVITIES;
+                    othersValue += Double.parseDouble(othersQuestionPanel.hotelRest_pubSpendingTextField.getText())*Others.HOTELS_RESTAURANTS_PUBS;
+                    othersValue += Double.parseDouble(othersQuestionPanel.phoneMobileCallSpendingTextField.getText())*Others.CALL_COST;
+                    othersValue += Double.parseDouble(othersQuestionPanel.tvRadioPhoneEquipmentSpending.getText())*Others.TV_RADIO_PHONE;
+                    othersValue += Double.parseDouble(othersQuestionPanel.pcAndITequipmentTextField.getText())*Others.COMPUTER_IT;
+                    othersValue += Double.parseDouble(othersQuestionPanel.bankingAndFinanceTextField.getText())*Others.BANKING_FINANCE;
+                    othersValue += Double.parseDouble(othersQuestionPanel.paperBasedProductsTextField.getText())*Others.BOOKS_MAGAZINES_ETC;
+                    othersValue += Double.parseDouble(othersQuestionPanel.insuranceTextField.getText())*Others.INSURANCE;
+                    othersValue += Double.parseDouble(othersQuestionPanel.clothesTextilesShoesTextField.getText())*Others.CLOTHES_TEXTILES_SHOES;
+                    othersValue += Double.parseDouble(othersQuestionPanel.pharmaceuticalsTextField.getText())*Others.PHARMACEUTICALS;
+                    reportDone();
+                }catch(Exception e){
+                    //Pop Up
+                    //Düzgü
+                    System.out.println("düzgün sayı giriniz");
+                }
+            }
 
-            if(src.equals(reportPanel.backPageButton)){
+            /*if(src.equals(reportPanel.backPageButton)){
                 if( others )
                     cardLayout.show(contentPanel,"othersQuestionPanel");
                 else if ( home )
@@ -208,7 +269,7 @@ public class Gui extends JFrame{
                     cardLayout.show(contentPanel,"foodQuestionPanel");
                 else
                     cardLayout.show(contentPanel, "newReportPanel");
-            }
+            }*/
             if(src.equals(reportPanel.nextPageButton)) cardLayout.show(contentPanel,"donationPanel");
             if(src.equals(signUpPanel.loginButton)) cardLayout.show(contentPanel,"loginPanel");
 
@@ -277,7 +338,10 @@ public class Gui extends JFrame{
                     cardLayout.show(contentPanel,"newReportPanel");
             }
 
-            if(src.equals(transportationQuestionPanel.nextButton)) cardLayout.show(contentPanel,"transportationQuestion2Panel");
+            if(src.equals(transportationQuestionPanel.nextButton)) {
+
+                cardLayout.show(contentPanel,"transportationQuestion2Panel");
+            }
         }
     }
 
@@ -306,7 +370,7 @@ public class Gui extends JFrame{
         recommendationsPanel.houseRecommendationButton.addActionListener(al);
         recommendationsPanel.othersRecommendationButton.addActionListener(al);
         recommendationsPanel.transportationlRecommendationButton.addActionListener(al);
-        reportPanel.backPageButton.addActionListener(al);
+        //reportPanel.backPageButton.addActionListener(al);
         reportPanel.nextPageButton.addActionListener(al);
         signUpPanel.signUpButton.addActionListener(al);
         signUpPanel.loginButton.addActionListener(al);
@@ -386,12 +450,20 @@ public class Gui extends JFrame{
             if( event.getSource()== menuBar.account ) {
                 cardLayout.show(contentPanel,"accountPanel");
                 accountPanel.usernameField.setText(normalUser.getUsername());
-                accountPanel.donationsField.setText("Default");
+                accountPanel.donationsField.setText(normalUser.getDonations()+"");
             }
         }
     }
     private void logout(){
         cardLayout.show(contentPanel,"loginPanel");
         menuBar.removeMenu();
+    }
+    private void reportDone(){
+        normalUser.createReport(housingValue, travelValue , foodValue, othersValue, home, transportation, food, others);
+        reportPanel.function(normalUser.getCurrentReport().getFoodScore(),normalUser.getCurrentReport().getTransportScore(),normalUser.getCurrentReport().getHomeScore(),normalUser.getCurrentReport().getOthersScore(),
+                normalUser.getPreviousReport().getFoodScore(),normalUser.getPreviousReport().getTransportScore(),normalUser.getPreviousReport().getHomeScore(),normalUser.getPreviousReport().getOthersScore());
+        System.out.println(normalUser.getPreviousReport().getScore()+ " " + normalUser.getPreviousReport().getUser());
+        System.out.println(normalUser.getCurrentReport().getScore()+ " " + normalUser.getCurrentReport().getUser());
+        cardLayout.show(contentPanel, "reportPanel");
     }
 }

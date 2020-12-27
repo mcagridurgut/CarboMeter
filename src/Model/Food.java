@@ -16,8 +16,9 @@ public class Food extends Category {
   public static final double GRAINS = 0.00207607; // kgCO2
   public static final double FRUITS = 0.00768758; // kgCO2
   public static final double POULTRY_EGGS = 0.01094276; // kgCO2
+  public static final double SNACKS = 0.00566123; // kgCO2
 
-  public static final double DEFAULT = 7000;
+  public static final double DEFAULT = 7182.0;
 
   public Food(boolean h){
     super(h);

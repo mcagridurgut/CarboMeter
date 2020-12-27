@@ -212,35 +212,35 @@ public class OthersQuestionPanel extends javax.swing.JPanel {
         background.setBounds(0, 0, 1280, 700);
     }
     private javax.swing.JLabel background;
-    private javax.swing.JTextField bankingAndFinanceTextField;
+    public javax.swing.JTextField bankingAndFinanceTextField;
     private javax.swing.JLabel bankingLabel;
     private javax.swing.JLabel callCostLabel;
-    private javax.swing.JTextField clothesTextilesShoesTextField;
+    public javax.swing.JTextField clothesTextilesShoesTextField;
     private javax.swing.JLabel culturalActsLabel;
-    private javax.swing.JTextField culturalSpendingTextField;
+    public javax.swing.JTextField culturalSpendingTextField;
     private javax.swing.JLabel educationLabel;
-    private javax.swing.JTextField educationSpendingTextField;
+    public javax.swing.JTextField educationSpendingTextField;
     private javax.swing.JLabel furnitureLabel;
-    private javax.swing.JTextField furnitureSpendingTextField;
+    public javax.swing.JTextField furnitureSpendingTextField;
     public javax.swing.JButton goBackButton;
     private javax.swing.JLabel hotelPubLabel;
-    private javax.swing.JTextField hotelRest_pubSpendingTextField;
+    public javax.swing.JTextField hotelRest_pubSpendingTextField;
     private javax.swing.JLabel insuranceLabel;
-    private javax.swing.JTextField insuranceTextField;
+    public javax.swing.JTextField insuranceTextField;
     private javax.swing.JLabel itLabel;
     private javax.swing.JLabel othersLabel;
-    private javax.swing.JTextField paperBasedProductsTextField;
+    public javax.swing.JTextField paperBasedProductsTextField;
     private javax.swing.JLabel paperProductsLabel;
-    private javax.swing.JTextField pcAndITequipmentTextField;
+    public javax.swing.JTextField pcAndITequipmentTextField;
     private javax.swing.JLabel pharmaLabel;
-    private javax.swing.JTextField pharmaceuticalsTextField;
-    private javax.swing.JTextField phoneMobileCallSpendingTextField;
+    public javax.swing.JTextField pharmaceuticalsTextField;
+    public javax.swing.JTextField phoneMobileCallSpendingTextField;
     public javax.swing.JButton showTheReportButton;
     private javax.swing.JLabel textilesLabel;
-    private javax.swing.JTextField tvRadioPhoneEquipmentSpending;
+    public javax.swing.JTextField tvRadioPhoneEquipmentSpending;
     private javax.swing.JLabel tvRadioPhoneLabel;
     private javax.swing.JLabel vehicleSpendingLabel;
-    private javax.swing.JTextField vehicleSpendingTextField;
+    public javax.swing.JTextField vehicleSpendingTextField;
     private javax.swing.JLabel warningLabel;
 
 }
