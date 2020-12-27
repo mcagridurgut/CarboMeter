@@ -99,7 +99,7 @@ public class NormalUser extends User {
   }
 
 
-  public void addFriend( String name ) {
+  public boolean addFriend( String name ) {
     if( DatabaseConnection.isSuchUserExists(name) && !isSuchFriendExists(name) ) {
       DatabaseConnection.addFriend(getUsername(), name);
       Report friend = new Report( name, true, true, true, true);
@@ -111,7 +111,9 @@ public class NormalUser extends User {
       friend.setOthersScore( (double)frnd[8] );
       friend.updateScore();
       friends.add(friend);
+      return true;
     }
+    return false;
   }
 
   private boolean isSuchFriendExists (String name){

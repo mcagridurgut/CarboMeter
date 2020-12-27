@@ -13,15 +13,45 @@ import java.util.ArrayList;
  * @author Eren Özen, Onur Ertunç
  */
 
+
 public class FriendsPanel extends JPanel {
+
+    // Properties - components
     ArrayList<String> list;
+    private JLabel addFriendLabel;
+    public JTextField addFrinedField;
+    private JProgressBar averageBar;
+    private JLabel averageLabel;
+    private JLabel background;
+    private JLabel friendsLabel;
+    private JScrollPane frinedsPane;
+    public JTable frinedsTable;
+    private JProgressBar meBar;
+    private JLabel meLabel;
+
+    /**
+     * constructor of the class. Calls initComponents to initalize properties
+     */
+    public FriendsPanel() {
+        initComponents();
+    }
+
+    public void setMeBar(int num){
+        meBar.setValue(num/1000);
+    }
+
+    public void setFriendBar(String friend, int frbar){
+        averageBar.setValue(frbar/1000);
+        averageLabel.setText(friend);
+    }
+
     public void function ( ArrayList<String> list){
         this.list = list;
         int a = list.size();
         Object[][] arr = new Object[a][2];
         for( int i = 0; i< a; i++){
             arr[i][0] = list.get(i);
-            arr[i][1] = DatabaseConnection.select(list.get(i))[4];
+            arr[i][1] = (((Double)(DatabaseConnection.select(list.get(i))[4]))/1000);
         }
         frinedsTable.setModel(new DefaultTableModel(
                 arr,
@@ -50,25 +80,6 @@ public class FriendsPanel extends JPanel {
         list.add(friend);
         function(list);
         repaint();
-    }
-
-    // Properties - components
-    private JLabel addFriendLabel;
-    public JTextField addFrinedField;
-    private JProgressBar averageBar;
-    private JLabel averageLabel;
-    private JLabel background;
-    private JLabel friendsLabel;
-    private JScrollPane frinedsPane;
-    private JTable frinedsTable;
-    private JProgressBar meBar;
-    private JLabel meLabel;
-
-    /**
-     * constructor of the class. Calls initComponents to initalize properties
-     */
-    public FriendsPanel() {
-        initComponents();
     }
 
     /**
@@ -145,10 +156,10 @@ public class FriendsPanel extends JPanel {
         averageLabel.setForeground(new Color(255, 255, 255));
         averageLabel.setText("Average");
         add(averageLabel);
-        averageLabel.setBounds(950, 220, 90, 29);
+        averageLabel.setBounds(950, 220, 190, 29);
 
         // average bar alignments
-        averageBar.setValue(45);
+        averageBar.setValue(48);
         averageBar.setPreferredSize(new Dimension(300, 20));
         averageBar.setRequestFocusEnabled(false);
         add(averageBar);
