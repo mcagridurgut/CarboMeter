@@ -172,10 +172,11 @@ public class DonationPanel extends JPanel {
     } // end of the initComponents
 
     /**
-     * action performed of the eggButton.
+     * action performed of the eggButton. shows a message
      * @param evt action event
      */
     private void eggButtonActionPerformed(ActionEvent evt) {
+        JOptionPane.showMessageDialog(null, "https://climate.nasa.gov/" );
     }
 
     /**

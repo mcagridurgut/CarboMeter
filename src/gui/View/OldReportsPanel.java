@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * Old reports panel of the Carbometer desktop application. Draws the panel by swing components.
  * @author Eren Özen, Onur Ertunç
  */
-public class OldReportsPanel extends javax.swing.JPanel {
+public class OldReportsPanel extends JPanel {
 
     // Properties of the old reports panel
     private JLabel background;
