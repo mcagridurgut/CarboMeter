@@ -97,37 +97,37 @@ public class HouseQuestionPanel extends javax.swing.JPanel {
         woodenPelletsLabel.setBounds(670, 300, 90, 30);
 
         electricityTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        electricityTextField.setUI(new JTextFieldHintUI("Electricity", Color.gray));
+        electricityTextField.setUI(new JTextFieldHintUI("Electircty", Color.gray));
         add(electricityTextField);
         electricityTextField.setBounds(340, 300, 100, 30);
 
         naturalGasTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        naturalGasTextField.setUI(new JTextFieldHintUI("Natural Gas", Color.gray));
+        naturalGasTextField.setText("Enter here");
         add(naturalGasTextField);
         naturalGasTextField.setBounds(340, 360, 100, 30);
 
         coalTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        coalTextField.setUI(new JTextFieldHintUI("Coal", Color.gray));
+        coalTextField.setText("Enter here");
         add(coalTextField);
         coalTextField.setBounds(340, 420, 100, 30);
 
         LPGTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        LPGTextField.setUI(new JTextFieldHintUI("LPG", Color.gray));;
+        LPGTextField.setText("Enter here");
         add(LPGTextField);
         LPGTextField.setBounds(340, 480, 100, 30);
 
         woodenPelletsTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        woodenPelletsTextField.setUI(new JTextFieldHintUI("Wooden Pellets", Color.gray));
+        woodenPelletsTextField.setText("Enter here");
         add(woodenPelletsTextField);
         woodenPelletsTextField.setBounds(810, 300, 100, 30);
 
         heatingOilTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        heatingOilTextField.setUI(new JTextFieldHintUI("Heating Oil", Color.gray));
+        heatingOilTextField.setText("Enter here");
         add(heatingOilTextField);
         heatingOilTextField.setBounds(810, 360, 100, 30);
 
         propaneTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        propaneTextField.setUI(new JTextFieldHintUI("Propane", Color.gray));
+        propaneTextField.setText("Enter here");
         add(propaneTextField);
         propaneTextField.setBounds(810, 420, 100, 30);
 

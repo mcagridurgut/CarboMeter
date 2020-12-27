@@ -23,6 +23,7 @@ public class Report {
     this.carbopoint = CARBOPOINT_DEFAULT;
   }
 
+
   public void setHomeScore( double score ){
     this.home.updateScore(score);
   }

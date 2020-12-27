@@ -23,7 +23,10 @@ public class Transportation extends Category {
   public static final double SUBWAY_FACTOR = 0.0275; // kgCO2 per kilometer
 
   // CAR CONSTANTS
-  public static final double CAR_MANUEL_EFFICIENCY_FACTOR = 0.02168;
+  public static final double CAR_PETROL_FACTOR = 0.02168;
+  public static final double CAR_DIESEL_FACTOR = 0.02546;
+  public static final double CAR_LPG_FACTOR = 0.01555;
+  public static final double CAR_CNG_FACTOR = 0.00443;
 
   // PLANE CONSTANTS
   public static final double FLIGHT_CO2_FACTOR = 0.643736;
