@@ -10,7 +10,7 @@ import java.awt.event.*;
  */
 public class NormalUserHomePanel extends javax.swing.JPanel {
 
-    // Properties of the normal challenges panel
+    // Properties of the normal user home panel
     private JLabel background;
     public JButton challengesButton;
     public JButton donationButton;
