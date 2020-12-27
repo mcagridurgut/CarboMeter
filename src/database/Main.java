@@ -1,5 +1,6 @@
 package database;
 
+import Model.Report;
 import user.*;
 import java.util.ArrayList;
 
@@ -14,13 +15,15 @@ public class Main {
 //           System.out.println("succesfly logged in");
         //DatabaseConnection.forgotPassword("newbie");
         try{
-            NormalUser user = Login.NormalLogin("newbie", "cagridurgut123");
-//            user.addFriend("ucuncu");
-//            for( Report r: user.getReports() ){
-//                System.out.println(r.getUser());
-//                System.out.println(r.getScore());
-//            }
-//            user.createReport(143, 113, 313, 233);
+            NormalUser user = Login.NormalLogin("cagribilkent", "zaaxdxd");/*
+            for( Report r: user.getReports() ){
+                System.out.println(r.getUser());
+                System.out.println(r.getScore());
+            }*/
+            System.out.println( user.getCurrentReport().getUser() );
+            System.out.println( user.getCurrentReport().getScore() );
+            System.out.println( user.getPreviousReport().getUser() );
+            System.out.println( user.getPreviousReport().getScore() );
         }catch (Exception e){
             e.printStackTrace();
         }

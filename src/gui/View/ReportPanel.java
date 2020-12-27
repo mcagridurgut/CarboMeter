@@ -16,11 +16,11 @@ public class ReportPanel extends javax.swing.JPanel {
     public void function(Double newHome,Double newTravel,Double newFood,Double newOthers,Double oldHome,Double oldTravel,Double oldFood,Double oldOthers){
         reportTable.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
-                        {"Total", newFood+newTravel+newHome+newOthers, 123.11, oldFood+oldTravel+oldHome+oldOthers},
-                        {"Food", newFood, 123.123, oldFood},
-                        {"Transportation", newTravel, 45.45, oldTravel},
-                        {"House", newHome, 874.4, oldHome},
-                        {"Others", newOthers, 541.5, oldOthers}
+                        {"Total", (double)(newFood.intValue()+newTravel.intValue()+newHome.intValue()+newOthers.intValue())/1000, 48.721, (double) (oldFood.intValue()+oldTravel.intValue()+oldHome.intValue()+oldOthers.intValue() )/1000 },
+                        {"Food",(double) (newFood.intValue() ) /1000, 7.182,(double) (oldFood.intValue() ) /1000},
+                        {"Transportation", (double) ( newTravel.intValue() ) /1000, 15.391, (double ) (oldTravel.intValue() ) /1000 },
+                        {"House", (double)(newHome.intValue() ) /1000, 12.106, (double) (oldHome.intValue() ) /1000 },
+                        {"Others", (double)(newOthers.intValue())/1000, 14.042,(double) (oldOthers.intValue())/1000}
                 },
                 new String [] {
                         "", "My Carbopoint", "Average", "My Old Data"

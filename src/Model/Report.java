@@ -46,6 +46,18 @@ public class Report {
   public double getScore() {
     return this.carbopoint;
   }
+  public double getHomeScore() {
+    return this.home.getScore();
+  }
+  public double getFoodScore() {
+    return this.food.getScore();
+  }
+  public double getTransportScore() {
+    return this.transportation.getScore();
+  }
+  public double getOthersScore() {
+    return this.others.getScore();
+  }
 
   public String getUser() {
     return user;

@@ -1,5 +1,7 @@
 package gui.View;
 
+import java.awt.*;
+
 /**
  * @author Eren Özen, Onur Ertunç
  */
@@ -95,7 +97,7 @@ public class HouseQuestionPanel extends javax.swing.JPanel {
         woodenPelletsLabel.setBounds(670, 300, 90, 30);
 
         electricityTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        electricityTextField.setText("Enter here");
+        electricityTextField.setUI(new JTextFieldHintUI("Electircty", Color.gray));
         add(electricityTextField);
         electricityTextField.setBounds(340, 300, 100, 30);
 
@@ -218,17 +220,17 @@ public class HouseQuestionPanel extends javax.swing.JPanel {
     }
 
     private javax.swing.JLabel LPGLabel;
-    private javax.swing.JTextField LPGTextField;
+    public javax.swing.JTextField LPGTextField;
     private javax.swing.JLabel aMessageToUserLabel;
     private javax.swing.JLabel background;
     private javax.swing.JLabel coalLabel;
-    private javax.swing.JTextField coalTextField;
+    public javax.swing.JTextField coalTextField;
     private javax.swing.JLabel cubicMetersLabel;
     private javax.swing.JLabel electricityLabel;
-    private javax.swing.JTextField electricityTextField;
+    public javax.swing.JTextField electricityTextField;
     public javax.swing.JButton goBackButton;
     private javax.swing.JLabel heatingOilLabel;
-    private javax.swing.JTextField heatingOilTextField;
+    public javax.swing.JTextField heatingOilTextField;
     private javax.swing.JLabel houseLabel;
     private javax.swing.JLabel kwhLabel;
     private javax.swing.JLabel litresLabel1;
@@ -237,13 +239,13 @@ public class HouseQuestionPanel extends javax.swing.JPanel {
     private javax.swing.JLabel metricTonnesLabel1;
     private javax.swing.JLabel metricTonnesLabel2;
     private javax.swing.JLabel naturalGasLabel;
-    private javax.swing.JTextField naturalGasTextField;
+    public javax.swing.JTextField naturalGasTextField;
     public javax.swing.JButton nextButton;
-    private javax.swing.JTextField numOfPeople;
+    public javax.swing.JTextField numOfPeople;
     private javax.swing.JLabel numberPeopleLabel;
     private javax.swing.JLabel propaneLabel;
-    private javax.swing.JTextField propaneTextField;
+    public javax.swing.JTextField propaneTextField;
     private javax.swing.JLabel woodenPelletsLabel;
-    private javax.swing.JTextField woodenPelletsTextField;
+    public javax.swing.JTextField woodenPelletsTextField;
 
 }

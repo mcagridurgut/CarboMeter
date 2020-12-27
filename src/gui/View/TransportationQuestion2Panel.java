@@ -1,5 +1,7 @@
 package gui.View;
 
+import java.awt.*;
+
 /**
  * @author Eren Özen, Onur Ertunç
  */
@@ -103,27 +105,33 @@ public class TransportationQuestion2Panel extends javax.swing.JPanel {
 
         coachTextField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         coachTextField.setForeground(new java.awt.Color(255, 255, 255));
+        coachTextField.setUI(new JTextFieldHintUI("Coach", Color.gray));
         add(coachTextField);
         coachTextField.setBounds(550, 250, 150, 30);
 
         localTrainTextField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         localTrainTextField.setForeground(new java.awt.Color(255, 255, 255));
+        localTrainTextField.setUI(new JTextFieldHintUI("Local or Commuter Train", Color.gray));
         add(localTrainTextField);
         localTrainTextField.setBounds(550, 300, 150, 30);
 
         longDistanceTrainTextField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        longDistanceTrainTextField.setUI(new JTextFieldHintUI("Long Distance Train", Color.gray));
         add(longDistanceTrainTextField);
         longDistanceTrainTextField.setBounds(550, 350, 150, 30);
 
         tramTextField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        tramTextField.setUI(new JTextFieldHintUI("Tram", Color.gray));
         add(tramTextField);
         tramTextField.setBounds(550, 400, 150, 30);
 
         subwayTextField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        subwayTextField.setUI(new JTextFieldHintUI("Subway", Color.gray));
         add(subwayTextField);
         subwayTextField.setBounds(550, 450, 150, 30);
 
         taxiTextField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        taxiTextField.setUI(new JTextFieldHintUI("Taxi", Color.gray));
         add(taxiTextField);
         taxiTextField.setBounds(550, 500, 150, 30);
 
