@@ -95,7 +95,7 @@ public class OthersQuestionPanel extends JPanel {
 
         // others label alignment (background, font, foreground, alignment, text and position)
         othersLabel.setBackground(new Color(255, 255, 255));
-        othersLabel.setFont(new Font("Calibri", 1, 48)); // NOI18N
+        othersLabel.setFont(new Font("Calibri", 1, 48));
         othersLabel.setForeground(new Color(255, 255, 255));
         othersLabel.setHorizontalAlignment(SwingConstants.CENTER);
         othersLabel.setText("OTHERS");
@@ -103,91 +103,91 @@ public class OthersQuestionPanel extends JPanel {
         othersLabel.setBounds(555, 80, 170, 60);
 
         // pharma label alignment (font, foreground, text and position)
-        pharmaLabel.setFont(new Font("Arial", 3, 12)); // NOI18N
+        pharmaLabel.setFont(new Font("Arial", 3, 12));
         pharmaLabel.setForeground(new Color(255, 255, 255));
         pharmaLabel.setText("Pharmaceuticals");
         add(pharmaLabel);
         pharmaLabel.setBounds(230, 630, 360, 30);
 
         // textiles label alignment (font, foreground, text and position)
-        textilesLabel.setFont(new Font("Arial", 3, 12)); // NOI18N
+        textilesLabel.setFont(new Font("Arial", 3, 12));
         textilesLabel.setForeground(new Color(255, 255, 255));
         textilesLabel.setText("Clothes, textiles and shoes");
         add(textilesLabel);
         textilesLabel.setBounds(230, 590, 360, 30);
 
         // paper products label alignment (font, foreground, text and position)
-        paperProductsLabel.setFont(new Font("Arial", 3, 12)); // NOI18N
+        paperProductsLabel.setFont(new Font("Arial", 3, 12));
         paperProductsLabel.setForeground(new Color(255, 255, 255));
         paperProductsLabel.setText("Paper based products (e.g. books, magazines, newspapers)\t");
         add(paperProductsLabel);
         paperProductsLabel.setBounds(230, 510, 360, 30);
 
         // tv radio phone label alignment (font, foreground, text and position)
-        tvRadioPhoneLabel.setFont(new Font("Arial", 3, 12)); // NOI18N
+        tvRadioPhoneLabel.setFont(new Font("Arial", 3, 12));
         tvRadioPhoneLabel.setForeground(new Color(255, 255, 255));
         tvRadioPhoneLabel.setText("Television, radio and phone (equipment)");
         add(tvRadioPhoneLabel);
         tvRadioPhoneLabel.setBounds(230, 390, 360, 30);
 
         // vehicle spending label alignment (font, foreground, text and position)
-        vehicleSpendingLabel.setFont(new Font("Arial", 3, 12)); // NOI18N
+        vehicleSpendingLabel.setFont(new Font("Arial", 3, 12));
         vehicleSpendingLabel.setForeground(new Color(255, 255, 255));
         vehicleSpendingLabel.setText("Motor vehicles (not including fuel costs)");
         add(vehicleSpendingLabel);
         vehicleSpendingLabel.setBounds(230, 190, 360, 30);
 
         // furniture label alignment (font, foreground, text and position)
-        furnitureLabel.setFont(new Font("Arial", 3, 12)); // NOI18N
+        furnitureLabel.setFont(new Font("Arial", 3, 12));
         furnitureLabel.setForeground(new Color(255, 255, 255));
         furnitureLabel.setText("Furniture and other manufactured goods");
         add(furnitureLabel);
         furnitureLabel.setBounds(230, 150, 360, 30);
 
         // hotel pub label alignment (font, foreground, text and position)
-        hotelPubLabel.setFont(new Font("Arial", 3, 12)); // NOI18N
+        hotelPubLabel.setFont(new Font("Arial", 3, 12));
         hotelPubLabel.setForeground(new Color(255, 255, 255));
         hotelPubLabel.setText("Hotels, restaurants, and pubs etc.");
         add(hotelPubLabel);
         hotelPubLabel.setBounds(230, 310, 360, 30);
 
         // call cost label alignment (font,foreground, text and position)
-        callCostLabel.setFont(new Font("Arial", 3, 12)); // NOI18N
+        callCostLabel.setFont(new Font("Arial", 3, 12));
         callCostLabel.setForeground(new Color(255, 255, 255));
         callCostLabel.setText("Telephone, mobile/cell phone call costs");
         add(callCostLabel);
         callCostLabel.setBounds(230, 350, 360, 30);
 
         // banking label alignment (font, foreground, text and position)
-        bankingLabel.setFont(new Font("Arial", 3, 12)); // NOI18N
+        bankingLabel.setFont(new Font("Arial", 3, 12));
         bankingLabel.setForeground(new Color(255, 255, 255));
         bankingLabel.setText("Banking and finance (mortgage and loan interest payments)\t");
         add(bankingLabel);
         bankingLabel.setBounds(230, 470, 360, 30);
 
         // insurance label alignment (font, foreground, text and position)
-        insuranceLabel.setFont(new Font("Arial", 3, 12)); // NOI18N
+        insuranceLabel.setFont(new Font("Arial", 3, 12));
         insuranceLabel.setForeground(new Color(255, 255, 255));
         insuranceLabel.setText("Insurance");
         add(insuranceLabel);
         insuranceLabel.setBounds(230, 550, 360, 30);
 
         // it label alignment (font, foreground, text and position)
-        itLabel.setFont(new Font("Arial", 3, 12)); // NOI18N
+        itLabel.setFont(new Font("Arial", 3, 12));
         itLabel.setForeground(new Color(255, 255, 255));
         itLabel.setText("Computers and IT equipment");
         add(itLabel);
         itLabel.setBounds(230, 430, 360, 30);
 
         // education label alignment (font, foreground, text and position)
-        educationLabel.setFont(new Font("Arial", 3, 12)); // NOI18N
+        educationLabel.setFont(new Font("Arial", 3, 12));
         educationLabel.setForeground(new Color(255, 255, 255));
         educationLabel.setText("Education");
         add(educationLabel);
         educationLabel.setBounds(230, 230, 360, 30);
 
         // cultural acts label alignment (font, foreground, text and position)
-        culturalActsLabel.setFont(new Font("Arial", 3, 12)); // NOI18N
+        culturalActsLabel.setFont(new Font("Arial", 3, 12));
         culturalActsLabel.setForeground(new Color(255, 255, 255));
         culturalActsLabel.setText("Recreational, cultural and sporting activities");
         add(culturalActsLabel);
@@ -259,35 +259,34 @@ public class OthersQuestionPanel extends JPanel {
         pharmaceuticalsTextField.setBounds(700, 630, 200, 30);
 
         // show the report button alignment (font, icon, text and position)
-        showTheReportButton.setFont(new Font("Arial", 0, 12)); // NOI18N
-        showTheReportButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/right-arrow.png"))); // NOI18N
+        showTheReportButton.setFont(new Font("Arial", 0, 12));
+        showTheReportButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/right-arrow.png")));
         showTheReportButton.setText("Show the Report");
         add(showTheReportButton);
         showTheReportButton.setBounds(1040, 620, 170, 35);
 
         // go back button alignment (font, icon, text and position)
         goBackButton.setFont(new Font("Arial", 0, 12));
-        goBackButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/left Arrow.png"))); // NOI18N
+        goBackButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/left Arrow.png")));
         goBackButton.setText("Go Back");
         add(goBackButton);
         goBackButton.setBounds(50, 620, 110, 35);
 
         // warning label alignment (font, foreground, text and position)
-        warningLabel.setFont(new Font("Arial", 1, 12)); // NOI18N
+        warningLabel.setFont(new Font("Arial", 1, 12));
         warningLabel.setForeground(new Color(255, 255, 255));
         warningLabel.setText("Warning! Currency unit is US Dollar");
         add(warningLabel);
         warningLabel.setBounds(1030, 160, 200, 20);
 
         // background alignment (font, icon and positioning)
-        background.setFont(new Font("Calibri", 0, 11)); // NOI18N
-        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg"))); // NOI18N
+        background.setFont(new Font("Calibri", 0, 11));
+        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg")));
         background.setMaximumSize(new Dimension(1280, 700));
         background.setMinimumSize(new Dimension(1280, 700));
         background.setPreferredSize(new Dimension(1280, 700));
         add(background);
         background.setBounds(0, 0, 1280, 700);
-    }
+    } // end of the initComponents method
 
-
-}
+} // end of the class
