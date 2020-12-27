@@ -85,7 +85,7 @@ public class OldReportsPanel extends javax.swing.JPanel {
                 {"Total", null},
                 {"Food", null},
                 {"Transportation", null},
-                {"Home", null},
+                {"House", null},
                 {"Others", null},
                 {"Donation", null}
             },

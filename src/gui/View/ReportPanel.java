@@ -19,7 +19,7 @@ public class ReportPanel extends javax.swing.JPanel {
                         {"Total", newFood+newTravel+newHome+newOthers, 123.11, oldFood+oldTravel+oldHome+oldOthers},
                         {"Food", newFood, 123.123, oldFood},
                         {"Transportation", newTravel, 45.45, oldTravel},
-                        {"Home", newHome, 874.4, oldHome},
+                        {"House", newHome, 874.4, oldHome},
                         {"Others", newOthers, 541.5, oldOthers}
                 },
                 new String [] {

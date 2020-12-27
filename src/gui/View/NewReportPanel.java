@@ -123,7 +123,7 @@ public class NewReportPanel extends javax.swing.JPanel {
         newReportTextArea.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         newReportTextArea.setForeground(new java.awt.Color(255, 255, 255));
         newReportTextArea.setRows(5);
-        newReportTextArea.setText("FOOD\n\nTRANSPORTATION\n\nHOME\n\nOTHERS\n");
+        newReportTextArea.setText("FOOD\n\nTRANSPORTATION\n\nHOUSE\n\nOTHERS\n");
         newReportPane.setViewportView(newReportTextArea);
 
         add(newReportPane);
