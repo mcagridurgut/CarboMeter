@@ -1,70 +1,99 @@
 package gui.View;
 
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
 /**
+ * Recommendations panel of the Carbometer desktop application. Draws the panel by swing components.
  * @author Eren Özen, Onur Ertunç
  */
 
-public class RecommendationsPanel extends javax.swing.JPanel {
+public class RecommendationsPanel extends JPanel {
 
+    // Properties of the others question panel
+    private JLabel background;
+    public JButton foodRecommendationButton;
+    public JButton houseRecommendationButton;
+    private JScrollPane jScrollPane1;
+    public JButton othersRecommendationButton;
+    private JLabel recommendationsLabel;
+    private JTextArea recommendationsTextArea;
+    public JButton transportationlRecommendationButton;
+
+    /**
+     * constructor of the class
+     */
     public RecommendationsPanel() {
         initComponents();
     }
 
+    /**
+     * initializes the properties of the class
+     */
     private void initComponents() {
 
-        recommendationsLabel = new javax.swing.JLabel();
-        foodRecommendationButton = new javax.swing.JButton();
-        transportationlRecommendationButton = new javax.swing.JButton();
-        houseRecommendationButton = new javax.swing.JButton();
-        othersRecommendationButton = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        recommendationsTextArea = new javax.swing.JTextArea();
-        background = new javax.swing.JLabel();
+        //initialization of the components
+        recommendationsLabel = new JLabel();
+        foodRecommendationButton = new JButton();
+        transportationlRecommendationButton = new JButton();
+        houseRecommendationButton = new JButton();
+        othersRecommendationButton = new JButton();
+        jScrollPane1 = new JScrollPane();
+        recommendationsTextArea = new JTextArea();
+        background = new JLabel();
 
-        setPreferredSize(new java.awt.Dimension(1280, 700));
+        // size of the panel and layout adjusted
+        setPreferredSize(new Dimension(1280, 700));
         setLayout(null);
 
-        recommendationsLabel.setFont(new java.awt.Font("Calibri", 1, 48)); // NOI18N
-        recommendationsLabel.setForeground(new java.awt.Color(255, 255, 255));
+        // recommendations label alignment (font, foreground, text and position)
+        recommendationsLabel.setFont(new Font("Calibri", 1, 48)); // NOI18N
+        recommendationsLabel.setForeground(new Color(255, 255, 255));
         recommendationsLabel.setText("RECOMMENDATIONS");
         add(recommendationsLabel);
         recommendationsLabel.setBounds(425, 80, 429, 60);
 
-        foodRecommendationButton.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        foodRecommendationButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons and backgrounds/diet (1).png"))); // NOI18N
+        // food recommendations button alignment (font, icon, text and position)
+        foodRecommendationButton.setFont(new Font("Arial", 0, 18)); // NOI18N
+        foodRecommendationButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/diet (1).png"))); // NOI18N
         foodRecommendationButton.setText("Food");
         add(foodRecommendationButton);
         foodRecommendationButton.setBounds(200, 150, 210, 80);
 
-        transportationlRecommendationButton.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        transportationlRecommendationButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons and backgrounds/globe (1).png"))); // NOI18N
+        // transportation recommendations button alignment (font, icon, text and position)
+        transportationlRecommendationButton.setFont(new Font("Arial", 0, 18)); // NOI18N
+        transportationlRecommendationButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/globe (1).png"))); // NOI18N
         transportationlRecommendationButton.setText("Transportation");
         add(transportationlRecommendationButton);
         transportationlRecommendationButton.setBounds(200, 260, 210, 80);
 
-        houseRecommendationButton.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        houseRecommendationButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons and backgrounds/home (2).png"))); // NOI18N
+        // house recommendations button alignment (font, icon, text and position)
+        houseRecommendationButton.setFont(new Font("Arial", 0, 18)); // NOI18N
+        houseRecommendationButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/home (2).png"))); // NOI18N
         houseRecommendationButton.setText("House");
-        houseRecommendationButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        houseRecommendationButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 houseRecommendationButtonActionPerformed(evt);
             }
         });
         add(houseRecommendationButton);
         houseRecommendationButton.setBounds(200, 370, 210, 80);
 
-        othersRecommendationButton.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        othersRecommendationButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons and backgrounds/application (1).png"))); // NOI18N
+        // others recommendations button alignment (font, icon, text and position)
+        othersRecommendationButton.setFont(new Font("Arial", 0, 18)); // NOI18N
+        othersRecommendationButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/application (1).png"))); // NOI18N
         othersRecommendationButton.setText("Others");
         add(othersRecommendationButton);
         othersRecommendationButton.setBounds(200, 480, 210, 80);
 
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        recommendationsTextArea.setBackground(new java.awt.Color(88, 78, 69));
+        // recommendations text area alignment (background, columns, font, foreground, rows, border and position)
+        recommendationsTextArea.setBackground(new Color(88, 78, 69));
         recommendationsTextArea.setColumns(20);
-        recommendationsTextArea.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        recommendationsTextArea.setForeground(new java.awt.Color(255, 255, 255));
+        recommendationsTextArea.setFont(new Font("Arial", 1, 12)); // NOI18N
+        recommendationsTextArea.setForeground(new Color(255, 255, 255));
         recommendationsTextArea.setRows(5);
         recommendationsTextArea.setBorder(null);
         jScrollPane1.setViewportView(recommendationsTextArea);
@@ -72,25 +101,23 @@ public class RecommendationsPanel extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(570, 150, 540, 410);
 
-        background.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg"))); // NOI18N
-        background.setMaximumSize(new java.awt.Dimension(1280, 700));
-        background.setMinimumSize(new java.awt.Dimension(1280, 700));
-        background.setPreferredSize(new java.awt.Dimension(1280, 700));
+        // background alignment (font, icon and positioning)
+        background.setFont(new Font("Calibri", 0, 11)); // NOI18N
+        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg"))); // NOI18N
+        background.setMaximumSize(new Dimension(1280, 700));
+        background.setMinimumSize(new Dimension(1280, 700));
+        background.setPreferredSize(new Dimension(1280, 700));
         add(background);
         background.setBounds(0, 0, 1280, 700);
     }
 
-    private void houseRecommendationButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    /**
+     * house recommendation button action performed method. check the gui class.
+     * @param evt action event
+     */
+    private void houseRecommendationButtonActionPerformed(ActionEvent evt) {
     }
 
-    private javax.swing.JLabel background;
-    public javax.swing.JButton foodRecommendationButton;
-    public javax.swing.JButton houseRecommendationButton;
-    private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JButton othersRecommendationButton;
-    private javax.swing.JLabel recommendationsLabel;
-    private javax.swing.JTextArea recommendationsTextArea;
-    public javax.swing.JButton transportationlRecommendationButton;
+
 
 }
