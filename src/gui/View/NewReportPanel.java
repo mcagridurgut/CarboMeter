@@ -11,7 +11,7 @@ import java.awt.event.*;
 
 public class NewReportPanel extends JPanel {
 
-    // Properties of the login panel
+    // Properties of the new report panel
     private JLabel background;
     private JLabel carbobarLabel;
     private JProgressBar carbobarProgressBar;
