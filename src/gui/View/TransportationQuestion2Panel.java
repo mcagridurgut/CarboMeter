@@ -100,17 +100,16 @@ public class TransportationQuestion2Panel extends javax.swing.JPanel {
         taxiLabel.setBounds(260, 500, 145, 30);
 
         busTextField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        busTextField.setUI(new JTextFieldHintUI("Bus", Color.gray));
         add(busTextField);
         busTextField.setBounds(550, 200, 150, 30);
 
         coachTextField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        coachTextField.setForeground(new java.awt.Color(255, 255, 255));
         coachTextField.setUI(new JTextFieldHintUI("Coach", Color.gray));
         add(coachTextField);
         coachTextField.setBounds(550, 250, 150, 30);
 
         localTrainTextField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        localTrainTextField.setForeground(new java.awt.Color(255, 255, 255));
         localTrainTextField.setUI(new JTextFieldHintUI("Local or Commuter Train", Color.gray));
         add(localTrainTextField);
         localTrainTextField.setBounds(550, 300, 150, 30);

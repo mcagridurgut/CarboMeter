@@ -158,48 +158,56 @@ public class FoodQuestionPanel extends JPanel {
 
         // textfield that gets the input of beefLambVeal. alignments are here. not inputs - listeners
         jTextField1.setBackground(new Color(240, 240, 240));
+        jTextField1.setUI(new JTextFieldHintUI("Cal", Color.gray));
         jTextField1.setFont(new Font("Arial", 1, 12));
         add(jTextField1);
         jTextField1.setBounds(530, 210, 150, 30);
 
         // textfield that gets the input of fishAndSeaFood. alignments are here. not inputs - listeners
         jTextField2.setBackground(new Color(240, 240, 240));
+        jTextField2.setUI(new JTextFieldHintUI("Cal", Color.gray));
         jTextField2.setFont(new Font("Arial", 1, 12));
         add(jTextField2);
         jTextField2.setBounds(530, 260, 150, 30);
 
         // textfield that gets the input of otherMeat. alignments are here. not inputs - listeners
         jTextField3.setBackground(new Color(240, 240, 240));
+        jTextField3.setUI(new JTextFieldHintUI("Cal", Color.gray));
         jTextField3.setFont(new Font("Arial", 1, 12));
         add(jTextField3);
         jTextField3.setBounds(530, 310, 150, 30);
 
         // textfield that gets the input of poultryAndEgg. alignments are here. not inputs - listeners
         jTextField4.setBackground(new Color(240, 240, 240));
+        jTextField4.setUI(new JTextFieldHintUI("Cal", Color.gray));
         jTextField4.setFont(new Font("Arial", 1, 12));
         add(jTextField4);
         jTextField4.setBounds(530, 360, 150, 30);
 
         // textfield that gets the input of grainsAndBaked. alignments are here. not inputs - listeners
         jTextField5.setBackground(new Color(240, 240, 240));
+        jTextField5.setUI(new JTextFieldHintUI("Cal", Color.gray));
         jTextField5.setFont(new Font("Arial", 1, 12));
         add(jTextField5);
         jTextField5.setBounds(530, 410, 150, 30);
 
         // textfield that gets the input of dairy. alignments are here. not inputs - listeners
         jTextField6.setBackground(new Color(240, 240, 240));
+        jTextField6.setUI(new JTextFieldHintUI("Cal", Color.gray));
         jTextField6.setFont(new Font("Arial", 1, 12));
         add(jTextField6);
         jTextField6.setBounds(530, 460, 150, 30);
 
         // textfield that gets the input of fruitsAndVegetables. alignments are here. not inputs - listeners
         jTextField7.setBackground(new Color(240, 240, 240));
+        jTextField7.setUI(new JTextFieldHintUI("Cal", Color.gray));
         jTextField7.setFont(new Font("Arial", 1, 12));
         add(jTextField7);
         jTextField7.setBounds(530, 510, 150, 30);
 
         // textfield that gets the input of snacks. alignments are here. not inputs - listeners
         jTextField8.setBackground(new Color(240, 240, 240));
+        jTextField8.setUI(new JTextFieldHintUI("Cal", Color.gray));
         jTextField8.setFont(new Font("Arial", 1, 12));
         add(jTextField8);
         jTextField8.setBounds(530, 560, 150, 30);

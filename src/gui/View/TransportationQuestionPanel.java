@@ -1,5 +1,7 @@
 package gui.View;
 
+import java.awt.*;
+
 /**
  * @author Eren Özen, Onur Ertunç
  */
@@ -68,6 +70,7 @@ public class TransportationQuestionPanel extends javax.swing.JPanel {
                 flightDistanceTextFieldActionPerformed(evt);
             }
         });
+        flightDistanceTextField.setUI(new JTextFieldHintUI("Flight Distance", Color.gray));
         add(flightDistanceTextField);
         flightDistanceTextField.setBounds(460, 190, 150, 30);
 
@@ -90,6 +93,7 @@ public class TransportationQuestionPanel extends javax.swing.JPanel {
         mileageInfoLabel.setBounds(260, 280, 190, 30);
 
         carMileageTextField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        carMileageTextField.setUI(new JTextFieldHintUI("Car Mileage", Color.gray));
         add(carMileageTextField);
         carMileageTextField.setBounds(460, 280, 150, 30);
 
@@ -106,6 +110,7 @@ public class TransportationQuestionPanel extends javax.swing.JPanel {
         efficiencyOfCarLabel.setBounds(260, 320, 190, 30);
 
         efficiencyOfCarTextField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        efficiencyOfCarTextField.setUI(new JTextFieldHintUI("Efficiency Of Car", Color.gray));
         add(efficiencyOfCarTextField);
         efficiencyOfCarTextField.setBounds(460, 320, 150, 30);
 
@@ -139,6 +144,7 @@ public class TransportationQuestionPanel extends javax.swing.JPanel {
         mileageInfoLabel2.setBounds(260, 420, 190, 30);
 
         motorbikeMileageTextField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        motorbikeMileageTextField.setUI(new JTextFieldHintUI("Motorbike Mileage", Color.gray));
         add(motorbikeMileageTextField);
         motorbikeMileageTextField.setBounds(460, 420, 150, 30);
 
@@ -166,6 +172,7 @@ public class TransportationQuestionPanel extends javax.swing.JPanel {
         enterEfficiencyLabel.setBounds(720, 460, 110, 30);
 
         motorbikeEfficiencyTextField.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
+        motorbikeEfficiencyTextField.setUI(new JTextFieldHintUI("Motorbike Efficiency", Color.gray));
         motorbikeEfficiencyTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 motorbikeEfficiencyTextFieldActionPerformed(evt);

@@ -1,5 +1,7 @@
 package gui.View;
 
+import java.awt.*;
+
 /**
  * @author Eren Özen, Onur Ertunç
  */
@@ -133,55 +135,55 @@ public class OthersQuestionPanel extends javax.swing.JPanel {
         add(culturalActsLabel);
         culturalActsLabel.setBounds(230, 270, 360, 30);
 
-        furnitureSpendingTextField.setText("spending");
+        furnitureSpendingTextField.setUI(new JTextFieldHintUI("Spending", Color.gray));
         add(furnitureSpendingTextField);
         furnitureSpendingTextField.setBounds(700, 150, 200, 30);
 
-        vehicleSpendingTextField.setText("spending");
+        vehicleSpendingTextField.setUI(new JTextFieldHintUI("Spending", Color.gray));
         add(vehicleSpendingTextField);
         vehicleSpendingTextField.setBounds(700, 190, 200, 30);
 
-        educationSpendingTextField.setText("spending");
+        educationSpendingTextField.setUI(new JTextFieldHintUI("Spending", Color.gray));
         add(educationSpendingTextField);
         educationSpendingTextField.setBounds(700, 230, 200, 30);
 
-        culturalSpendingTextField.setText("spending");
+        culturalSpendingTextField.setUI(new JTextFieldHintUI("Spending", Color.gray));
         add(culturalSpendingTextField);
         culturalSpendingTextField.setBounds(700, 270, 200, 30);
 
-        hotelRest_pubSpendingTextField.setText("spending");
+        hotelRest_pubSpendingTextField.setUI(new JTextFieldHintUI("Spending", Color.gray));
         add(hotelRest_pubSpendingTextField);
         hotelRest_pubSpendingTextField.setBounds(700, 310, 200, 30);
 
-        phoneMobileCallSpendingTextField.setText("spending");
+        phoneMobileCallSpendingTextField.setUI(new JTextFieldHintUI("Spending", Color.gray));
         add(phoneMobileCallSpendingTextField);
         phoneMobileCallSpendingTextField.setBounds(700, 350, 200, 30);
 
-        tvRadioPhoneEquipmentSpending.setText("spending");
+        tvRadioPhoneEquipmentSpending.setUI(new JTextFieldHintUI("Spending", Color.gray));
         add(tvRadioPhoneEquipmentSpending);
         tvRadioPhoneEquipmentSpending.setBounds(700, 390, 200, 30);
 
-        pcAndITequipmentTextField.setText("spending");
+        pcAndITequipmentTextField.setUI(new JTextFieldHintUI("Spending", Color.gray));
         add(pcAndITequipmentTextField);
         pcAndITequipmentTextField.setBounds(700, 430, 200, 30);
 
-        bankingAndFinanceTextField.setText("spending");
+        bankingAndFinanceTextField.setUI(new JTextFieldHintUI("Spending", Color.gray));
         add(bankingAndFinanceTextField);
         bankingAndFinanceTextField.setBounds(700, 470, 200, 30);
 
-        paperBasedProductsTextField.setText("spending");
+        paperBasedProductsTextField.setUI(new JTextFieldHintUI("Spending", Color.gray));
         add(paperBasedProductsTextField);
         paperBasedProductsTextField.setBounds(700, 510, 200, 30);
 
-        insuranceTextField.setText("spending");
+        insuranceTextField.setUI(new JTextFieldHintUI("Spending", Color.gray));
         add(insuranceTextField);
         insuranceTextField.setBounds(700, 550, 200, 30);
 
-        clothesTextilesShoesTextField.setText("spending");
+        clothesTextilesShoesTextField.setUI(new JTextFieldHintUI("Spending", Color.gray));
         add(clothesTextilesShoesTextField);
         clothesTextilesShoesTextField.setBounds(700, 590, 200, 30);
 
-        pharmaceuticalsTextField.setText("spending");
+        pharmaceuticalsTextField.setUI(new JTextFieldHintUI("Spending", Color.gray));
         add(pharmaceuticalsTextField);
         pharmaceuticalsTextField.setBounds(700, 630, 200, 30);
 
