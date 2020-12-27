@@ -154,14 +154,16 @@ public class FoodQuestionPanel extends javax.swing.JPanel {
         jTextField8.setBounds(530, 560, 150, 30);
 
         nextButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        nextButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons and backgrounds/right-arrow.png")));
         nextButton.setText("Next");
         add(nextButton);
-        nextButton.setBounds(1110, 610, 110, 35);
+        nextButton.setBounds(1120, 620, 110, 35);
 
         goBackButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        goBackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons and backgrounds/left Arrow.png")));
         goBackButton.setText("Go Back");
         add(goBackButton);
-        goBackButton.setBounds(80, 620, 110, 35);
+        goBackButton.setBounds(50, 620, 110, 35);
 
         caloriesLabel1.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
         caloriesLabel1.setForeground(new java.awt.Color(255, 255, 255));

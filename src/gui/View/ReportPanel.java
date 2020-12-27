@@ -97,7 +97,7 @@ public class ReportPanel extends javax.swing.JPanel {
         nextPageButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons and backgrounds/right-arrow.png"))); // NOI18N
         nextPageButton.setText("Next");
         add(nextPageButton);
-        nextPageButton.setBounds(1130, 630, 110, 35);
+        nextPageButton.setBounds(1120, 620, 110, 35);
 
         backPageButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         backPageButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons and backgrounds/left Arrow.png"))); // NOI18N
