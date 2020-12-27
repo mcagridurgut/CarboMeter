@@ -64,9 +64,8 @@ public class DonationPanel extends JPanel {
         //font, size and content adjusted
         carbopointLabel.setFont(new Font("Calibri", 0, 36));
         carbopointLabel.setForeground(new Color(255, 255, 255));
-        carbopointLabel.setText("Your Total Carbopoint Level Corresponds to ");
         add(carbopointLabel);
-        carbopointLabel.setBounds(330, 200, 650, 44);
+        carbopointLabel.setBounds(330, 200, 900, 44);
 
         //easter egg button
         eggButton.setFont(new Font("Arial", 0, 12));
@@ -102,9 +101,9 @@ public class DonationPanel extends JPanel {
         questionLabel.setBounds(420, 550, 280, 30);
 
         //tl symbol label
-        tlLabel.setFont(new Font("Calibri", 0, 36));
+        tlLabel.setFont(new Font("Calibri", 1, 25));
         tlLabel.setForeground(new Color(255, 255, 255));
-        tlLabel.setText("₺");
+        tlLabel.setText("$");
         add(tlLabel);
         tlLabel.setBounds(760, 550, 20, 30);
 
@@ -191,6 +190,10 @@ public class DonationPanel extends JPanel {
      * @param evt action event
      */
     private void jTextField1ActionPerformed(ActionEvent evt) {
+    }
+
+    public void setDollar(double variable){
+        carbopointLabel.setText("Your Total Carbopoint Level Corresponds to "+ Math.round(10*(variable/7)) + "$");
     }
 
 } // end of the class

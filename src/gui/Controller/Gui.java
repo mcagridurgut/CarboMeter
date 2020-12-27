@@ -221,7 +221,10 @@ public class Gui extends JFrame{
                 oldReportsPanel.setDetailsTable(normalUser.getReports().get(0));
             }
             if(src.equals(normalUserHomePanel.challengesButton)) cardLayout.show(contentPanel,"normalChallengesPanel");
-            if(src.equals(normalUserHomePanel.donationButton)) cardLayout.show(contentPanel,"donationPanel");
+            if(src.equals(normalUserHomePanel.donationButton)) {
+                donationPanel.setDollar(normalUser.getCurrentReport().getScore()/1000);
+                cardLayout.show(contentPanel,"donationPanel");
+            }
 
             if(src.equals(normalUserHomePanel.friendsButton)) {
                 ArrayList<String> arrayList = new ArrayList<>();
