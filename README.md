@@ -27,7 +27,7 @@ In progress...
 [Flaction](https://www.flaticon.com/)
 
 * For Universal Data 
-[Kaggle] (https://www.kaggle.com/)
+[Kaggle](https://www.kaggle.com/)
 * For Turkey's data
-[TUIK] (https://www.tuik.gov.tr/)
-[OTHERS] (https://docs.google.com/document/d/1xiDDanvmGvPreQkSTFbFpgwMrc3tQ_UsjpsqpNpH0jw/edit?usp=sharing)
+[TUIK](https://www.tuik.gov.tr/)
+[OTHERS](https://docs.google.com/document/d/1xiDDanvmGvPreQkSTFbFpgwMrc3tQ_UsjpsqpNpH0jw/edit?usp=sharing)
