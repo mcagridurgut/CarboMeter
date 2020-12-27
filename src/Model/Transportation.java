@@ -34,6 +34,10 @@ public class Transportation extends Category {
   //Constant average
   public static final double DEFAULT = 15391.0;
 
+  /**
+   * constructor
+   * @param h ---> default / personalise
+   */
   public Transportation(boolean h){
     super(h);
     setDef( DEFAULT );

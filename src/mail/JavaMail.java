@@ -1,5 +1,10 @@
 package mail;
 
+/**
+ *
+ *
+ *
+ */
 public class JavaMail {
 	public static void sendMail(String email, String subject, String mail) {
 		try {
