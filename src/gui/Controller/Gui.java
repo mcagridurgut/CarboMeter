@@ -208,7 +208,7 @@ public class Gui extends JFrame{
 
             if(src.equals(normalUserHomePanel.newReportButton)){
                 cardLayout.show(contentPanel,"newReportPanel");
-                newReportPanel.setBar(50);
+                newReportPanel.setBar(0);
             }
             if(src.equals(loginPanel.forgotPasswordLabel)){
                 String str = JOptionPane.showInputDialog(this, "Lütfen kullanıcı adınızı veya e postanızı giriniz");
