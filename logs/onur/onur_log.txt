@@ -4,3 +4,7 @@ Connection between panels completed by Eren.
 
 JMenuMenu bar completed.
 10 more panels uploaded. (Total 22 panels were created for the GUI by Eren and Onur) Connection issue between Frame, container panel and MenuBar have not been fixed yet.
+
+Borderless frame applied. Exit button was put onto JMenuBar.
+Constants for questions fixed.
+New constants added.

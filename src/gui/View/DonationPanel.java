@@ -51,6 +51,7 @@ public class DonationPanel extends javax.swing.JPanel {
         eggButton.setBounds(630, 360, 40, 30);
 
         upScrollPane.setBackground(new java.awt.Color(0, 51, 51));
+//TEST
 
         textArea.setEditable(false);
         textArea.setBackground(new java.awt.Color(88, 78, 69));
