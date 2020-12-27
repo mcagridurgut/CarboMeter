@@ -191,6 +191,7 @@ public class OthersQuestionPanel extends javax.swing.JPanel {
         add(showTheReportButton);
         showTheReportButton.setBounds(1040, 620, 170, 35);
 
+        goBackButton.setFont(new java.awt.Font("Arial", 0, 12));
         goBackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons and backgrounds/left Arrow.png"))); // NOI18N
         goBackButton.setText("Go Back");
         add(goBackButton);
