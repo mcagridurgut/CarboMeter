@@ -94,16 +94,16 @@ public class LoginPanel extends javax.swing.JPanel {
 
         // welcomeLabel alignment ( font, foreground, text and position)
         forgotPasswordLabel.setFont(new Font("Arial", 2, 12)); // NOI18N
-        forgotPasswordLabel.setForeground(new Color(255, 255, 255));
+        forgotPasswordLabel.setForeground(new Color(0, 0, 0));
         forgotPasswordLabel.setText("Forgot my password");
         add(forgotPasswordLabel);
-        forgotPasswordLabel.setBounds(585, 375, 110, 20);
+        forgotPasswordLabel.setBounds(565, 415, 150, 20);
 
         // login button alignment ( font, text and position)
         loginButton.setFont(new Font("Arial", 0, 12)); // NOI18N
         loginButton.setText("Login");
         add(loginButton);
-        loginButton.setBounds(590, 400, 100, 30);
+        loginButton.setBounds(590, 370, 100, 30);
 
         // signup button alignment ( font, text and position)
         signUpButton.setFont(new Font("Arial", 0, 12)); // NOI18N

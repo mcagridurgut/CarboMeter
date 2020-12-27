@@ -212,17 +212,20 @@ public class Gui extends JFrame{
                 newReportPanel.setBar(0);
             }
             if(src.equals(loginPanel.forgotPasswordLabel)){
-                String str = JOptionPane.showInputDialog(this, "Lütfen kullanıcı adınızı veya e postanızı giriniz");
+                String str = JOptionPane.showInputDialog(null, "Lütfen kullanıcı adınızı veya e postanızı giriniz");
                 Login.forgotMyPassword(str);
             }
             if(src.equals(normalUserHomePanel.oldReportButton)) cardLayout.show(contentPanel,"oldReportsPanel");
             if(src.equals(normalUserHomePanel.challengesButton)) cardLayout.show(contentPanel,"normalChallengesPanel");
             if(src.equals(normalUserHomePanel.donationButton)) cardLayout.show(contentPanel,"donationPanel");
+
             if(src.equals(normalUserHomePanel.friendsButton)) {
                 ArrayList<String> arrayList = new ArrayList<>();
-                arrayList.add("cagribilkent");
-                arrayList.add("onur");
+                for(int i = 0; i<normalUser.getFriends().size(); i++) {
+                    arrayList.add(normalUser.getFriends().get(i).getUser());
+                }
                 friendsPanel.function(arrayList);
+                friendsPanel.setMeBar((int)normalUser.getCurrentReport().getScore());
                 cardLayout.show(contentPanel,"friendsPanel");
             }
             if(src.equals(normalUserHomePanel.recommendationsButton)) cardLayout.show(contentPanel,"recommendationsPanel");
@@ -348,7 +351,16 @@ public class Gui extends JFrame{
         actionListener al = new actionListener();
         MyKeyListener keyListener = new MyKeyListener();
         friendsPanel.addFrinedField.addKeyListener(keyListener);
-
+        friendsPanel.frinedsTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                int row = friendsPanel.frinedsTable.rowAtPoint(evt.getPoint());
+                if (row >= 0) {
+                    friendsPanel.setFriendBar(normalUser.getFriends().get(row).getUser(),
+                            (int) (normalUser.getFriends().get(row).getScore()) );
+                }
+            }
+        });
         accountPanel.changePasswordButton.addActionListener(al);
         accountPanel.logOutButton.addActionListener(al);
         donationPanel.backPageButton.addActionListener(al);
@@ -407,8 +419,11 @@ public class Gui extends JFrame{
         @Override
         public void keyReleased(KeyEvent e) {
             if(e.getKeyCode() == KeyEvent.VK_ENTER){
-                System.out.println("helo");
-                friendsPanel.addFriend( friendsPanel.addFrinedField.getText() );
+                if( normalUser.addFriend(friendsPanel.addFrinedField.getText() ) )
+                    friendsPanel.addFriend( friendsPanel.addFrinedField.getText() );
+                else{
+                    //POP UP NO SUCH USER
+                }
             }
         }
     }
