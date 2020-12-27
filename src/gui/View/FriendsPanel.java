@@ -1,8 +1,12 @@
 package gui.View;
+import database.DatabaseConnection;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 /**
  * FriendsPanel of the Carbometer desktop application. Draws the panel by swing components.
@@ -10,10 +14,47 @@ import java.awt.event.*;
  */
 
 public class FriendsPanel extends JPanel {
+    ArrayList<String> list;
+    public void function ( ArrayList<String> list){
+        this.list = list;
+        int a = list.size();
+        Object[][] arr = new Object[a][2];
+        for( int i = 0; i< a; i++){
+            arr[i][0] = list.get(i);
+            arr[i][1] = DatabaseConnection.select(list.get(i))[4];
+        }
+        frinedsTable.setModel(new DefaultTableModel(
+                arr,
+                new String [] {
+                        "Friend", "Carbopoint Level"
+                }
+        ) {
+            Class[] types = new Class [] {
+                    java.lang.Object.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                    false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+    }
+
+    public void addFriend(String friend){
+        list.add(friend);
+        function(list);
+        repaint();
+    }
 
     // Properties - components
     private JLabel addFriendLabel;
-    private JTextField addFrinedField;
+    public JTextField addFrinedField;
     private JProgressBar averageBar;
     private JLabel averageLabel;
     private JLabel background;
@@ -63,33 +104,6 @@ public class FriendsPanel extends JPanel {
         frinedsTable.setBackground(new Color(88, 78, 69));
         frinedsTable.setFont(new Font("Arial", 0, 24));
         frinedsTable.setForeground(new Color(255, 255, 255));
-        frinedsTable.setModel(new DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Friend", "Carbopoint Level"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Double.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
         frinedsTable.setRowHeight(36);
         frinedsPane.setViewportView(frinedsTable);
         if (frinedsTable.getColumnModel().getColumnCount() > 0) {

@@ -12,6 +12,7 @@ import user.SuperUser;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 /**
  * @author Eren Özen, Onur Ertunç
@@ -222,16 +223,28 @@ public class Gui extends JFrame{
             if(src.equals(normalUserHomePanel.oldReportButton)) cardLayout.show(contentPanel,"oldReportsPanel");
             if(src.equals(normalUserHomePanel.challengesButton)) cardLayout.show(contentPanel,"normalChallengesPanel");
             if(src.equals(normalUserHomePanel.donationButton)) cardLayout.show(contentPanel,"donationPanel");
-            if(src.equals(normalUserHomePanel.friendsButton)) cardLayout.show(contentPanel,"friendsPanel");
+            if(src.equals(normalUserHomePanel.friendsButton)) {
+                ArrayList<String> arrayList = new ArrayList<>();
+                arrayList.add("cagribilkent");
+                arrayList.add("onur");
+                friendsPanel.function(arrayList);
+                cardLayout.show(contentPanel,"friendsPanel");
+            }
             if(src.equals(normalUserHomePanel.recommendationsButton)) cardLayout.show(contentPanel,"recommendationsPanel");
 
             if(src.equals(othersQuestionPanel.goBackButton)){
-                if( home )
-                    cardLayout.show(contentPanel,"houseQuestionPanel");
-                else if( transportation )
-                    cardLayout.show(contentPanel,"transportationQuestion2Panel");
-                else if( food )
-                    cardLayout.show(contentPanel,"foodQuestionPanel");
+                if( home ) {
+                    housingValue = 0.0;
+                    cardLayout.show(contentPanel, "houseQuestionPanel");
+                }
+                else if( transportation ) {
+                    travelValue = 0.0;
+                    cardLayout.show(contentPanel, "transportationQuestion2Panel");
+                }
+                else if( food ) {
+                    cardLayout.show(contentPanel, "foodQuestionPanel");
+                    foodValue = 0.0;
+                }
                 else
                     cardLayout.show(contentPanel,"newReportPanel");
 
@@ -259,18 +272,9 @@ public class Gui extends JFrame{
                 }
             }
 
-            /*if(src.equals(reportPanel.backPageButton)){
-                if( others )
-                    cardLayout.show(contentPanel,"othersQuestionPanel");
-                else if ( home )
-                    cardLayout.show(contentPanel,"houseQuestionPanel");
-                else if ( transportation )
-                    cardLayout.show(contentPanel,"transportationQuestion2Panel");
-                else if ( food )
-                    cardLayout.show(contentPanel,"foodQuestionPanel");
-                else
-                    cardLayout.show(contentPanel, "newReportPanel");
-            }*/
+            if(src.equals(reportPanel.backPageButton)){
+                cardLayout.show(contentPanel, "normalUserHomePanel");
+            }
             if(src.equals(reportPanel.nextPageButton)) cardLayout.show(contentPanel,"donationPanel");
             if(src.equals(signUpPanel.loginButton)) cardLayout.show(contentPanel,"loginPanel");
 
@@ -336,9 +340,10 @@ public class Gui extends JFrame{
             }
 
             if(src.equals(transportationQuestionPanel.goBackButton)){
-                if( food )
-                    cardLayout.show(contentPanel,"foodQuestionPanel");
-                else
+                if( food ) {
+                    cardLayout.show(contentPanel, "foodQuestionPanel");
+                    foodValue = 0.0;
+                }else
                     cardLayout.show(contentPanel,"newReportPanel");
             }
 
@@ -350,6 +355,8 @@ public class Gui extends JFrame{
 
     private void buttonCreator() {
         actionListener al = new actionListener();
+        MyKeyListener keyListener = new MyKeyListener();
+        friendsPanel.addFrinedField.addKeyListener(keyListener);
 
         accountPanel.changePasswordButton.addActionListener(al);
         accountPanel.logOutButton.addActionListener(al);
@@ -393,6 +400,26 @@ public class Gui extends JFrame{
         foodQuestionPanel.nextButton.addActionListener(al);
         loginPanel.forgotPasswordLabel.addActionListener(al);
 
+    }
+
+    public class MyKeyListener implements KeyListener{
+
+        @Override
+        public void keyTyped(KeyEvent e) {
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            if(e.getKeyCode() == KeyEvent.VK_ENTER){
+                System.out.println("helo");
+                friendsPanel.addFriend( friendsPanel.addFrinedField.getText() );
+            }
+        }
     }
 
     private void panelAdder(){
