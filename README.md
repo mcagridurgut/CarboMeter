@@ -19,10 +19,16 @@ As the world average, the Carbopoint is fixed at 48 (THIS IS NOT JUST AN AVERAGE
 Carbobar created for the users to understand their Carbopoint levels more easily. It is visible in many panels. Unlike Carbopoint, Carbobar provides a representation over 100 max value. Carbobar stops updating when a user's damage level exceeds the approximate average value of 50 Carbopoints.
 
 ### Friends 
-In progress...
+Users can add friends by searching their username. They can see eachother's most recent Carbopoint level and Carbobars along with their own Carbobar. So that users can compare their Carbopoint levels easily.
+
+### Donations
+Users can easily donate money as much as their carbopoint values (OR MORE!) as $ to a recommended non govermental organization on the Donation Page. Since Carbopoint is a carefully crafted algorithm's result, users won't have to worry about how much donation they have to donate anually. We are deviding their Carbopoint values by 7*. This indicates how many trees users should donate in dollars so that these trees compensate the damage that users cause to the atmosphere and the soil. We calculate this donation amount by multiply it with 10**, and show it to the user in Donation Panel.
 
 ### Challenges 
-In progress...
+In progress
+
+### Recommandation 
+In progress
 
 # References and Image Sources
 * Licensed background image and icons 
@@ -32,7 +38,13 @@ In progress...
 * For Universal Data 
 [Kaggle](https://www.kaggle.com/) 
 [Combustion of Fuels](https://www.engineeringtoolbox.com/co2-emission-fuels-d_1085.html)
+[OTHERS](https://onedrive.live.com/view.aspx?resid=4781A361017B6B78!715&ithint=file%2cxlsx&authkey=!ACdOGUMpPUgqH14)
+
 * For Turkey's data
 [TUIK](https://www.tuik.gov.tr/) 
-[OTHERS](https://docs.google.com/document/d/1xiDDanvmGvPreQkSTFbFpgwMrc3tQ_UsjpsqpNpH0jw/edit?usp=sharing)
+[OTHERS](https://1drv.ms/w/s!AnhrewFho4FHhUZ21riZhzo57SKf?e=cMfJCO)
+
+## Readme References
+* [*](https://ythakker.medium.com/how-many-new-trees-would-it-take-to-offset-our-carbon-emissions-13c78ccb09ab)
+* [**](https://onetreeplanted.org/blogs/stories/how-much-does-it-cost-to-plant-a-tree)
 
