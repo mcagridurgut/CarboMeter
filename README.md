@@ -4,6 +4,9 @@ This is our CS102 project.
 
 Carbometer is a desktop application that calculates the total damage that users do to nature and encourages them to donate as much as the damage they have caused to nature. Carbometer makes the users' damage level more understandable, with a special unit called Carbopoint. With its intuitive interface thanks to Carbobar, Carbometer provides users with a simple to use yet effective experience.
 
+![gif](https://user-images.githubusercontent.com/72264947/103178442-da9c4980-4893-11eb-9e2f-43f4aea8c36e.gif)
+
+
 ## Features
 
 ### Carbopoint

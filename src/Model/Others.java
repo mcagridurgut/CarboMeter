@@ -7,6 +7,7 @@ package Model;
  */
 public class Others extends Category {
 
+  // QUESTIONS CONSTANTS
   public static final double PHARMACEUTICALS = 1.8635; // kgCO2 per dollar
   public static final double CLOTHES_TEXTILES_SHOES = 0.2892; // kgC2 usd dollar
   public static final double BOOKS_MAGAZINES_ETC = 0.1971; // kgCO2 usd dollar
@@ -20,9 +21,13 @@ public class Others extends Category {
   public static final double ACTIVITIES = 0.2289; // kgCO2 usd dollar
   public static final double INSURANCE = 0.1264; // kgCO2 usd dollar
   public static final double EDUCATION = 0.1791; // kgCO2 usd dollar
-
+  // DEFAULT CONSTANT
   public static final double DEFAULT = 14042.0;
 
+  /**
+   * constructor
+   * @param h ---> default / personalise for others category
+   */
   public Others(boolean h){
     super(h);
     setDef( DEFAULT );
