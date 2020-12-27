@@ -115,7 +115,7 @@ public class NewReportPanel extends JPanel {
         add(homeComboBox);
         homeComboBox.setBounds(650, 380, 100, 40);
 
-        // stuffComboBox alignment ( background, model and position)
+        // stuffComboBox alignment  ( background, model and position)
         stuffComboBox.setBackground(new Color(240, 240, 240));
         stuffComboBox.setModel(new DefaultComboBoxModel<>(new String[] { "Default", "Personalize" }));
         stuffComboBox.addActionListener(new ActionListener() {
