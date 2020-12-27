@@ -3,8 +3,8 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
-
 /**
+ * Donation panel of the Carbometer desktop application. Draws the panel by swing components.
  * @author Eren Özen, Onur Ertunç, Çağrı Durgut
  */
 
@@ -55,23 +55,23 @@ public class DonationPanel extends JPanel {
         setLayout(null);
 
         //font, size and content adjusted
-        donationLabel.setFont(new Font("Calibri", 1, 48)); // NOI18N
+        donationLabel.setFont(new Font("Calibri", 1, 48));
         donationLabel.setForeground(new Color(255, 255, 255));
         donationLabel.setText("DONATION");
         add(donationLabel);
         donationLabel.setBounds(525, 80, 230, 60);
 
         //font, size and content adjusted
-        carbopointLabel.setFont(new Font("Calibri", 0, 36)); // NOI18N
+        carbopointLabel.setFont(new Font("Calibri", 0, 36));
         carbopointLabel.setForeground(new Color(255, 255, 255));
         carbopointLabel.setText("Your Total Carbopoint Level Corresponds to ");
         add(carbopointLabel);
         carbopointLabel.setBounds(330, 200, 650, 44);
 
         //easter egg button
-        eggButton.setFont(new Font("Arial", 0, 12)); // NOI18N
-        eggButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/exclamation-mark.png"))); // NOI18N
-        eggButton.addActionListener(new java.awt.event.ActionListener() {
+        eggButton.setFont(new Font("Arial", 0, 12));
+        eggButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/exclamation-mark.png")));
+        eggButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 eggButtonActionPerformed(evt);
             }
@@ -85,7 +85,7 @@ public class DonationPanel extends JPanel {
         textArea.setEditable(false);
         textArea.setBackground(new Color(88, 78, 69));
         textArea.setColumns(20);
-        textArea.setFont(new Font("Arial", 0, 16)); // NOI18N
+        textArea.setFont(new Font("Arial", 0, 16));
         textArea.setForeground(new Color(255, 255, 255));
         textArea.setRows(5);
         textArea.setText("\nYou can fullfill your responsibility to future generations by donating\nan equal amount of money to one of the following organizations.");
@@ -95,22 +95,22 @@ public class DonationPanel extends JPanel {
         upScrollPane.setBounds(420, 270, 470, 120);
 
         //question label
-        questionLabel.setFont(new Font("Calibri", 0, 24)); // NOI18N
+        questionLabel.setFont(new Font("Calibri", 0, 24));
         questionLabel.setForeground(new Color(255, 255, 255));
         questionLabel.setText("How much did you donate?");
         add(questionLabel);
         questionLabel.setBounds(420, 550, 280, 30);
 
         //tl symbol label
-        tlLabel.setFont(new Font("Calibri", 0, 36)); // NOI18N
+        tlLabel.setFont(new Font("Calibri", 0, 36));
         tlLabel.setForeground(new Color(255, 255, 255));
         tlLabel.setText("₺");
         add(tlLabel);
         tlLabel.setBounds(760, 550, 20, 30);
 
-        //donation table
+        //donation table. contains the links of environmental organizations.
         donationTable.setBackground(new Color(88, 78, 69));
-        donationTable.setFont(new Font("Arial", 0, 14)); // NOI18N
+        donationTable.setFont(new Font("Arial", 0, 14));
         donationTable.setForeground(new Color(255, 255, 255));
         donationTable.setModel(new DefaultTableModel(
                 new Object [][] {
@@ -143,10 +143,10 @@ public class DonationPanel extends JPanel {
         downPane.setBounds(422, 402, 470, 140);
 
         //back page button
-        backPageButton.setFont(new Font("Arial", 0, 12)); // NOI18N
-        backPageButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/left Arrow.png"))); // NOI18N
+        backPageButton.setFont(new Font("Arial", 0, 12));
+        backPageButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/left Arrow.png")));
         backPageButton.setText("Go Back");
-        backPageButton.addActionListener(new java.awt.event.ActionListener() {
+        backPageButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 backPageButtonActionPerformed(evt);
             }
@@ -155,7 +155,7 @@ public class DonationPanel extends JPanel {
         backPageButton.setBounds(50, 620, 110, 35);
 
         jTextField1.setBackground(new Color(240, 240, 240));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jTextField1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
@@ -164,19 +164,32 @@ public class DonationPanel extends JPanel {
         jTextField1.setBounds(700, 550, 50, 30);
 
         // background adjusted and added
-        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg"))); // NOI18N
+        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg")));
         background.setPreferredSize(new Dimension(1280, 700));
         add(background);
         background.setBounds(0, 0, 1280, 700);
-    }
 
+    } // end of the initComponents
+
+    /**
+     * action performed of the eggButton.
+     * @param evt action event
+     */
     private void eggButtonActionPerformed(ActionEvent evt) {
     }
 
+    /**
+     * action performed of the back page button
+     * @param evt action performed
+     */
     private void backPageButtonActionPerformed(ActionEvent evt) {
     }
 
+    /**
+     * jtextfield action performed method
+     * @param evt action event
+     */
     private void jTextField1ActionPerformed(ActionEvent evt) {
     }
 
-}
+} // end of the class

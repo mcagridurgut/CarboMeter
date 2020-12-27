@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 /**
+ * Account panel of the Carbometer desktop application. Draws the panel by swing components.
  * @author Eren Özen, Onur Ertunç
  */
 public class AccountPanel extends JPanel {
@@ -45,7 +46,7 @@ public class AccountPanel extends JPanel {
         setPreferredSize(new Dimension(1280, 700));
         setLayout(null);
 
-        // logOut button adjustments ( font, icon, text and listener)
+        // logOut button alignment ( font, icon, text and listener)
         logOutButton.setFont(new Font("Arial", 0, 12));
         logOutButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/door.png")));
         logOutButton.setText("Log Out");
@@ -58,7 +59,7 @@ public class AccountPanel extends JPanel {
         add(logOutButton);
         logOutButton.setBounds(720, 390, 180, 30);
 
-        // username field adjustments ( editable, font, and listener)
+        // username field alignment ( editable, font, and listener)
         usernameField.setEditable(false);
         usernameField.setFont(new Font("Arial", 1, 12));
         usernameField.addActionListener(new ActionListener() {
@@ -70,7 +71,7 @@ public class AccountPanel extends JPanel {
         add(usernameField);
         usernameField.setBounds(400, 290, 180, 30);
 
-        // account label adjustments ( font, foreground, alignment, text and position)
+        // account label alignment ( font, foreground, alignment, text and position)
         accountLabel.setFont(new Font("Calibri", 1, 48));
         accountLabel.setForeground(new Color(255, 255, 255));
         accountLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -79,7 +80,7 @@ public class AccountPanel extends JPanel {
         add(accountLabel);
         accountLabel.setBounds(540, 80, 200, 60);
 
-        // donations label adjustments ( font, foreground, alignment, text and position)
+        // donations label alignment ( font, foreground, alignment, text and position)
         donationsLabel.setFont(new Font("Arial", 1, 18));
         donationsLabel.setForeground(new Color(255, 255, 255));
         donationsLabel.setHorizontalAlignment(SwingConstants.TRAILING);
@@ -88,7 +89,7 @@ public class AccountPanel extends JPanel {
         add(donationsLabel);
         donationsLabel.setBounds(300, 390, 90, 30);
 
-        //
+        // change password button alignments ( font, icon, text)
         changePasswordButton.setFont(new Font("Arial", 0, 12));
         changePasswordButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/key.png")));
         changePasswordButton.setText("Change Password");
@@ -97,9 +98,11 @@ public class AccountPanel extends JPanel {
                 changePasswordButtonActionPerformed(evt);
             }
         });
+        // added to the panel
         add(changePasswordButton);
         changePasswordButton.setBounds(720, 290, 180, 30);
 
+        // donations text field adjustments. background, font, bounds were aligned and it is not editable.
         donationsField.setBackground(new Color(240, 240, 240));
         donationsField.setFont(new Font("Arial", 1, 12));
         donationsField.addActionListener(new ActionListener() {
@@ -111,6 +114,7 @@ public class AccountPanel extends JPanel {
         add(donationsField);
         donationsField.setBounds(400, 390, 180, 30);
 
+        // username field alignment (positioning, font, foreground)
         usernameLabel.setFont(new Font("Arial", 1, 18));
         usernameLabel.setForeground(new Color(255, 255, 255));
         usernameLabel.setHorizontalAlignment(SwingConstants.TRAILING);
@@ -119,6 +123,7 @@ public class AccountPanel extends JPanel {
         add(usernameLabel);
         usernameLabel.setBounds(300, 290, 90, 30);
 
+        // background alignment ( dimension and positioning)
         background.setFont(new Font("Calibri", 0, 11));
         background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg")));
         background.setMaximumSize(new Dimension(1280, 700));
@@ -127,27 +132,44 @@ public class AccountPanel extends JPanel {
         add(background);
         background.setBounds(0, 0, 1280, 700);
 
+        // panel alignment
         jPanel1.setPreferredSize(new Dimension(1280, 700));
         jPanel1.setLayout(null);
         add(jPanel1);
         jPanel1.setBounds(0, 0, 1280, 700);
-    }
+    } // end of the initComponents
 
+    /**
+     * action performed for change password button. check gui controller class
+     * @param evt action event
+     */
     public void changePasswordButtonActionPerformed(ActionEvent evt) {
 
     }
 
+    /**
+     * action performed of logout button. check gui class under controller package
+     * @param evt action event
+     */
     public void logOutButtonActionPerformed(ActionEvent evt) {
 
 
     }
 
+    /**
+     * check gui class under controller package
+     * @param evt action event
+     */
     public void usernameFieldActionPerformed(ActionEvent evt) {
 
     }
 
+    /**
+     * check gui class under controller package
+     * @param evt action event
+     */
     public void donationsFieldActionPerformed(ActionEvent evt) {
 
     }
 
-}
+} // end of the class

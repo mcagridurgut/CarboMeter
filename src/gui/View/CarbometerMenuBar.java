@@ -1,6 +1,10 @@
 package gui.View;
 import javax.swing.*;
 
+/**
+ * extends the jmenubar for carbometer app menubar. Draws the menubar by swing components
+ * @author Onur Ertunc, Eren Özen, Çağrı Durgut
+ */
 public class CarbometerMenuBar extends JMenuBar {
 
     public JMenu menu;
@@ -38,12 +42,19 @@ public class CarbometerMenuBar extends JMenuBar {
         // adding JMenu menu to the JMenuBar
         this.add(exitMenu);
 
-    }
+    } // end of the initComponents
 
+    /**
+     * for security and logic purposes, adds menu to the bar after an operation.
+     */
     public void addMenu() {
         this.add(menu);
         repaint();
     }
+
+    /**
+     * for security and logic purposes, removes the menu from the bar
+     */
     public void removeMenu() {
         this.remove(menu);
         repaint();
