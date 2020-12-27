@@ -1,23 +1,43 @@
 package gui.View;
-import javax.swing.*;
-import javax.swing.plaf.basic.BasicTextFieldUI;
-import javax.swing.text.JTextComponent;
+
 import java.awt.*;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
+import javax.swing.*;
+import java.awt.event.*;
 
 /**
+ * Login panel of the Carbometer desktop application. Draws the panel by swing components.
  * @author Eren Özen, Onur Ertunç
  */
 
-public class LoginPanel extends JPanel {
+public class LoginPanel extends javax.swing.JPanel {
 
+    // Properties of the login panel
+    private JLabel background;
+    private JLabel carbometerLabel;
+    private JLabel forAGreenFutureLabel;
+    public JButton forgotPasswordLabel;
+    public JButton loginButton;
+    private JLabel noAccountLabel;
+    public JPasswordField passwordField;
+    private JLabel passwordSignature;
+    public JButton signUpButton;
+    public JTextField userNameField;
+    private JLabel usernameSignature;
+    private JLabel welcomeLabel;
+
+    /**
+     * constructor of the class
+     */
     public LoginPanel() {
         initComponents();
     }
 
+    /**
+     * initializes the properties of the class
+     */
     private void initComponents() {
 
+        //initialization of the components
         carbometerLabel = new JLabel();
         forAGreenFutureLabel = new JLabel();
         welcomeLabel = new JLabel();
@@ -31,23 +51,27 @@ public class LoginPanel extends JPanel {
         passwordSignature = new JLabel();
         background = new JLabel();
 
+        // size of the panel and layout adjusted
         setPreferredSize(new Dimension(1280, 700));
         setLayout(null);
 
-        carbometerLabel.setFont(new Font("Calibri", 1, 48));
+        // carbometerlabel alignment ( font, foreground, alignment, text and position)
+        carbometerLabel.setFont(new Font("Calibri", 1, 48)); // NOI18N
         carbometerLabel.setForeground(new Color(255, 255, 255));
         carbometerLabel.setHorizontalAlignment(SwingConstants.CENTER);
         carbometerLabel.setText("CARBOMETER");
         add(carbometerLabel);
         carbometerLabel.setBounds(500, 80, 280, 60);
 
-        forAGreenFutureLabel.setFont(new Font("Calibri", 0, 24));
+        // forAGreenFutureLabel alignment ( font, foreground, alignment, text and position)
+        forAGreenFutureLabel.setFont(new Font("Calibri", 0, 24)); // NOI18N
         forAGreenFutureLabel.setForeground(new Color(255, 255, 255));
         forAGreenFutureLabel.setHorizontalAlignment(SwingConstants.CENTER);
         forAGreenFutureLabel.setText("For a Green Future");
         add(forAGreenFutureLabel);
         forAGreenFutureLabel.setBounds(545, 130, 190, 25);
 
+        // welcomeLabel alignment ( font, foreground, alignment, text and position)
         welcomeLabel.setFont(new Font("Calibri", 0, 24)); // NOI18N
         welcomeLabel.setForeground(new Color(255, 255, 255));
         welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -55,71 +79,69 @@ public class LoginPanel extends JPanel {
         add(welcomeLabel);
         welcomeLabel.setBounds(590, 160, 100, 25);
 
+        // usernameField alignment ( background, font)
         userNameField.setBackground(new Color(240, 240, 240));
         userNameField.setFont(new Font("Arial", 1, 12)); // NOI18N
         //userNameField.setUI(new JTextFieldHintUI("Username or Email", Color.gray));
         add(userNameField);
         userNameField.setBounds(550, 280, 180, 30);
 
-        passwordField.setBackground(new java.awt.Color(240, 240, 240));
-        passwordField.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        // passwordField alignment ( background, font, and position)
+        passwordField.setBackground(new Color(240, 240, 240));
+        passwordField.setFont(new Font("Arial", 1, 12)); // NOI18N
         add(passwordField);
         passwordField.setBounds(550, 320, 180, 30);
 
-        forgotPasswordLabel.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
-        forgotPasswordLabel.setForeground(new java.awt.Color(255, 255, 255));
+        // welcomeLabel alignment ( font, foreground, text and position)
+        forgotPasswordLabel.setFont(new Font("Arial", 2, 12)); // NOI18N
+        forgotPasswordLabel.setForeground(new Color(255, 255, 255));
         forgotPasswordLabel.setText("Forgot my password");
         add(forgotPasswordLabel);
         forgotPasswordLabel.setBounds(585, 375, 110, 20);
 
-        loginButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        // login button alignment ( font, text and position)
+        loginButton.setFont(new Font("Arial", 0, 12)); // NOI18N
         loginButton.setText("Login");
         add(loginButton);
         loginButton.setBounds(590, 400, 100, 30);
 
-        signUpButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        // signup button alignment ( font, text and position)
+        signUpButton.setFont(new Font("Arial", 0, 12)); // NOI18N
         signUpButton.setText("Sign Up");
         add(signUpButton);
         signUpButton.setBounds(590, 530, 100, 30);
 
-        noAccountLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        noAccountLabel.setForeground(new java.awt.Color(255, 255, 255));
+        // noAccountLabel alignment ( font, foreground, text and position)
+        noAccountLabel.setFont(new Font("Arial", 0, 12)); // NOI18N
+        noAccountLabel.setForeground(new Color(255, 255, 255));
         noAccountLabel.setText("Don't have an account?");
         add(noAccountLabel);
         noAccountLabel.setBounds(575, 500, 130, 20);
 
-        usernameSignature.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        usernameSignature.setForeground(new java.awt.Color(255, 255, 255));
+        // usernameSignature alignment ( font, foreground, text and position)
+        usernameSignature.setFont(new Font("Arial", 1, 18)); // NOI18N
+        usernameSignature.setForeground(new Color(255, 255, 255));
         usernameSignature.setText("Username or e-mail");
         add(usernameSignature);
         usernameSignature.setBounds(350, 280, 180, 30);
 
-        passwordSignature.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        passwordSignature.setForeground(new java.awt.Color(255, 255, 255));
+        // passwordSignature alignment ( font, foreground, text and position)
+        passwordSignature.setFont(new Font("Arial", 1, 18)); // NOI18N
+        passwordSignature.setForeground(new Color(255, 255, 255));
         passwordSignature.setText("Password");
         add(passwordSignature);
         passwordSignature.setBounds(440, 320, 90, 30);
 
-        background.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg"))); // NOI18N
-        background.setMaximumSize(new java.awt.Dimension(1280, 700));
-        background.setMinimumSize(new java.awt.Dimension(1280, 700));
-        background.setPreferredSize(new java.awt.Dimension(1280, 700));
+        // background alignment ( dimension and positioning)
+        background.setFont(new Font("Calibri", 0, 11)); // NOI18N
+        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg"))); // NOI18N
+        background.setMaximumSize(new Dimension(1280, 700));
+        background.setMinimumSize(new Dimension(1280, 700));
+        background.setPreferredSize(new Dimension(1280, 700));
         add(background);
         background.setBounds(0, 0, 1280, 700);
     }
 
-    private javax.swing.JLabel background;
-    private javax.swing.JLabel carbometerLabel;
-    private javax.swing.JLabel forAGreenFutureLabel;
-    public javax.swing.JButton forgotPasswordLabel;
-    public javax.swing.JButton loginButton;
-    private javax.swing.JLabel noAccountLabel;
-    public javax.swing.JPasswordField passwordField;
-    private javax.swing.JLabel passwordSignature;
-    public javax.swing.JButton signUpButton;
-    public javax.swing.JTextField userNameField;
-    private javax.swing.JLabel usernameSignature;
-    private javax.swing.JLabel welcomeLabel;
+
 
 }
