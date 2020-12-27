@@ -215,7 +215,11 @@ public class Gui extends JFrame{
                 String str = JOptionPane.showInputDialog(this, "Lütfen kullanıcı adınızı veya e postanızı giriniz");
                 Login.forgotMyPassword(str);
             }
-            if(src.equals(normalUserHomePanel.oldReportButton)) cardLayout.show(contentPanel,"oldReportsPanel");
+            if(src.equals(normalUserHomePanel.oldReportButton)){
+                cardLayout.show(contentPanel,"oldReportsPanel");
+                oldReportsPanel.setTable(normalUser.getReports());
+                oldReportsPanel.setDetailsTable(normalUser.getReports().get(0));
+            }
             if(src.equals(normalUserHomePanel.challengesButton)) cardLayout.show(contentPanel,"normalChallengesPanel");
             if(src.equals(normalUserHomePanel.donationButton)) cardLayout.show(contentPanel,"donationPanel");
 
@@ -351,13 +355,23 @@ public class Gui extends JFrame{
         actionListener al = new actionListener();
         MyKeyListener keyListener = new MyKeyListener();
         friendsPanel.addFrinedField.addKeyListener(keyListener);
-        friendsPanel.frinedsTable.addMouseListener(new java.awt.event.MouseAdapter() {
+        friendsPanel.frinedsTable.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+            public void mouseClicked(MouseEvent evt) {
                 int row = friendsPanel.frinedsTable.rowAtPoint(evt.getPoint());
                 if (row >= 0) {
                     friendsPanel.setFriendBar(normalUser.getFriends().get(row).getUser(),
                             (int) (normalUser.getFriends().get(row).getScore()) );
+                }
+            }
+        });
+        oldReportsPanel.dateTable.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent evt) {
+                int row = oldReportsPanel.dateTable.rowAtPoint(evt.getPoint());
+                if (row >= 0) {
+                    oldReportsPanel.setDetailsTable(normalUser.getReports().get(row));
+                    oldReportsPanel.setBar((int)normalUser.getReports().get(row).getScore()/1000);
                 }
             }
         });

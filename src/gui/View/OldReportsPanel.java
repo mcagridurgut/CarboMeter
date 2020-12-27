@@ -1,8 +1,11 @@
 package gui.View;
 
+import Model.Report;
+
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 /**
  * Old reports panel of the Carbometer desktop application. Draws the panel by swing components.
@@ -15,10 +18,10 @@ public class OldReportsPanel extends javax.swing.JPanel {
     private JLabel carbobarLabel;
     private JProgressBar carbobarProgressBar;
     private JScrollPane datePane;
-    private JTable dateTable;
+    public JTable dateTable;
     private JLabel detailsLabel;
     private JScrollPane detailsPane;
-    private JTable detailsTable;
+    public JTable detailsTable;
     private JLabel leftLabel;
     private JLabel oldReportLabel;
 
@@ -58,7 +61,6 @@ public class OldReportsPanel extends javax.swing.JPanel {
         oldReportLabel.setBounds(500, 80, 280, 60);
 
         // carbobar progress bar alignment (dimension, focus and position)
-        carbobarProgressBar.setValue(10);
         carbobarProgressBar.setPreferredSize(new Dimension(300, 20));
         carbobarProgressBar.setRequestFocusEnabled(false);
         add(carbobarProgressBar);
@@ -68,33 +70,7 @@ public class OldReportsPanel extends javax.swing.JPanel {
         dateTable.setBackground(new Color(88, 78, 69));
         dateTable.setFont(new Font("Arial", 0, 18)); // NOI18N
         dateTable.setForeground(new Color(255, 255, 255));
-        dateTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"", null},
-                {"", null},
-                {"", null},
-                {"", null},
-                {"", null}
-            },
-            new String [] {
-                "Date", "Carbopoint"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
         dateTable.setRowHeight(44);
         datePane.setViewportView(dateTable);
         if (dateTable.getColumnModel().getColumnCount() > 0) {
@@ -109,34 +85,7 @@ public class OldReportsPanel extends javax.swing.JPanel {
         detailsTable.setBackground(new Color(88, 78, 69));
         detailsTable.setFont(new Font("Arial", 0, 18)); // NOI18N
         detailsTable.setForeground(new Color(255, 255, 255));
-        detailsTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Total", null},
-                {"Food", null},
-                {"Transportation", null},
-                {"House", null},
-                {"Others", null},
-                {"Donation", null}
-            },
-            new String [] {
-                "Date", "01.01.21"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class
-            };
-            boolean[] canEdit = new boolean [] {
-                true, false
-            };
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
         detailsTable.setRowHeight(36);
         detailsPane.setViewportView(detailsTable);
         if (detailsTable.getColumnModel().getColumnCount() > 0) {
@@ -174,7 +123,69 @@ public class OldReportsPanel extends javax.swing.JPanel {
         background.setBounds(0, 0, 1280, 700);
     }
 
+    public void setTable(ArrayList<Report> reports){
+        Object[][] arr = new Object[reports.size()][2];
+        for(int i = 0; i<reports.size();i++){
+            arr[i][0] = i;
+            arr[i][1] = ((int) reports.get(i).getScore()) /1000.0 ;
+        }
+        dateTable.setModel(new javax.swing.table.DefaultTableModel(
+                arr,
+                new String [] {
+                        "Measurement", "Carbopoint"
+                }
+        ) {
+            Class[] types = new Class [] {
+                    java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                    false, false
+            };
 
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+    }
+
+    public void setDetailsTable( Report  report ){
+        System.out.println("assad");
+        detailsTable.setModel(new javax.swing.table.DefaultTableModel(
+                new Object [][] {
+                        {"Total", ((int) report.getScore()) /1000.0},
+                        {"Food", ((int) report.getFoodScore()) /1000.0},
+                        {"Transportation", ((int) report.getTransportScore()) /1000.0},
+                        {"House", ((int) report.getHomeScore()) /1000.0},
+                        {"Others", ((int) report.getOthersScore()) /1000.0},
+                },
+                new String [] {
+                        "Category", "Value"
+                }
+        ) {
+            Class[] types = new Class [] {
+                    java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                    true, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+    }
+
+    public void setBar(int bar){
+        carbobarProgressBar.setValue(bar);
+    }
 
 
 }
