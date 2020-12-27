@@ -99,6 +99,7 @@ public class Gui extends JFrame{
             }
             if(src.equals(houseQuestionPanel.nextButton)){
                 try {
+                    housingValue = 0.0;
                     housingValue += Double.parseDouble(houseQuestionPanel.electricityTextField.getText()) *Home.ELECTRICITY_FACTOR;
                     housingValue += Double.parseDouble(houseQuestionPanel.LPGTextField.getText()) *Home.LPG_FACTOR;
                     housingValue += Double.parseDouble(houseQuestionPanel.naturalGasTextField.getText()) *Home.NATURAL_GAS_FACTOR;
