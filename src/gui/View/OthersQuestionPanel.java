@@ -151,7 +151,7 @@ public class OthersQuestionPanel extends JPanel {
         add(hotelPubLabel);
         hotelPubLabel.setBounds(230, 310, 360, 30);
 
-        // call cost label alignment (font, foreground, text and position)
+        // call cost label alignment (font,foreground, text and position)
         callCostLabel.setFont(new Font("Arial", 3, 12)); // NOI18N
         callCostLabel.setForeground(new Color(255, 255, 255));
         callCostLabel.setText("Telephone, mobile/cell phone call costs");
