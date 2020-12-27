@@ -31,6 +31,10 @@ In progress...
 
 * For Universal Data 
 [Kaggle](https://www.kaggle.com/)
+
+[Combustion of Fuels](https://www.engineeringtoolbox.com/co2-emission-fuels-d_1085.html)
 * For Turkey's data
 [TUIK](https://www.tuik.gov.tr/)
+
 [OTHERS](https://docs.google.com/document/d/1xiDDanvmGvPreQkSTFbFpgwMrc3tQ_UsjpsqpNpH0jw/edit?usp=sharing)
+
