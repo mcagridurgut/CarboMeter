@@ -94,7 +94,7 @@ public class Gui extends JFrame{
                 else if ( food )
                     cardLayout.show(contentPanel,"foodQuestionPanel");
                 else
-                    cardLayout.show(contentPanel,"reportPanel");
+                    cardLayout.show(contentPanel,"newReportPanel");
             }
             if(src.equals(houseQuestionPanel.nextButton)){
                 try {
@@ -164,6 +164,7 @@ public class Gui extends JFrame{
                     cardLayout.show(contentPanel, "othersQuestionPanel");
                     foodValue = Food.DEFAULT;
                     travelValue = Transportation.DEFAULT;
+                    housingValue = Home.DEFAULT;
                 }
                 else {
                     // YOU HAVE TO Personalize at least one field
@@ -174,10 +175,10 @@ public class Gui extends JFrame{
             if(src.equals(foodQuestionPanel.nextButton)) {
                 try {
                     foodValue += Double.parseDouble(foodQuestionPanel.jTextField1.getText()) * Food.BEEF_LAMB_VEAL;
-                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField2.getText()) * Food.FISH_SEAFOOD;
                     foodValue += Double.parseDouble(foodQuestionPanel.jTextField3.getText()) * Food.OTHER_MEAT;
                     foodValue += Double.parseDouble(foodQuestionPanel.jTextField4.getText()) * Food.DAIRY;
                     foodValue += Double.parseDouble(foodQuestionPanel.jTextField5.getText()) * Food.GRAINS;
+                    foodValue += Double.parseDouble(foodQuestionPanel.jTextField2.getText()) * Food.FISH_SEAFOOD;
                     foodValue += Double.parseDouble(foodQuestionPanel.jTextField6.getText()) * Food.FRUITS;
                     foodValue += Double.parseDouble(foodQuestionPanel.jTextField7.getText()) * Food.SNACKS;
                     foodValue += Double.parseDouble(foodQuestionPanel.jTextField8.getText()) * Food.POULTRY_EGGS;
@@ -232,7 +233,7 @@ public class Gui extends JFrame{
                 else if( food )
                     cardLayout.show(contentPanel,"foodQuestionPanel");
                 else
-                    cardLayout.show(contentPanel,"reportPanel");
+                    cardLayout.show(contentPanel,"newReportPanel");
 
             }
             if(src.equals(othersQuestionPanel.showTheReportButton)) {
@@ -322,13 +323,16 @@ public class Gui extends JFrame{
             if(src.equals(transportationQuestion2Panel.goBackButton)) cardLayout.show(contentPanel,"transportationQuestionPanel");
 
             if(src.equals(transportationQuestion2Panel.nextButton)){
-                if( home )
+                if( home ) {
                     cardLayout.show(contentPanel,"houseQuestionPanel");
-                else if ( others )
-                    cardLayout.show(contentPanel,"othersQuestionPanel");
-                else
-                    cardLayout.show(contentPanel,"reportPanel");
-
+                }else if ( others ) {
+                    housingValue = Home.DEFAULT;
+                    cardLayout.show(contentPanel, "othersQuestionPanel");
+                }else {
+                    housingValue = Home.DEFAULT;
+                    othersValue = Others.DEFAULT;
+                    cardLayout.show(contentPanel, "reportPanel");
+                }
             }
 
             if(src.equals(transportationQuestionPanel.goBackButton)){
@@ -339,7 +343,6 @@ public class Gui extends JFrame{
             }
 
             if(src.equals(transportationQuestionPanel.nextButton)) {
-
                 cardLayout.show(contentPanel,"transportationQuestion2Panel");
             }
         }
