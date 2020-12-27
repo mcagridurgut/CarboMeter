@@ -212,7 +212,7 @@ public class Gui extends JFrame{
                 newReportPanel.setBar(0);
             }
             if(src.equals(loginPanel.forgotPasswordLabel)){
-                String str = JOptionPane.showInputDialog(this, "Lütfen kullanıcı adınızı veya e postanızı giriniz");
+                String str = JOptionPane.showInputDialog(null, "Lütfen kullanıcı adınızı veya e postanızı giriniz");
                 Login.forgotMyPassword(str);
             }
             if(src.equals(normalUserHomePanel.oldReportButton)) cardLayout.show(contentPanel,"oldReportsPanel");

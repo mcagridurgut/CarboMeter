@@ -1,37 +1,58 @@
 package gui.View;
-
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 /**
+ * Users panel of the Carbometer desktop application. Draws the panel by swing components.
  * @author Eren Özen, Onur Ertunç
  */
+public class UsersPanel extends JPanel {
 
-public class UsersPanel extends javax.swing.JPanel {
+    // Properties - components
+    private JLabel background;
+    public JButton kickUserButton;
+    private JLabel usersLabel;
+    private JScrollPane usersPane;
+    private JTable usersTable;
 
+    /**
+     * constructor of the class. Calls the initComponents method
+     */
     public UsersPanel() {
         initComponents();
     }
 
+    /**
+     * initializes components of the panel and align them
+     */
     private void initComponents() {
 
-        usersLabel = new javax.swing.JLabel();
-        usersPane = new javax.swing.JScrollPane();
-        usersTable = new javax.swing.JTable();
-        kickUserButton = new javax.swing.JButton();
-        background = new javax.swing.JLabel();
+        // initialization of the components
+        usersLabel = new JLabel();
+        usersPane = new JScrollPane();
+        usersTable = new JTable();
+        kickUserButton = new JButton();
+        background = new JLabel();
 
-        setPreferredSize(new java.awt.Dimension(1280, 700));
+        // dimension of the panel and layout settings
+        setPreferredSize(new Dimension(1280, 700));
         setLayout(null);
 
-        usersLabel.setBackground(new java.awt.Color(255, 255, 255));
-        usersLabel.setFont(new java.awt.Font("Calibri", 1, 48)); // NOI18N
-        usersLabel.setForeground(new java.awt.Color(255, 255, 255));
+        // usersLabel alignment
+        usersLabel.setBackground(new Color(255, 255, 255));
+        usersLabel.setFont(new Font("Calibri", 1, 48)); // NOI18N
+        usersLabel.setForeground(new Color(255, 255, 255));
         usersLabel.setText("USERS");
         add(usersLabel);
         usersLabel.setBounds(575, 80, 130, 60);
 
-        usersTable.setBackground(new java.awt.Color(88, 78, 69));
-        usersTable.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        usersTable.setForeground(new java.awt.Color(255, 255, 255));
-        usersTable.setModel(new javax.swing.table.DefaultTableModel(
+        // usersTable alignment
+        usersTable.setBackground(new Color(88, 78, 69));
+        usersTable.setFont(new Font("Arial", 0, 18)); // NOI18N
+        usersTable.setForeground(new Color(255, 255, 255));
+        usersTable.setModel(new DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -51,31 +72,33 @@ public class UsersPanel extends javax.swing.JPanel {
             usersTable.getColumnModel().getColumn(3).setHeaderValue("Uncompleted Challenges");
         }
 
+        // usersTable added to the panel
         add(usersPane);
         usersPane.setBounds(230, 180, 810, 320);
 
-        kickUserButton.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        kickUserButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons and backgrounds/cancel.png"))); // NOI18N
+        // kick user button alignments
+        kickUserButton.setFont(new Font("Arial", 0, 18)); // NOI18N
+        kickUserButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/cancel.png")));
         kickUserButton.setText("Kick User");
-        kickUserButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        kickUserButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 kickUserButtonActionPerformed(evt);
             }
         });
         add(kickUserButton);
         kickUserButton.setBounds(560, 550, 180, 60);
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg"))); // NOI18N
+        // background
+        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg")));
         add(background);
         background.setBounds(0, 0, 1280, 700);
+    } // end of the initComponents
+
+    /**
+     * kickUser button action performed method
+     * @param evt action event
+     */
+    private void kickUserButtonActionPerformed(ActionEvent evt) {
     }
 
-    private void kickUserButtonActionPerformed(java.awt.event.ActionEvent evt) {
-    }
-    private javax.swing.JLabel background;
-    public javax.swing.JButton kickUserButton;
-    private javax.swing.JLabel usersLabel;
-    private javax.swing.JScrollPane usersPane;
-    private javax.swing.JTable usersTable;
-
-}
+} // end of the class
