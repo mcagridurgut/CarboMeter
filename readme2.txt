@@ -23,6 +23,10 @@ libraries, etc., as well as for instructions for setup, compilation & running of
 
 Çağrı 
 Onur
+Files that I primarily worked on: View (Graphical User Interface) classes and Controller of the application. I used
+NetBeans v8.2, Eclipse 2019, and IntelliJ IDEA 2020.3 x64 version. 
+Java Swing Library used to draw GUI components. For background, JLabel and to get user input, JTextField. For the controller,
+JButtons and JLabels used. to communicate with the user to provide easy to use UI, JOptionPane pop-ups were added.
 Uygar
 Alper
 Eren
