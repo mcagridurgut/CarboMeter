@@ -33,3 +33,18 @@ Finally, I would like to thank my sub-team friend Onur Ertunç, who was working 
 dozens of times over zoom. (12.28.2020)
                                                                                                                                                                      
 ONUR ERTUNÇ
+Since this is my very first project, the first team work experience on this major, and the practice 
+of working individually, adapting to the team work was difficult at the beginning, but I adapted. 
+In terms of the project, although we did not provide a very complex userinterface, it was beneficial 
+to me to understand how to use Java Swing library components while designing a graphical user interface.
+In addition, the project taught me the importance of how I can maintain doing project and learning the 
+components that I will use at the same process. Doing thisproject, Also I learned the importance of adding 
+an idea to the project, I should learn how I can implement it on my work. Although me and my sub-team friend
+Eren Özen did not make a well looking, up to date user interface, I spent a lot of time to understand
+the abilites of the tools that I used during the process. If I would be at the beginning of the project,
+learning the tools, I would also try to learn and implement JavaFX to the project so that at least we
+can provide better user interface to users and learn something new in addition to the CS102 course cover.
+As my sub-team friend mentioned, the program has quite original points which makes it unique so that I am
+happy with the result and the things that I contributed to the project. I would like to thank my team mate
+Eren since his motivating attitude to me and dozens of hours spent with me while doing our responsibilities 
+in the project. (12.28.2020)
