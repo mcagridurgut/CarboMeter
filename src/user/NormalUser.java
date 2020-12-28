@@ -117,11 +117,13 @@ public class NormalUser extends User {
     return false;
   }
 
-  private boolean isSuchFriendExists (String name){
-    for( Report friend : friends ){
-      if( friend.getUser().equals(name) )
+  private boolean isSuchFriendExists (String name) {
+   if(friends!=null){
+     for (Report friend : friends) {
+      if (friend.getUser().equals(name))
         return true;
     }
+  }
     return false;
   }
 

@@ -229,10 +229,12 @@ public class Gui extends JFrame{
 
             if(src.equals(normalUserHomePanel.friendsButton)) {
                 ArrayList<String> arrayList = new ArrayList<>();
-                for(int i = 0; i<normalUser.getFriends().size(); i++) {
-                    arrayList.add(normalUser.getFriends().get(i).getUser());
+                if(normalUser.getFriends()!=null) {
+                    for (int i = 0; i < normalUser.getFriends().size(); i++) {
+                        arrayList.add(normalUser.getFriends().get(i).getUser());
+                    }
+                    friendsPanel.function(arrayList);
                 }
-                friendsPanel.function(arrayList);
                 friendsPanel.setMeBar((int)normalUser.getCurrentReport().getScore());
                 cardLayout.show(contentPanel,"friendsPanel");
             }
