@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>130</x>
+      <y>240</y>
+      <w>240</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>_JavaMail_
+--
++ sendMail(String,String,String):void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>190</y>
+      <w>430</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>_JavaMailUtil_
+--
+- String MyAccountEmail
+- Properties properties
+- String password
+- Session session
+- Message message
+--
++ sendMail(String,String,String)throws Exception:void
++ prepareMessage(session,String,String,String,String):Message</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>260</y>
+      <w>280</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+
+                                                           0..*</panel_attributes>
+    <additional_attributes>10.0;20.0;260.0;20.0</additional_attributes>
+  </element>
+</diagram>
