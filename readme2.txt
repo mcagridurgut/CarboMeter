@@ -6,13 +6,20 @@ Description : Carbometer is a desktop application that calculates the total dama
 
 Current Status: Unfinished
 
-What Has Been Done:  
+What Has Been Done: 
+All the graphical user interface components completed whether the core classes responsible to manipulate them completed or not. A normal user can create a new report,
+check the old reports, can add friends, see and compare their Carbopoints and make donations linked non-governmental environmental organizations. Carbobars are working
+efficiently. Pages are connected with Java Swing Library's CardLayout ability. Database is working and the reports which were created by the user are stored in the
+local database. Creating a new user, and forgotten password situation, e-mail verification code are sent.
 
 What Works:
+All the listed things in the - What has been done - part are working efficiently and without bugs, errors. 
 
 What Doesn't:
+Although the GUI part of the project is completed, Super-user, Add Challenge and Recommendations have not been implemented in the core of the Carbometer. 
 
 What Remains To Be Done:
+Super-user, Add Challenge and Recommendations core classes.
 
 Contributions 
 (files we primarily worked on, details of the software used including version numbers, libraries, etc., as well as for instructions for setup, compilation & running of the project.)
