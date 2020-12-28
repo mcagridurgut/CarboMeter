@@ -48,3 +48,15 @@ As my sub-team friend mentioned, the program has quite original points which mak
 happy with the result and the things that I contributed to the project. I would like to thank my team mate
 Eren since his motivating attitude to me and dozens of hours spent with me while doing our responsibilities 
 in the project. (12.28.2020)
+
+MUSTAFA ÇAĞRI DURGUT
+This project was a nice experience for me to put practice my theorical knowledge of Computer science and Java with a
+hands on project. I took part in almost every part of the project and gained a real teamwork experience. My first duty
+as we shared in design report was designing and maintaining a database for the application. I choose that since this
+is a desktop application a local database would be a nice match. Then I decided that SQLite is the best choice for that
+because it is light and practical, I added jar file of SQLite in to project dependencies and included into project.
+Thereafter I designed the database, DatabaseConnection.java, It includes one table called users and users table includes
+14 columns. I tried to code spesific methods to help my friends at front end dont have trouble while connecting. After I 
+finished the database, i revised Core classes and connect them to the database, after that I took part in coding Gui.java.
+Then after we finished some parts I took part in testing, I found the mistakes that would cause of crashing of the app, and
+debugged. Overall, it was a nice experience for me. (12.28.2020)
