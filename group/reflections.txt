@@ -1,4 +1,4 @@
-EREN ÖZEN
+﻿EREN ÖZEN
 We have made an effective and easy-to-use application where people can easily calculate
 their level of damage to nature and fulfill their responsibilities by donating as much
 as their damage level. In GUI, database and core classes, so at every point of our 
@@ -60,3 +60,17 @@ Thereafter I designed the database, DatabaseConnection.java, It includes one tab
 finished the database, i revised Core classes and connect them to the database, after that I took part in coding Gui.java.
 Then after we finished some parts I took part in testing, I found the mistakes that would cause of crashing of the app, and
 debugged. Overall, it was a nice experience for me. (12.28.2020)
+
+ALPER MUMCULAR
+I think this project was a huge experience for us to see the importance of teamwork. At the beginning of the course, I was 
+a little bit doubtful about the project, but after a short time, I started to think we can do this project, and while doing this
+we can learn something we do not know. And we learned new things at the end of the project. Although I did not participate in GUI classes,
+I learned a new layout style which is CardLayout. Firstly, I did not believe that we can send an email to the user by using only Java code, 
+but I was wrong. I did the email sending part, by using activation.jar and javax.mail.jar, and I think it was very good for me to show myself that I was mistaken. In the project, I did the model
+classes, core classes, and email classes. I have checked our Requirements Report and UI Report for a long time, and I wrote the necessary codes 
+for those classes, and my groupmate Çağrı connected these classes with the database. As I stated before, this project was a really great experience because 
+it was our first project. Of course, we have some pieces missing, but since this is our first project, I think it is normal. We did a great job and I am very grateful for
+my teammates. Also, I am very thankful to them especially Çağrı because of the database connection which seems really complicated to me, and Onur and Eren because of their works on
+Graphical User Interface. They tried a new layout and they did it very well. Whenever I check this project on my GitHub account, I will remember the days we did not sleep and 
+my teammates. Lastly, I still believe that our project is still developable. Maybe we can develop the project in the future. Finally, it was a really good project for us to discover new 
+things and learning new things by searching them on the Internet or asking our friends.
