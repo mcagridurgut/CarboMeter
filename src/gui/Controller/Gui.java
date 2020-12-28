@@ -172,6 +172,7 @@ public class Gui extends JFrame{
 
             if(src.equals(foodQuestionPanel.nextButton)) {
                 try {
+                    foodValue=0.0;
                     foodValue += Double.parseDouble(foodQuestionPanel.jTextField1.getText()) * Food.BEEF_LAMB_VEAL;
                     foodValue += Double.parseDouble(foodQuestionPanel.jTextField3.getText()) * Food.OTHER_MEAT;
                     foodValue += Double.parseDouble(foodQuestionPanel.jTextField4.getText()) * Food.DAIRY;
@@ -256,6 +257,7 @@ public class Gui extends JFrame{
             }
             if(src.equals(othersQuestionPanel.showTheReportButton)) {
                 try{
+                    othersValue = 0.0;
                     othersValue += Double.parseDouble(othersQuestionPanel.furnitureSpendingTextField.getText())*Others.FURNITURE_OTHER;
                     othersValue += Double.parseDouble(othersQuestionPanel.vehicleSpendingTextField.getText())*Others.MOTOR_VEHICLES;
                     othersValue += Double.parseDouble(othersQuestionPanel.educationSpendingTextField.getText())*Others.EDUCATION;
