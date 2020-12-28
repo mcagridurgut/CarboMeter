@@ -13,15 +13,15 @@ public class TransportationQuestionPanel extends JPanel {
     // Properties - components
     private JLabel background;
     private JLabel carLabel;
-    private JTextField carMileageTextField;
+    public JTextField carMileageTextField;
     private JLabel efficiencyOfCarLabel;
-    private JTextField efficiencyOfCarTextField;
+    public JTextField efficiencyOfCarTextField;
     private JLabel enterEfficiencyLabel;
-    private JTextField flightDistanceTextField;
+    public JTextField flightDistanceTextField;
     private JLabel flightsLabel;
     private JLabel fuelTypeLabel;
     public JButton goBackButton;
-    private JComboBox<String> jComboBox1;
+    public JComboBox<String> jComboBox1;
     private JLabel kilometersYearLabel;
     private JLabel kilometersYearLabel2;
     private JLabel kilometersYearLabel3;
@@ -29,10 +29,10 @@ public class TransportationQuestionPanel extends JPanel {
     private JLabel liters100kilometersLabel2;
     private JLabel mileageInfoLabel;
     private JLabel mileageInfoLabel2;
-    private JComboBox<String> motorbikeComboBox;
-    private JTextField motorbikeEfficiencyTextField;
+    public JComboBox<String> motorbikeComboBox;
+    public JTextField motorbikeEfficiencyTextField;
     private JLabel motorbikeLabel;
-    private JTextField motorbikeMileageTextField;
+    public JTextField motorbikeMileageTextField;
     public JButton nextButton;
     private JLabel selectMotorbikeTypeLabel;
     private JLabel transportationLabel;

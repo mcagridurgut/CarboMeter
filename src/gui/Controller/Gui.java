@@ -50,6 +50,7 @@ public class Gui extends JFrame{
     SuperUser superUser;
     Double housingValue = 0.0;
     Double travelValue= 0.0;
+    Double travelValue2=0.0;
     Double foodValue= 0.0;
     Double othersValue= 0.0;
 
@@ -90,11 +91,14 @@ public class Gui extends JFrame{
             }
             if(src.equals(donationPanel.backPageButton)) cardLayout.show(contentPanel,"reportPanel");
             if(src.equals(houseQuestionPanel.goBackButton)) {
-                if( transportation )
-                    cardLayout.show(contentPanel,"transportationQuestion2Panel");
-                else if ( food )
-                    cardLayout.show(contentPanel,"foodQuestionPanel");
-                else
+                if( transportation ) {
+                    travelValue2 = 0.0;
+                    cardLayout.show(contentPanel, "transportationQuestion2Panel");
+                }
+                else if ( food ) {
+                    foodValue = 0.0;
+                    cardLayout.show(contentPanel, "foodQuestionPanel");
+                }else
                     cardLayout.show(contentPanel,"newReportPanel");
             }
             if(src.equals(houseQuestionPanel.nextButton)){
@@ -159,10 +163,12 @@ public class Gui extends JFrame{
                     cardLayout.show(contentPanel, "houseQuestionPanel");
                     foodValue = Food.DEFAULT;
                     travelValue = Transportation.DEFAULT;
+                    travelValue2 = 0.0;
                 }else if ( others ) {
                     cardLayout.show(contentPanel, "othersQuestionPanel");
                     foodValue = Food.DEFAULT;
                     travelValue = Transportation.DEFAULT;
+                    travelValue2 = 0.0;
                     housingValue = Home.DEFAULT;
                 }
                 else {
@@ -186,15 +192,18 @@ public class Gui extends JFrame{
                         cardLayout.show(contentPanel, "transportationQuestionPanel");
                     else if (home){
                         travelValue = Transportation.DEFAULT;
+                        travelValue2 = 0.0;
                         cardLayout.show(contentPanel, "houseQuestionPanel");
                     }
                     else if (others) {
                         travelValue = Transportation.DEFAULT;
+                        travelValue2 = 0.0;
                         housingValue = Home.DEFAULT;
                         cardLayout.show(contentPanel, "othersQuestionPanel");
                     }
                     else {
                         travelValue = Transportation.DEFAULT;
+                        travelValue2 = 0.0;
                         housingValue = Home.DEFAULT;
                         othersValue = Others.DEFAULT;
                         reportDone();
@@ -247,6 +256,7 @@ public class Gui extends JFrame{
                 }
                 else if( transportation ) {
                     travelValue = 0.0;
+                    travelValue2 = 0.0;
                     cardLayout.show(contentPanel, "transportationQuestion2Panel");
                 }
                 else if( food ) {
@@ -333,18 +343,33 @@ public class Gui extends JFrame{
             }
 
             if(src.equals(superUserHomePanel.challengesButton)) cardLayout.show(contentPanel,"superChallengesPanel");
-            if(src.equals(transportationQuestion2Panel.goBackButton)) cardLayout.show(contentPanel,"transportationQuestionPanel");
+            if(src.equals(transportationQuestion2Panel.goBackButton)) {
+                travelValue = 0.0;
+                cardLayout.show(contentPanel,"transportationQuestionPanel");
+            }
 
-            if(src.equals(transportationQuestion2Panel.nextButton)){
-                if( home ) {
-                    cardLayout.show(contentPanel,"houseQuestionPanel");
-                }else if ( others ) {
-                    housingValue = Home.DEFAULT;
-                    cardLayout.show(contentPanel, "othersQuestionPanel");
-                }else {
-                    housingValue = Home.DEFAULT;
-                    othersValue = Others.DEFAULT;
-                    cardLayout.show(contentPanel, "reportPanel");
+            if(src.equals(transportationQuestion2Panel.nextButton)) {
+                try{
+                    travelValue2 = 0.0;
+                    travelValue2 += Double.parseDouble(transportationQuestion2Panel.busTextField.getText())*Transportation.BUS_FACTOR;
+                    travelValue2 += Double.parseDouble(transportationQuestion2Panel.coachTextField.getText())*Transportation.COACH_FACTOR;
+                    travelValue2 += Double.parseDouble(transportationQuestion2Panel.localTrainTextField.getText())*Transportation.LOCAL_COMMUTTER_TRAIN_FACTOR;
+                    travelValue2 += Double.parseDouble(transportationQuestion2Panel.taxiTextField.getText())*Transportation.TAXI_FACTOR;
+                    travelValue2 += Double.parseDouble(transportationQuestion2Panel.tramTextField.getText())*Transportation.TRAM_FACTOR;
+                    travelValue2 += Double.parseDouble(transportationQuestion2Panel.longDistanceTrainTextField.getText())*Transportation.LONG_DISTANCE_TRAIN_FACTOR;
+                    travelValue2 += Double.parseDouble(transportationQuestion2Panel.subwayTextField.getText())*Transportation.SUBWAY_FACTOR;
+                    if (home) {
+                        cardLayout.show(contentPanel, "houseQuestionPanel");
+                    } else if (others) {
+                        housingValue = Home.DEFAULT;
+                        cardLayout.show(contentPanel, "othersQuestionPanel");
+                    } else {
+                        housingValue = Home.DEFAULT;
+                        othersValue = Others.DEFAULT;
+                        reportDone();
+                    }
+                }catch (Exception e){
+                    //pop up
                 }
             }
 
@@ -357,7 +382,44 @@ public class Gui extends JFrame{
             }
 
             if(src.equals(transportationQuestionPanel.nextButton)) {
-                cardLayout.show(contentPanel,"transportationQuestion2Panel");
+                travelValue = 0.0;
+                try{
+                    travelValue += Double.parseDouble(transportationQuestionPanel.flightDistanceTextField.getText())*Transportation.FLIGHT_CO2_FACTOR;
+                    Double type;
+                    String selection = (String)transportationQuestionPanel.jComboBox1.getSelectedItem();
+                    if(selection.equals("Petrol"))
+                        type = Transportation.CAR_PETROL_FACTOR;
+                    else if( selection.equals("Diesel"))
+                        type = Transportation.CAR_DIESEL_FACTOR;
+                    else if( selection.equals("LPG"))
+                        type = Transportation.CAR_LPG_FACTOR;
+                    else
+                        type = Transportation.CAR_CNG_FACTOR;
+                    travelValue += Double.parseDouble(transportationQuestionPanel.carMileageTextField.getText())
+                            * Double.parseDouble(transportationQuestionPanel.efficiencyOfCarTextField.getText())
+                            * type;
+                    try{
+                        Double bikeEff = Double.parseDouble(transportationQuestionPanel.motorbikeEfficiencyTextField.getText());
+                        travelValue += bikeEff * Double.parseDouble(transportationQuestionPanel.motorbikeMileageTextField.getText());
+                        cardLayout.show(contentPanel,"transportationQuestion2Panel");
+                    }catch (Exception e){
+                        System.out.println("asd");
+                        String combo = (String) transportationQuestionPanel.motorbikeComboBox.getSelectedItem();
+                        Double katsayı;
+                        if ( combo.equals("Small Motorbike - Moped - Scooter (up to 125cc)") )
+                            katsayı = Transportation.UP_TO_125CC;
+                        else if ( combo.equals("Medium Motorbike (125cc - 500cc)"))
+                            katsayı = Transportation.OVER_125CC_UP_TO_500CC;
+                        else if (combo.equals("Large Motorbike (over 500cc) "))
+                            katsayı = Transportation.OVER_500CC;
+                        else
+                            throw new Exception();
+                        travelValue+=katsayı*type*Double.parseDouble(transportationQuestionPanel.motorbikeMileageTextField.getText());
+                        cardLayout.show(contentPanel,"transportationQuestion2Panel");
+                    }
+                }catch(Exception e){
+
+                }
             }
         }
     }
@@ -539,7 +601,7 @@ public class Gui extends JFrame{
         menuBar.removeMenu();
     }
     private void reportDone(){
-        normalUser.createReport(housingValue, travelValue , foodValue, othersValue, home, transportation, food, others);
+        normalUser.createReport(housingValue, travelValue+travelValue2 , foodValue, othersValue, home, transportation, food, others);
         reportPanel.function(normalUser.getCurrentReport().getFoodScore(),normalUser.getCurrentReport().getTransportScore(),normalUser.getCurrentReport().getHomeScore(),normalUser.getCurrentReport().getOthersScore(),
                 normalUser.getPreviousReport().getFoodScore(),normalUser.getPreviousReport().getTransportScore(),normalUser.getPreviousReport().getHomeScore(),normalUser.getPreviousReport().getOthersScore());
         System.out.println(normalUser.getPreviousReport().getScore()+ " " + normalUser.getPreviousReport().getUser());

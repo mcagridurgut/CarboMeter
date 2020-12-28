@@ -13,9 +13,9 @@ public class TransportationQuestion2Panel extends JPanel {
     private JLabel background;
     private JLabel busLabel;
     private JLabel busRailTaxiStatsLabel;
-    private JTextField busTextField;
+    public JTextField busTextField;
     private JLabel coachLabel;
-    private JTextField coachTextField;
+    public JTextField coachTextField;
     public JButton goBackButton;
     private JLabel kilometersYearLabel1;
     private JLabel kilometersYearLabel2;
@@ -25,16 +25,16 @@ public class TransportationQuestion2Panel extends JPanel {
     private JLabel kilometersYearLabel6;
     private JLabel kilometersYearLabel7;
     private JLabel localTrainLabel;
-    private JTextField localTrainTextField;
+    public JTextField localTrainTextField;
     private JLabel longDistanceTrainLabel;
-    private JTextField longDistanceTrainTextField;
+    public JTextField longDistanceTrainTextField;
     public JButton nextButton;
     private JLabel subwayLabel;
-    private JTextField subwayTextField;
+    public JTextField subwayTextField;
     private JLabel taxiLabel;
-    private JTextField taxiTextField;
+    public JTextField taxiTextField;
     private JLabel tramLabel;
-    private JTextField tramTextField;
+    public JTextField tramTextField;
     private JLabel transportationLabel;
 
     /**
