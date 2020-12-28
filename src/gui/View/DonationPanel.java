@@ -89,7 +89,7 @@ public class DonationPanel extends JPanel {
         textArea.setRows(5);
         textArea.setText("You can fulfill your responsibility to future generations by donating\n" +
                 "an equal amount of money to one of the following organizations.\n" +
-                "We are deviding your Carbopoint value by 7. This indicates how many\n" +
+                "We devide your Carbopoint value by 7. This indicates how many\n" +
                 "trees you should donate in dollars so that these trees compensate\n" +
                 "the damage you cause to the atmosphere and the soil. We calculate\n" +
                 "this donation amount by multiply it with 10($ per tree)");
