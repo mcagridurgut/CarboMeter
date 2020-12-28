@@ -25,6 +25,8 @@ Contributions
 (files we primarily worked on, details of the software used including version numbers, libraries, etc., as well as for instructions for setup, compilation & running of the project.)
 
 Çağrı 
+Files that I primarily worked on: src/Database/DatabaseConnection, src/gui/Controller/gui.java, Model classes. I used Intellij IDEA and SQLite jdbc 3.27. and swing components.
+
 Onur Ertunç
 Files that I primarily worked on: View (Graphical User Interface) classes and Controller of the application. I used NetBeans v8.2, Eclipse 2019, and IntelliJ IDEA 2020.3 x64 version. Java Swing Library used to draw GUI components. For background, JLabel and to get user input, JTextField. For the controller, JButtons and JLabels used. to communicate with the user to provide easy to use UI, JOptionPane pop-ups were added.
 Uygar
