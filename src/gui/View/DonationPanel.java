@@ -18,7 +18,7 @@ public class DonationPanel extends JPanel {
     private JTable donationTable;
     private JScrollPane downPane;
     public JButton eggButton;
-    private JTextField jTextField1;
+    public JTextField jTextField1;
     private JLabel questionLabel;
     private JTextArea textArea;
     private JLabel tlLabel;

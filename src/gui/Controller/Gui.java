@@ -378,6 +378,26 @@ public class Gui extends JFrame{
                 }
             }
         });
+        donationPanel.jTextField1.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode() == KeyEvent.VK_ENTER){
+                    normalUser.setDonations(normalUser.getDonations()+Double.parseDouble(donationPanel.jTextField1.getText()));
+                    donationPanel.jTextField1.setText("");
+                    //POP UP HERE FOR THANKING USER
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
         accountPanel.changePasswordButton.addActionListener(al);
         accountPanel.logOutButton.addActionListener(al);
         donationPanel.backPageButton.addActionListener(al);
@@ -430,11 +450,6 @@ public class Gui extends JFrame{
 
         @Override
         public void keyPressed(KeyEvent e) {
-
-        }
-
-        @Override
-        public void keyReleased(KeyEvent e) {
             if(e.getKeyCode() == KeyEvent.VK_ENTER){
                 if( normalUser.addFriend(friendsPanel.addFrinedField.getText() ) )
                     friendsPanel.addFriend( friendsPanel.addFrinedField.getText() );
@@ -442,6 +457,10 @@ public class Gui extends JFrame{
                     //POP UP NO SUCH USER
                 }
             }
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
         }
     }
 

@@ -15,15 +15,13 @@ public class Main {
 //           System.out.println("succesfly logged in");
         //DatabaseConnection.forgotPassword("newbie");
         try{
-            NormalUser user = Login.NormalLogin("cagribilkent", "zaaxdxd");/*
+            NormalUser user = Login.NormalLogin("cagribilkent", "q");/*
             for( Report r: user.getReports() ){
                 System.out.println(r.getUser());
                 System.out.println(r.getScore());
             }*/
-            System.out.println( user.getCurrentReport().getUser() );
-            System.out.println( user.getCurrentReport().getScore() );
-            System.out.println( user.getPreviousReport().getUser() );
-            System.out.println( user.getPreviousReport().getScore() );
+            user.setDonations(123.12);
+            System.out.println( user.getDonations() );
         }catch (Exception e){
             e.printStackTrace();
         }

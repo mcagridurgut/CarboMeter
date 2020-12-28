@@ -77,6 +77,7 @@ public class NormalUser extends User {
   // setters
   public void setDonations( double x) {
     this.donations = x;
+    DatabaseConnection.updateDonation(getUsername(),x);
   }
   public void setReports( ArrayList<Report> reports) {
     this.reportsCompleted = reports;

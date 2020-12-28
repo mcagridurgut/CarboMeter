@@ -30,6 +30,7 @@ public class Login {
             user.setReferenceCode( (String) usr[12]);
             user.setFriends( setReports( DatabaseConnection.getFriends(user.getUsername()) ));
             user.setReports( setReports(DatabaseConnection.selectWithEmail( (String) usr[2] ) ) );
+            user.setDonations((double)usr[13]);
             return user;
         }
         throw new NoSuchElementException();

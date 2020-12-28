@@ -75,6 +75,19 @@ public class DatabaseConnection {
         return select(name+"-old-");
     }
 
+    public static void updateDonation(String name, double donate) {
+        Object[] array = new Object[ROWSIZE];
+        String sql = "UPDATE users SET " +
+                "donate = '"+ donate + "'"+
+                " WHERE name  = '" + name + "';";
+        try (Connection conn = DriverManager.getConnection(url);
+             Statement stmt = conn.createStatement()) {
+            stmt.execute(sql);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     private static void update(String name, String email, String password, double carbopoint, double transport, double housing, double food, double other, int userType, String challenges, String friends, String refCode, double donate) {
         Object[] array = new Object[ROWSIZE];
         String sql = "UPDATE users SET " +
