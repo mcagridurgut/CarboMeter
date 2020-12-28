@@ -295,12 +295,13 @@ public class Gui extends JFrame{
                     try{
                         normalUser = Login.register(signUpPanel.userNameField.getText(),signUpPanel.emailField.getText(),signUpPanel.passwordField.getText(),signUpPanel.superUserCodeField.getText());
                         String str = randomCodeGenerator();
-                        String input = JOptionPane.showInputDialog(this, "13 haneli güvenlik kodunuzu giriniz");
                         try{
                             JavaMail.sendMail(normalUser.getEmail(), "CarboMeter E-Mail Verification", "Your code is: "+str);
                         }catch (Exception e){
                             e.printStackTrace();
                         }
+
+                        String input = JOptionPane.showInputDialog(null, "13 haneli güvenlik kodunuzu giriniz");
                         while( !str.equals(input) )
                             input = JOptionPane.showInputDialog("13 haneli güvenlik kodunuzu giriniz", "enter here");
 
