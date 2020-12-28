@@ -64,6 +64,7 @@ public class DonationPanel extends JPanel {
         //font, size and content adjusted
         carbopointLabel.setFont(new Font("Calibri", 0, 36));
         carbopointLabel.setForeground(new Color(255, 255, 255));
+        carbopointLabel.setText("deneme");
         add(carbopointLabel);
         carbopointLabel.setBounds(330, 200, 900, 44);
 
