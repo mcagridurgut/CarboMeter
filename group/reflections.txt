@@ -1,6 +1,34 @@
 EREN ÖZEN
-We have made an effective and easy-to-use application where people can easily calculate their level of damage to nature and fulfill their responsibilities by donating as much as their damage level. In GUI, database and core classes, so at every point of our application, we have took what we learned in the course and added it to it. We learned new and necessary things such as how to do research, how to report a project, how to work as a group. In addition, I have developed in areas that I think will be very useful in professional life, such as dividing work as a team and working efficiently and establishing correct communication between sub-teams. I think I have had an efficient learning process and gained quite important experiences in GUI, project  development and team  communication since I have never had experience in such areas before.
-What I do not like about the project is, even though we spend hours on it, design we created does not  look modern at all. I am aware that this is my first project/design experience, but I do not like  that my first product looks like a windows 7 application designed in the 2010 and I am one of the responsible ones for this situation. The point that I had the most difficulty while doing the project was the learning process of the implementation. Sometimes I stared at the screen inefficiently for hours and found out that the solution was very easy. Jumping directly into topics like CardLayout instead of  learning in advance drove me into an unpredictable chaos. If I have to start the application from the beginning, I would make the task distribution more realistic (in terms of database and reports) and avoid unnecessary fatigue. I would consider using FX instead of 
-Swing, so I would make a design that would look much more modern. In the first half of the semester, although I did not do much work except report, mockup and wireframe design, I spent the last seven weeks very intensely and with my sub-teammate Onur, I completed all the GUI parts and switch to the missing parts of the project. I am very proud of what we have done and implemented. Even though there are many applications that calculate someone's carbon footprint, we have calculated the total damage of users and I think this idea is quite original when other features are taken into account. We did not give people a random donation value or encourage them to donate the amount of money they wanted. We have created a mechanism for them to calculate their responsibility towards nature on their behalf, and this is why I am very proud. The creation of our calculation algorithms, the success and accuracy of our reports, the source of every data we use, and the reliability of these sources can be the subject we are best at. Finally, I would like to thank my sub-team friend Onur Ertunç, who was with me dozens of times over zoom. (12.28.2020)
+We have made an effective and easy-to-use application where people can easily calculate
+their level of damage to nature and fulfill their responsibilities by donating as much
+as their damage level. In GUI, database and core classes, so at every point of our 
+application, we have took what we learned in the course and added it to it. We learned 
+new and necessary things such as how to do research, how to report a project, how to work 
+as a group. In addition, I have developed in areas that I think will be very useful in
+professional life, such as dividing work as a team and working efficiently and establishing
+correct communication between sub-teams. I think I have had an efficient learning process
+and gained quite important experiences in GUI, project  development and team  communication 
+since I have never had experience in such areas before. What I do not like about the project
+is, even though we spend hours on it, design we created does not  look modern at all. I am
+aware that this is my first project/design experience, but I do not like  that my first 
+product looks like a windows 7 application designed in the 2010 and I am one of the responsible
+ones for this situation. The point that I had the most difficulty while doing the project 
+was the learning process of the implementation. Sometimes I stared at the screen inefficiently
+for hours and found out that the solution was very easy. Jumping directly into topics like
+CardLayout instead of  learning in advance drove me into an unpredictable chaos. If I have 
+to start the application from the beginning, I would make the task distribution more realistic
+(in terms of database and reports) and avoid unnecessary fatigue. I would consider using FX
+instead of Swing, so I would make a design that would look much more modern. In the first half
+of the semester, although I did not do much work except report, mockup and wireframe design, 
+I spent the last seven weeks very intensely and with my sub-teammate Onur, I completed all the
+GUI parts and switch to the missing parts of the project. I am very proud of what we have done 
+and implemented. Even though there are many applications that calculate someone's carbon footprint,
+we have calculated the total damage of users and I think this idea is quite original when other
+features are taken into account. We did not give people a random donation value or encourage
+them to donate the amount of money they wanted. We have created a mechanism for them to calculate
+their responsibility towards nature on their behalf, and this is why I am very proud. The 
+creation of our calculation algorithms, the success and accuracy of our reports, the source 
+of every data we use, and the reliability of these sources can be the subject we are best at.
+Finally, I would like to thank my sub-team friend Onur Ertunç, who was with me dozens of times over zoom. (12.28.2020)
                                                                                                                                                                      
 ONUR ERTUNÇ
