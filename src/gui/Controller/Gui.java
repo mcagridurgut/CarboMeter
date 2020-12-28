@@ -392,7 +392,7 @@ public class Gui extends JFrame{
                 if(e.getKeyCode() == KeyEvent.VK_ENTER){
                     normalUser.setDonations(normalUser.getDonations()+Double.parseDouble(donationPanel.jTextField1.getText()));
                     donationPanel.jTextField1.setText("");
-                    //POP UP HERE FOR THANKING USER
+                    JOptionPane.showMessageDialog(null, "Thank you for the donation." );
                 }
             }
 
@@ -457,7 +457,7 @@ public class Gui extends JFrame{
                 if( normalUser.addFriend(friendsPanel.addFrinedField.getText() ) )
                     friendsPanel.addFriend( friendsPanel.addFrinedField.getText() );
                 else{
-                    //POP UP NO SUCH USER
+                    JOptionPane.showMessageDialog(null, "There is no such user." );
                 }
             }
         }

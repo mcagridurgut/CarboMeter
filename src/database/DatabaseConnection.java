@@ -1,17 +1,25 @@
 package database;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import mail.*;
 
+/**
+ * Database Connection of the Carbometer Desktop app.
+ * @author Çağrı Durgut
+ */
 public class DatabaseConnection {
 
+    // rowsize of the database
     public static int ROWSIZE = 14;
 
+    // properties
     static String wd = System.getProperty("user.dir").replace('\\','/');
     static String url = "jdbc:sqlite:"+ wd +"/carbopoints.db";
 
+    /**
+     * creates new table if it does not exist.
+     */
     public static void createNewTableIfNotExists() {
 
         // SQL statement for creating a new table
@@ -41,6 +49,10 @@ public class DatabaseConnection {
         }
     }
 
+    /**
+     * connects database files
+     * @return
+     */
     private static Connection connect() {
         // SQLite connection string
         Connection conn = null;
@@ -52,16 +64,43 @@ public class DatabaseConnection {
         return conn;
     }
 
+    /**
+     * checks whether the user exist or not
+     * @param name of the user
+     * @return true or false
+     */
     public static boolean isSuchUserExists(String name){
         Object[] arr  = select(name);
         return (arr != null && arr[0] != null);
     }
 
+    /**
+     * checks whether the email exist or not
+     * @param email entered
+     * @return true or false
+     */
     public static boolean isSuchEmailExists(String email){
         ArrayList<Object[]> users  = selectWithEmail(email);
         return ( users.size() > 0);
     }
 
+    /**
+     * updates user
+     * @param name of the user
+     * @param email of the user
+     * @param password of the user
+     * @param carbopoint of the user
+     * @param transport data of the user
+     * @param housing data of the user
+     * @param food data of the user
+     * @param other data of the user
+     * @param userType super user or normal user
+     * @param challenges added by super user
+     * @param friends of the user
+     * @param refCode
+     * @param donate made by user
+     * @throws NoSuchElementException
+     */
     public static void updateUser(String name, String email, String password, double carbopoint, double transport,double housing,double food,double other, int userType, String challenges, String friends,String refCode, double donate ) throws NoSuchElementException{
         if(isSuchUserExists(name)) {
             Object[] user = select(name);
@@ -71,6 +110,11 @@ public class DatabaseConnection {
         }
     }
 
+    /**
+     * returns the old values
+     * @param name username
+     * @return old values
+     */
     public static Object[] getOldValues(String name){
         return select(name+"-old-");
     }
@@ -88,6 +132,22 @@ public class DatabaseConnection {
         }
     }
 
+    /**
+     * updates carbometer app
+     * @param name of the user
+     * @param email of the user
+     * @param password of the user
+     * @param carbopoint of the user
+     * @param transport data of the user
+     * @param housing data of the user
+     * @param food data of the user
+     * @param other s data of the user
+     * @param userType superuser or normal user
+     * @param challenges added by superuser
+     * @param friends of the user
+     * @param refCode of the user
+     * @param donate donation amount of the user
+     */
     private static void update(String name, String email, String password, double carbopoint, double transport, double housing, double food, double other, int userType, String challenges, String friends, String refCode, double donate) {
         Object[] array = new Object[ROWSIZE];
         String sql = "UPDATE users SET " +
@@ -112,6 +172,22 @@ public class DatabaseConnection {
         }
     }
 
+    /**
+     * creates new user in database
+     * @param name of the user
+     * @param email of the user
+     * @param password of the user
+     * @param carbopoint of the user
+     * @param transport data of the user
+     * @param housing data of the user
+     * @param food data of the user
+     * @param other data of the user
+     * @param userType super user or normal user
+     * @param challenges added by super user
+     * @param friends of the user
+     * @param refCode
+     * @param donate amount of the user
+     */
     public static void createNewUser(String name, String email, String password, double carbopoint, double transport,double housing,double food,double other, int userType, String challenges, String friends,String refCode, double donate ){
         createNewTableIfNotExists();
         if(!isSuchUserExists(name)) {
@@ -139,6 +215,10 @@ public class DatabaseConnection {
         }
     }
 
+    /**
+     * selects all users in the database
+     * @return users
+     */
     public static ArrayList<Object[]> selectAll(){
         createNewTableIfNotExists();
         ArrayList<Object[]> arrayList = new ArrayList<>();
@@ -173,6 +253,11 @@ public class DatabaseConnection {
         return arrayList;
     }
 
+    /**
+     * selects users
+     * @param name username
+     * @return user objects
+     */
     public static Object[] select(String name)  {
         createNewTableIfNotExists();
         Object[] array = new Object[ROWSIZE];
@@ -205,6 +290,11 @@ public class DatabaseConnection {
         return array;
     }
 
+    /**
+     * selects user with id
+     * @param id of the user
+     * @return user
+     */
     public static Object[] selectWithId(int id)  {
         createNewTableIfNotExists();
         Object[] array = new Object[ROWSIZE];
@@ -237,6 +327,13 @@ public class DatabaseConnection {
         return array;
     }
 
+    /**
+     * changes the password of the user
+     * @param name username
+     * @param oldPassword of the user
+     * @param newPassword of the user
+     * @return result of the password change process
+     */
     public static boolean changePassword( String name, String oldPassword, String newPassword ){
         if(isSuchUserExists(name)) {
             Object[] user = select(name);
@@ -248,6 +345,13 @@ public class DatabaseConnection {
         return false;
     }
 
+    /**
+     * changes the email
+     * @param name username
+     * @param password password of the user
+     * @param newEmail new email address of the user
+     * @return result of the process
+     */
     public static boolean changeEmail( String name, String password, String newEmail ){
         if(isSuchUserExists(name)) {
             Object[] usr = select(name);
@@ -262,6 +366,11 @@ public class DatabaseConnection {
         return false;
     }
 
+    /**
+     * adds users as friend, helper of the addFriend
+     * @param name of the user
+     * @param friend friend of the user
+     */
     private static void addFriendHelper( String name, String friend){
         Object[] user = select(name);
         int friendNumber = (Integer) select(friend)[0];
@@ -269,6 +378,12 @@ public class DatabaseConnection {
         update((String) user[1], (String) user[2], (String) user[3], (double) user[4], (double) user[5], (double) user[6], (double) user[7], (double) user[8], (Integer) user[9], (String) user[10], friends,(String) user[12], (Double) user[13]);
     }
 
+    /**
+     * adds users as friend
+     * @param name of the user
+     * @param friend of the user
+     * @return
+     */
     public static boolean addFriend (String name, String friend){
         if(isSuchUserExists(name)) {
             if ( !isSuchUserExists(friend) )
@@ -285,6 +400,10 @@ public class DatabaseConnection {
         return false;
     }
 
+    /**
+     *
+     * @return returns the superusers
+     */
     public static ArrayList<Object[]> getSuperUsers(){
         ArrayList<Object[]> superUsers = new ArrayList<>();
         createNewTableIfNotExists();
@@ -319,6 +438,11 @@ public class DatabaseConnection {
         return superUsers;
     }
 
+    /**
+     * select users with email
+     * @param email of the user
+     * @return user
+     */
     public static ArrayList<Object[]> selectWithEmail( String email ){
         ArrayList<Object[]> users = new ArrayList<>();
         createNewTableIfNotExists();
@@ -353,6 +477,12 @@ public class DatabaseConnection {
         return users;
     }
 
+    /**
+     * adds challenge
+     * @param superUsername superuser name
+     * @param challengeID challenge id of the challenge
+     * @return result of the process
+     */
     public static boolean addChallenge( String superUsername, int challengeID){
         if(!isSuchUserExists(superUsername) )
             return false;
@@ -365,6 +495,11 @@ public class DatabaseConnection {
         return true;
     }
 
+    /**
+     * returns sub-users
+     * @param name of the user
+     * @return sub-users
+     */
     private static ArrayList<Object[]> getSubUsers(String name){
         ArrayList<Object[]> subUsers = new ArrayList<>();
         String refCode = (String) select(name)[12];
@@ -399,6 +534,11 @@ public class DatabaseConnection {
         return subUsers;
     }
 
+    /**
+     * returns friends
+     * @param name of the friend
+     * @return friend
+     */
     public static ArrayList<Object[]> getFriends(String name){
         ArrayList<Object[]> friends = new ArrayList<>();
         if( isSuchUserExists(name) && ((String) select(name)[11]).length()>0 ) {
@@ -410,6 +550,10 @@ public class DatabaseConnection {
         return friends;
     }
 
+    /**
+     * returns all user names
+     * @return all user names
+     */
     public static ArrayList<String> getAllUsernames(){
         ArrayList<Object[]> users = selectAll();
         ArrayList<String> usernames =new ArrayList<>();
@@ -419,6 +563,11 @@ public class DatabaseConnection {
         return usernames;
     }
 
+    /**
+     * manipulates the challenge data depending on user (challenge completed or not?)
+     * @param name of the user
+     * @param challengeID challenge id of the challenge
+     */
     public static void completeChallenge( String name, int challengeID ){
         if( isSuchUserExists( name ) ){
             Object[] user = select(name);
@@ -436,6 +585,14 @@ public class DatabaseConnection {
         }
     }
 
+    /**
+     * updates the data in database
+     * @param name name of the user
+     * @param transport transportation of the user
+     * @param housing housing data of the user
+     * @param food food data of the user
+     * @param others secondary data of the user
+     */
     public static void updateData( String name, double transport, double  housing, double food, double others ){
         if ( isSuchUserExists(name) ){
             Object[] user = select(name);
@@ -443,6 +600,11 @@ public class DatabaseConnection {
         }
     }
 
+    /**
+     * does the forgot password operations
+     * @param emailOrUsername email or username of the user
+     * @return result of the process
+     */
     public static boolean forgotPassword( String emailOrUsername ){
         Object[] user;
         if( isSuchUserExists( emailOrUsername ) )
@@ -457,6 +619,12 @@ public class DatabaseConnection {
         return true;
     }
 
+    /**
+     * checks the login process
+     * @param emailOrUsername email or username of the user
+     * @param password password of the user
+     * @return result of the project
+     */
     public static boolean login (String emailOrUsername, String password){
         Object[] user;
         if( isSuchUserExists( emailOrUsername ) )
@@ -468,6 +636,11 @@ public class DatabaseConnection {
         return ( (String) user[3] ).equals(password);
     }
 
+    /**
+     * selects user email or username
+     * @param emailOrUserName of the user
+     * @return user object
+     */
     public static Object[] selectWithEmailOrUsername (String emailOrUserName ){
         if( isSuchUserExists(emailOrUserName) )
             return select(emailOrUserName);
@@ -475,6 +648,11 @@ public class DatabaseConnection {
             return selectWithEmail(emailOrUserName).get(0);
         return null;
     }
+
+    /**
+     * random code generator for signUp purposes
+     * @return random code
+     */
     private static String randomCodeGenerator(){
         String str = "";
         String randoms = "wertyuıopasdfghjklizxcvbnm1234567890";
@@ -485,4 +663,4 @@ public class DatabaseConnection {
         }
         return str;
     }
-}
+} // end of the class
