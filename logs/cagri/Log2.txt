@@ -1,0 +1,5 @@
+This week I've done following to contribute the app:
+I finished database connection class.
+I revised core and connected those classes with databases.
+I tested application to debug mistakes.
+I finished controller.
