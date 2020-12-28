@@ -1,0 +1,6 @@
+This week I've done the followings to contribute the app:
+
+We revised the core classes to connect them to the database.
+I created a mail package and its classes which is working well.(used activation.jar and javax.mail.jar)
+I tried to find new questions for the Carbometer project and determine it's constants properly.
+We added all the classes JavaDoc comment and make the codes more understandable.
