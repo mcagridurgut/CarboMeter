@@ -28,5 +28,7 @@ NetBeans v8.2, Eclipse 2019, and IntelliJ IDEA 2020.3 x64 version.
 Java Swing Library used to draw GUI components. For background, JLabel and to get user input, JTextField. For the controller,
 JButtons and JLabels used. to communicate with the user to provide easy to use UI, JOptionPane pop-ups were added.
 Uygar
+Files that I primarily worked on: user core classes and mail package. I worked with alper we watched videos to do mail package. We learned how to use JavaMailUtil library and
+did the user classes having user as abstract class and super user and normal user as classes from user abstract class.
 Alper
 Eren
