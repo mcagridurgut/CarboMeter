@@ -4,7 +4,7 @@ import Model.Report;
 import user.*;
 import java.util.ArrayList;
 
-public class Main {
+public class Test {
     public static void main(String[] args) {
         //DatabaseConnection.createNewUser("ucuncu", "ucuncu@gmail.com", "ucuncu", 0,0,0,0,0,1,"","","superUser1",0);
         //DatabaseConnection.changePassword("newbie","newChallenger","challenger123");

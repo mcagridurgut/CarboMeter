@@ -278,7 +278,10 @@ public class Gui extends JFrame{
             if(src.equals(reportPanel.backPageButton)){
                 cardLayout.show(contentPanel, "normalUserHomePanel");
             }
-            if(src.equals(reportPanel.nextPageButton)) cardLayout.show(contentPanel,"donationPanel");
+            if(src.equals(reportPanel.nextPageButton)){
+                donationPanel.setDollar(normalUser.getCurrentReport().getScore()/1000);
+                cardLayout.show(contentPanel,"donationPanel");
+            }
             if(src.equals(signUpPanel.loginButton)) cardLayout.show(contentPanel,"loginPanel");
 
             if(src.equals(signUpPanel.signUpButton)){
