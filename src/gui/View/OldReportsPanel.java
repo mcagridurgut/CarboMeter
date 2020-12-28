@@ -86,7 +86,7 @@ public class OldReportsPanel extends JPanel {
         detailsTable.setFont(new Font("Arial", 0, 18)); // NOI18N
         detailsTable.setForeground(new Color(255, 255, 255));
 
-        detailsTable.setRowHeight(36);
+        detailsTable.setRowHeight(45);
         detailsPane.setViewportView(detailsTable);
         if (detailsTable.getColumnModel().getColumnCount() > 0) {
             detailsTable.getColumnModel().getColumn(0).setResizable(false);
@@ -170,7 +170,7 @@ public class OldReportsPanel extends JPanel {
                     java.lang.String.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                    true, false
+                    false, false
             };
 
             public Class getColumnClass(int columnIndex) {

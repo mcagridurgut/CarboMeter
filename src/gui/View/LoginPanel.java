@@ -141,7 +141,4 @@ public class LoginPanel extends javax.swing.JPanel {
         add(background);
         background.setBounds(0, 0, 1280, 700);
     }
-
-
-
 }

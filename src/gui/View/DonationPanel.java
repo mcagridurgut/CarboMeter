@@ -77,18 +77,23 @@ public class DonationPanel extends JPanel {
             }
         });
         add(eggButton);
-        eggButton.setBounds(630, 360, 40, 30);
+        eggButton.setBounds(850, 360, 40, 30);
 
         upScrollPane.setBackground(new Color(0, 51, 51));
 
         //text area
         textArea.setEditable(false);
         textArea.setBackground(new Color(88, 78, 69));
-        textArea.setColumns(20);
-        textArea.setFont(new Font("Arial", 0, 16));
+        textArea.setColumns(25);
+        textArea.setFont(new Font("Arial", 0, 14));
         textArea.setForeground(new Color(255, 255, 255));
         textArea.setRows(5);
-        textArea.setText("\nYou can fullfill your responsibility to future generations by donating\nan equal amount of money to one of the following organizations.");
+        textArea.setText("You can fulfill your responsibility to future generations by donating\n" +
+                "an equal amount of money to one of the following organizations.\n" +
+                "We are deviding your Carbopoint value by 7. This indicates how many\n" +
+                "trees you should donate in dollars so that these trees compensate\n" +
+                "the damage you cause to the atmosphere and the soil. We calculate\n" +
+                "this donation amount by multiply it with 10($ per tree)");
         upScrollPane.setViewportView(textArea);
 
         add(upScrollPane);
@@ -142,6 +147,7 @@ public class DonationPanel extends JPanel {
         add(downPane);
         downPane.setBounds(422, 402, 470, 140);
 
+        /*
         //back page button
         backPageButton.setFont(new Font("Arial", 0, 12));
         backPageButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/left Arrow.png")));
@@ -153,6 +159,7 @@ public class DonationPanel extends JPanel {
         });
         add(backPageButton);
         backPageButton.setBounds(50, 620, 110, 35);
+        */
 
         jTextField1.setBackground(new Color(240, 240, 240));
         jTextField1.addActionListener(new ActionListener() {
