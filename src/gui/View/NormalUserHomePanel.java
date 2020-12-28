@@ -50,15 +50,15 @@ public class NormalUserHomePanel extends javax.swing.JPanel {
 
         // normal home label alignment (background, font, foreground, text and position)
         normalHomeLabel.setBackground(new Color(255, 255, 255));
-        normalHomeLabel.setFont(new Font("Calibri", 1, 48)); // NOI18N
+        normalHomeLabel.setFont(new Font("Calibri", 1, 48));
         normalHomeLabel.setForeground(new Color(255, 255, 255));
         normalHomeLabel.setText("HOME");
         add(normalHomeLabel);
         normalHomeLabel.setBounds(575, 80, 130, 60);
 
         // new report button alignment (font, icon, text and position)
-        newReportButton.setFont(new Font("Arial", 0, 24)); // NOI18N
-        newReportButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/report.png"))); // NOI18N
+        newReportButton.setFont(new Font("Arial", 0, 24));
+        newReportButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/report.png")));
         newReportButton.setText("Create a New Report");
         newReportButton.setMaximumSize(new Dimension(200, 37));
         newReportButton.addActionListener(new ActionListener() {
@@ -70,8 +70,8 @@ public class NormalUserHomePanel extends javax.swing.JPanel {
         newReportButton.setBounds(440, 210, 400, 50);
 
         // old report button alignment (font, icon, text and position)
-        oldReportButton.setFont(new Font("Arial", 0, 24)); // NOI18N
-        oldReportButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/seo-report.png"))); // NOI18N
+        oldReportButton.setFont(new Font("Arial", 0, 24));
+        oldReportButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/seo-report.png")));
         oldReportButton.setText("My Old Reports");
         oldReportButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -82,15 +82,15 @@ public class NormalUserHomePanel extends javax.swing.JPanel {
         oldReportButton.setBounds(440, 280, 400, 50);
 
         // donation button alignment (font, icon, text and position)
-        donationButton.setFont(new Font("Arial", 0, 24)); // NOI18N
-        donationButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/heart.png"))); // NOI18N
+        donationButton.setFont(new Font("Arial", 0, 24));
+        donationButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/heart.png")));
         donationButton.setText("Donations");
         add(donationButton);
         donationButton.setBounds(440, 420, 400, 50);
 
         // challenges button alignment (font, icon, text and position)
-        challengesButton.setFont(new Font("Arial", 0, 24)); // NOI18N
-        challengesButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/note.png"))); // NOI18N
+        challengesButton.setFont(new Font("Arial", 0, 24));
+        challengesButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/note.png")));
         challengesButton.setText("Challenges");
         challengesButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -101,29 +101,29 @@ public class NormalUserHomePanel extends javax.swing.JPanel {
         challengesButton.setBounds(440, 350, 400, 50);
 
         // friends button alignment (font, icon, text and position)
-        friendsButton.setFont(new Font("Arial", 0, 24)); // NOI18N
-        friendsButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/friends.png"))); // NOI18N
+        friendsButton.setFont(new Font("Arial", 0, 24));
+        friendsButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/friends.png")));
         friendsButton.setText("Friends");
         friendsButton.setToolTipText("");
         add(friendsButton);
         friendsButton.setBounds(440, 490, 400, 50);
 
         // recommendations button alignment (font, icon, text and position)
-        recommendationsButton.setFont(new Font("Arial", 0, 24)); // NOI18N
-        recommendationsButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/star.png"))); // NOI18N
+        recommendationsButton.setFont(new Font("Arial", 0, 24));
+        recommendationsButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/star.png")));
         recommendationsButton.setText("Reccommendations");
         add(recommendationsButton);
         recommendationsButton.setBounds(440, 560, 400, 50);
 
         // logout button alignment (font, icon, text and position)
-        logOutButton.setFont(new Font("Arial", 0, 12)); // NOI18N
-        logOutButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/door.png"))); // NOI18N
+        logOutButton.setFont(new Font("Arial", 0, 12));
+        logOutButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/door.png")));
         logOutButton.setText("Log Out");
         add(logOutButton);
         logOutButton.setBounds(1140, 30, 110, 35);
 
         // background alignment ( icon and positioning)
-        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg"))); // NOI18N
+        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg")));
         add(background);
         background.setBounds(0, 0, 1280, 700);
     }
@@ -154,4 +154,5 @@ public class NormalUserHomePanel extends javax.swing.JPanel {
 
 
 
-}
+
+} // end of the class

@@ -35,7 +35,7 @@ public class FQPanel extends JPanel {
         setLayout(null);
 
         // faq label alignment
-        FAQLabel.setFont(new Font("Calibri", 1, 48)); // NOI18N
+        FAQLabel.setFont(new Font("Calibri", 1, 48));
         FAQLabel.setForeground(new Color(255, 255, 255));
         FAQLabel.setText("FREQUENTLY ASKED QUESTIONS");
         add(FAQLabel);
@@ -45,7 +45,7 @@ public class FQPanel extends JPanel {
         FAQTextArea.setEditable(false);
         FAQTextArea.setBackground(new Color(88, 78, 69));
         FAQTextArea.setColumns(20);
-        FAQTextArea.setFont(new Font("Arial", 0, 16)); // NOI18N
+        FAQTextArea.setFont(new Font("Arial", 0, 16));
         FAQTextArea.setForeground(new Color(255, 255, 255));
         FAQTextArea.setRows(5);
         FAQTextArea.setText("Are donations mandotary?\nNo. It is optional to donate any non-govermental environmental organizations.\n\nAre super users able to see how much donatiıns I made?\nNo. Super users can only see the total donation amount of the users who entered their reference code.\n\nWhat different features does a super user have?\nSuper users are able to give challenges to users that entered their code and ect.\n\n");
@@ -56,7 +56,7 @@ public class FQPanel extends JPanel {
         FAQPane.setBounds(255, 280, 770, 210);
 
         // background
-        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg"))); // NOI18N
+        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg")));
         add(background);
         background.setBounds(0, 0, 1280, 700);
     } // end of the initComponents method

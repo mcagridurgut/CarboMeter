@@ -80,7 +80,7 @@ public class ReportPanel extends JPanel {
 
         // report label alignment (background, font, foreground, text and position)
         reportLabel.setBackground(new Color(255, 255, 255));
-        reportLabel.setFont(new Font("Calibri", 1, 48)); // NOI18N
+        reportLabel.setFont(new Font("Calibri", 1, 48));
         reportLabel.setForeground(new Color(255, 255, 255));
         reportLabel.setText("REPORT");
         add(reportLabel);
@@ -94,7 +94,7 @@ public class ReportPanel extends JPanel {
         reportBar.setBounds(500, 630, 300, 20);
 
         // carbobar label alignment (font, foreground, text and position)
-        carbobarLabel.setFont(new Font("Arial", 0, 24)); // NOI18N
+        carbobarLabel.setFont(new Font("Arial", 0, 24));
         carbobarLabel.setForeground(new Color(255, 255, 255));
         carbobarLabel.setText("Carbobar");
         add(carbobarLabel);
@@ -102,7 +102,7 @@ public class ReportPanel extends JPanel {
 
         // report table alignment (background, font, foreground and position)
         reportTable.setBackground(new Color(88, 78, 69));
-        reportTable.setFont(new Font("Arial", 0, 18)); // NOI18N
+        reportTable.setFont(new Font("Arial", 0, 18));
         reportTable.setForeground(new Color(255, 255, 255));
 
         function (0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0);
@@ -120,21 +120,21 @@ public class ReportPanel extends JPanel {
         reportPane.setBounds(240, 190, 800, 390);
 
         // next page button alignment (font, icon, text and position)
-        nextPageButton.setFont(new Font("Arial", 0, 12)); // NOI18N
-        nextPageButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/right-arrow.png"))); // NOI18N
+        nextPageButton.setFont(new Font("Arial", 0, 12));
+        nextPageButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/right-arrow.png")));
         nextPageButton.setText("Next");
         add(nextPageButton);
         nextPageButton.setBounds(1120, 620, 110, 35);
 
         // back page button alignment (font, icon, text and position)
-        backPageButton.setFont(new Font("Arial", 0, 12)); // NOI18N
-        backPageButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/left Arrow.png"))); // NOI18N
+        backPageButton.setFont(new Font("Arial", 0, 12));
+        backPageButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/left Arrow.png")));
         backPageButton.setText("Go Back");
         add(backPageButton);
         backPageButton.setBounds(50, 620, 110, 35);
 
         // background alignment (font, icon and positioning)
-        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg"))); // NOI18N
+        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg")));
         background.setToolTipText("");
         background.setMaximumSize(new Dimension(1280, 700));
         background.setMinimumSize(new Dimension(1280, 700));

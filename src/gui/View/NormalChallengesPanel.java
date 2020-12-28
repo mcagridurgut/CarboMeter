@@ -45,21 +45,21 @@ public class NormalChallengesPanel extends javax.swing.JPanel {
 
         // normalChallenges label alignment (background, font, foreground, text and position)
         normalChallengesLabel.setBackground(new Color(255, 255, 255));
-        normalChallengesLabel.setFont(new Font("Calibri", 1, 48)); // NOI18N
+        normalChallengesLabel.setFont(new Font("Calibri", 1, 48));
         normalChallengesLabel.setForeground(new Color(255, 255, 255));
         normalChallengesLabel.setText("CHALLENGES");
         add(normalChallengesLabel);
         normalChallengesLabel.setBounds(505, 80, 270, 60);
 
         // currentChallenges label alignment (font, foreground, text and position)
-        currentChallengesLabel.setFont(new Font("Arial", 0, 18)); // NOI18N
+        currentChallengesLabel.setFont(new Font("Arial", 0, 18));
         currentChallengesLabel.setForeground(new Color(255, 255, 255));
         currentChallengesLabel.setText("Current Challenges");
         add(currentChallengesLabel);
         currentChallengesLabel.setBounds(380, 220, 160, 22);
 
         // challengesComboBox alignment (font, model and position)
-        challengesComboBox.setFont(new Font("Arial", 0, 18)); // NOI18N
+        challengesComboBox.setFont(new Font("Arial", 0, 18));
         challengesComboBox.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2" }));
         challengesComboBox.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -72,7 +72,7 @@ public class NormalChallengesPanel extends javax.swing.JPanel {
         // normal Challenges Text Area alignment (background, columns, font, foreground, rows and position)
         normalChallengesTextArea.setBackground(new Color(88, 78, 69));
         normalChallengesTextArea.setColumns(20);
-        normalChallengesTextArea.setFont(new Font("Arial", 0, 18)); // NOI18N
+        normalChallengesTextArea.setFont(new Font("Arial", 0, 18));
         normalChallengesTextArea.setForeground(new Color(255, 255, 255));
         normalChallengesTextArea.setRows(5);
         normalChallengesPanel.setViewportView(normalChallengesTextArea);
@@ -81,7 +81,7 @@ public class NormalChallengesPanel extends javax.swing.JPanel {
         normalChallengesPanel.setBounds(730, 230, 500, 380);
 
         // background alignment ( icon, ToolTipText and positioning)
-        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg"))); // NOI18N
+        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg")));
         background.setToolTipText("");
         background.setMaximumSize(new Dimension(1280, 700));
         background.setMinimumSize(new Dimension(1280, 700));

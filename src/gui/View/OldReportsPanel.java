@@ -4,6 +4,7 @@ import Model.Report;
 
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.*;
 import java.util.ArrayList;
 
@@ -54,7 +55,7 @@ public class OldReportsPanel extends JPanel {
         setLayout(null);
 
         // old report label alignment (font, foreground, text and position)
-        oldReportLabel.setFont(new Font("Calibri", 1, 48)); // NOI18N
+        oldReportLabel.setFont(new Font("Calibri", 1, 48));
         oldReportLabel.setForeground(new Color(255, 255, 255));
         oldReportLabel.setText("OLD REPORTS");
         add(oldReportLabel);
@@ -68,7 +69,7 @@ public class OldReportsPanel extends JPanel {
 
         // date table alignment (background, font, foreground, model and position)
         dateTable.setBackground(new Color(88, 78, 69));
-        dateTable.setFont(new Font("Arial", 0, 18)); // NOI18N
+        dateTable.setFont(new Font("Arial", 0, 18));
         dateTable.setForeground(new Color(255, 255, 255));
 
         dateTable.setRowHeight(44);
@@ -83,7 +84,7 @@ public class OldReportsPanel extends JPanel {
 
         // details table alignment (background, font, foreground, model and position)
         detailsTable.setBackground(new Color(88, 78, 69));
-        detailsTable.setFont(new Font("Arial", 0, 18)); // NOI18N
+        detailsTable.setFont(new Font("Arial", 0, 18));
         detailsTable.setForeground(new Color(255, 255, 255));
 
         detailsTable.setRowHeight(45);
@@ -97,28 +98,28 @@ public class OldReportsPanel extends JPanel {
         detailsPane.setBounds(740, 280, 400, 250);
 
         // left label alignment (font, foreground, text and position)
-        leftLabel.setFont(new Font("Arial", 1, 12)); // NOI18N
+        leftLabel.setFont(new Font("Arial", 1, 12));
         leftLabel.setForeground(new Color(255, 255, 255));
         leftLabel.setText("Click a date to see details!");
         add(leftLabel);
         leftLabel.setBounds(370, 260, 150, 15);
 
         // details label alignment (font, foreground, text and position)
-        detailsLabel.setFont(new Font("Arial", 1, 18)); // NOI18N
+        detailsLabel.setFont(new Font("Arial", 1, 18));
         detailsLabel.setForeground(new Color(255, 255, 255));
         detailsLabel.setText("DETAILS");
         add(detailsLabel);
         detailsLabel.setBounds(900, 250, 90, 22);
 
         // carbobar label alignment (font, foreground, text and position)
-        carbobarLabel.setFont(new Font("Arial", 1, 18)); // NOI18N
+        carbobarLabel.setFont(new Font("Arial", 1, 18));
         carbobarLabel.setForeground(new Color(255, 255, 255));
         carbobarLabel.setText("Carbobar");
         add(carbobarLabel);
         carbobarLabel.setBounds(590, 580, 80, 22);
 
         // background alignment ( icon and positioning)
-        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg"))); // NOI18N
+        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg")));
         add(background);
         background.setBounds(0, 0, 1280, 700);
     }
@@ -129,7 +130,7 @@ public class OldReportsPanel extends JPanel {
             arr[i][0] = i;
             arr[i][1] = ((int) reports.get(i).getScore()) /1000.0 ;
         }
-        dateTable.setModel(new javax.swing.table.DefaultTableModel(
+        dateTable.setModel(new DefaultTableModel(
                 arr,
                 new String [] {
                         "Measurement", "Carbopoint"

@@ -64,7 +64,7 @@ public class LoginPanel extends javax.swing.JPanel {
         carbometerLabel.setBounds(500, 80, 280, 60);
 
         // forAGreenFutureLabel alignment ( font, foreground, alignment, text and position)
-        forAGreenFutureLabel.setFont(new Font("Calibri", 0, 24)); // NOI18N
+        forAGreenFutureLabel.setFont(new Font("Calibri", 0, 24));
         forAGreenFutureLabel.setForeground(new Color(255, 255, 255));
         forAGreenFutureLabel.setHorizontalAlignment(SwingConstants.CENTER);
         forAGreenFutureLabel.setText("For a Green Future");
@@ -72,7 +72,7 @@ public class LoginPanel extends javax.swing.JPanel {
         forAGreenFutureLabel.setBounds(545, 130, 190, 25);
 
         // welcomeLabel alignment ( font, foreground, alignment, text and position)
-        welcomeLabel.setFont(new Font("Calibri", 0, 24)); // NOI18N
+        welcomeLabel.setFont(new Font("Calibri", 0, 24));
         welcomeLabel.setForeground(new Color(255, 255, 255));
         welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
         welcomeLabel.setText("Welcome");
@@ -81,64 +81,64 @@ public class LoginPanel extends javax.swing.JPanel {
 
         // usernameField alignment ( background, font)
         userNameField.setBackground(new Color(240, 240, 240));
-        userNameField.setFont(new Font("Arial", 1, 12)); // NOI18N
+        userNameField.setFont(new Font("Arial", 1, 12));
         //userNameField.setUI(new JTextFieldHintUI("Username or Email", Color.gray));
         add(userNameField);
         userNameField.setBounds(550, 280, 180, 30);
 
         // passwordField alignment ( background, font, and position)
         passwordField.setBackground(new Color(240, 240, 240));
-        passwordField.setFont(new Font("Arial", 1, 12)); // NOI18N
+        passwordField.setFont(new Font("Arial", 1, 12));
         add(passwordField);
         passwordField.setBounds(550, 320, 180, 30);
 
         // welcomeLabel alignment ( font, foreground, text and position)
-        forgotPasswordLabel.setFont(new Font("Arial", 2, 12)); // NOI18N
+        forgotPasswordLabel.setFont(new Font("Arial", 2, 12));
         forgotPasswordLabel.setForeground(new Color(0, 0, 0));
         forgotPasswordLabel.setText("Forgot my password");
         add(forgotPasswordLabel);
         forgotPasswordLabel.setBounds(565, 415, 150, 20);
 
         // login button alignment ( font, text and position)
-        loginButton.setFont(new Font("Arial", 0, 12)); // NOI18N
+        loginButton.setFont(new Font("Arial", 0, 12));
         loginButton.setText("Login");
         add(loginButton);
         loginButton.setBounds(590, 370, 100, 30);
 
         // signup button alignment ( font, text and position)
-        signUpButton.setFont(new Font("Arial", 0, 12)); // NOI18N
+        signUpButton.setFont(new Font("Arial", 0, 12));
         signUpButton.setText("Sign Up");
         add(signUpButton);
         signUpButton.setBounds(590, 530, 100, 30);
 
         // noAccountLabel alignment ( font, foreground, text and position)
-        noAccountLabel.setFont(new Font("Arial", 0, 12)); // NOI18N
+        noAccountLabel.setFont(new Font("Arial", 0, 12));
         noAccountLabel.setForeground(new Color(255, 255, 255));
         noAccountLabel.setText("Don't have an account?");
         add(noAccountLabel);
         noAccountLabel.setBounds(575, 500, 130, 20);
 
         // usernameSignature alignment ( font, foreground, text and position)
-        usernameSignature.setFont(new Font("Arial", 1, 18)); // NOI18N
+        usernameSignature.setFont(new Font("Arial", 1, 18));
         usernameSignature.setForeground(new Color(255, 255, 255));
         usernameSignature.setText("Username or e-mail");
         add(usernameSignature);
         usernameSignature.setBounds(350, 280, 180, 30);
 
         // passwordSignature alignment ( font, foreground, text and position)
-        passwordSignature.setFont(new Font("Arial", 1, 18)); // NOI18N
+        passwordSignature.setFont(new Font("Arial", 1, 18));
         passwordSignature.setForeground(new Color(255, 255, 255));
         passwordSignature.setText("Password");
         add(passwordSignature);
         passwordSignature.setBounds(440, 320, 90, 30);
 
         // background alignment ( dimension and positioning)
-        background.setFont(new Font("Calibri", 0, 11)); // NOI18N
-        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg"))); // NOI18N
+        background.setFont(new Font("Calibri", 0, 11));
+        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg")));
         background.setMaximumSize(new Dimension(1280, 700));
         background.setMinimumSize(new Dimension(1280, 700));
         background.setPreferredSize(new Dimension(1280, 700));
         add(background);
         background.setBounds(0, 0, 1280, 700);
-    }
-}
+    }// end of the initComponents
+} // end of the class

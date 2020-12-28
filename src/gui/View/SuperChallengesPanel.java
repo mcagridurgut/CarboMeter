@@ -49,21 +49,21 @@ public class SuperChallengesPanel extends JPanel {
 
         // super challenges label alignment (background, font, foreground, text and position)
         superChallengesLabel.setBackground(new Color(255, 255, 255));
-        superChallengesLabel.setFont(new Font("Calibri", 1, 48)); // NOI18N
+        superChallengesLabel.setFont(new Font("Calibri", 1, 48));
         superChallengesLabel.setForeground(new Color(255, 255, 255));
         superChallengesLabel.setText("CHALLENGES");
         add(superChallengesLabel);
         superChallengesLabel.setBounds(505, 80, 270, 60);
 
         // current challenges label alignment (font, foreground, text and position)
-        currentChallengesLabel.setFont(new Font("Arial", 0, 18)); // NOI18N
+        currentChallengesLabel.setFont(new Font("Arial", 0, 18));
         currentChallengesLabel.setForeground(new Color(255, 255, 255));
         currentChallengesLabel.setText("Current Challenges");
         add(currentChallengesLabel);
         currentChallengesLabel.setBounds(380, 240, 160, 22);
 
         // challenges combobox alignment (font, model and position)
-        challengesComboBox.setFont(new Font("Arial", 0, 18)); // NOI18N
+        challengesComboBox.setFont(new Font("Arial", 0, 18));
         challengesComboBox.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2" }));
         challengesComboBox.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -75,7 +75,7 @@ public class SuperChallengesPanel extends JPanel {
 
         // challenges table alignment (background, font, foreground, model and position)
         challengeTable.setBackground(new Color(88, 78, 69));
-        challengeTable.setFont(new Font("Arial", 0, 18)); // NOI18N
+        challengeTable.setFont(new Font("Arial", 0, 18));
         challengeTable.setForeground(new Color(255, 255, 255));
         challengeTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -123,8 +123,8 @@ public class SuperChallengesPanel extends JPanel {
         activeChallengePanel.setBounds(810, 240, 400, 300);
 
         // remove challenge button alignment (font, icon, text and position)
-        removeChallengeButton.setFont(new Font("Arial", 0, 14)); // NOI18N
-        removeChallengeButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/cancel.png"))); // NOI18N
+        removeChallengeButton.setFont(new Font("Arial", 0, 14));
+        removeChallengeButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/cancel.png")));
         removeChallengeButton.setText("Delete Challenge");
         removeChallengeButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -136,7 +136,7 @@ public class SuperChallengesPanel extends JPanel {
 
         // add challenge button alignment (font, icon, text and position)
         addChallengeButton1.setFont(new Font("Arial", 0, 14)); // NOI18N
-        addChallengeButton1.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/add-button.png"))); // NOI18N
+        addChallengeButton1.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/add-button.png")));
         addChallengeButton1.setText("Add Challenge");
         addChallengeButton1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -147,7 +147,7 @@ public class SuperChallengesPanel extends JPanel {
         addChallengeButton1.setBounds(810, 550, 180, 33);
 
         // background alignment (font, icon and positioning)
-        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg"))); // NOI18N
+        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg")));
         background.setToolTipText("");
         background.setMaximumSize(new Dimension(1280, 700));
         background.setMinimumSize(new Dimension(1280, 700));

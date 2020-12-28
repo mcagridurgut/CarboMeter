@@ -258,14 +258,14 @@ public class HouseQuestionPanel extends JPanel {
         add(litresLabel2);
         litresLabel2.setBounds(930, 420, 90, 30);
 
-        // goBackButton button allignment
+        // goBackButton button alignment
         goBackButton.setFont(new Font("Arial", 0, 12));
         goBackButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/left Arrow.png")));
         goBackButton.setText("Go Back");
         add(goBackButton);
         goBackButton.setBounds(50, 620, 110, 35);
 
-        // nextButton allignment
+        // nextButton alignment
         nextButton.setFont(new Font("Arial", 0, 12));
         nextButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/right-arrow.png")));
         nextButton.setText("Next");

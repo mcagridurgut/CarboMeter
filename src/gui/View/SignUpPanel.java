@@ -69,7 +69,7 @@ public class SignUpPanel extends JPanel {
         setLayout(null);
 
         // carbometer label alignment (font, foreground, alignment, text and position)
-        carbometerLabel.setFont(new Font("Calibri", 1, 48)); // NOI18N
+        carbometerLabel.setFont(new Font("Calibri", 1, 48));
         carbometerLabel.setForeground(new Color(255, 255, 255));
         carbometerLabel.setHorizontalAlignment(SwingConstants.CENTER);
         carbometerLabel.setText("CARBOMETER");
@@ -77,7 +77,7 @@ public class SignUpPanel extends JPanel {
         carbometerLabel.setBounds(500, 80, 280, 60);
 
         // sign up signature label alignment (font, foreground, alignment, text and position)
-        signUpSignatureLabel.setFont(new Font("Calibri", 0, 24)); // NOI18N
+        signUpSignatureLabel.setFont(new Font("Calibri", 0, 24));
         signUpSignatureLabel.setForeground(new Color(255, 255, 255));
         signUpSignatureLabel.setHorizontalAlignment(SwingConstants.CENTER);
         signUpSignatureLabel.setText("Sign Up for Payback");
@@ -86,7 +86,7 @@ public class SignUpPanel extends JPanel {
 
         // user name field alignment (background, font and position)
         userNameField.setBackground(new Color(240, 240, 240));
-        userNameField.setFont(new Font("Arial", 1, 12)); // NOI18N
+        userNameField.setFont(new Font("Arial", 1, 12));
         userNameField.setUI(new JTextFieldHintUI("Username", Color.gray));
         userNameField.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -98,7 +98,7 @@ public class SignUpPanel extends JPanel {
 
         // password field alignment (background, font and position)
         passwordField.setBackground(new Color(240, 240, 240));
-        passwordField.setFont(new Font("Arial", 1, 12)); // NOI18N
+        passwordField.setFont(new Font("Arial", 1, 12));
         add(passwordField);
         passwordField.setBounds(570, 300, 180, 30);
 
@@ -109,19 +109,19 @@ public class SignUpPanel extends JPanel {
 
         // email field alignment (background, font and position)
         emailField.setBackground(new Color(240, 240, 240));
-        emailField.setFont(new Font("Arial", 1, 12)); // NOI18N
+        emailField.setFont(new Font("Arial", 1, 12));
         emailField.setUI(new JTextFieldHintUI("E-mail", Color.gray));
         add(emailField);
         emailField.setBounds(570, 400, 180, 30);
 
         // superusercode field alignment (background, font and position)
         superUserCodeField.setBackground(new Color(240, 240, 240));
-        superUserCodeField.setFont(new Font("Arial", 1, 12)); // NOI18N
+        superUserCodeField.setFont(new Font("Arial", 1, 12));
         superUserCodeField.setUI(new JTextFieldHintUI("Super User Code (optional)", Color.gray));
         add(superUserCodeField);
         superUserCodeField.setBounds(570, 450, 180, 30);
 
-        /*userTypeCombo.setFont(new Font("Arial", 1, 12)); // NOI18N
+        /*userTypeCombo.setFont(new Font("Arial", 1, 12));
         userTypeCombo.setModel(new DefaultComboBoxModel<>(new String[] { "Normal User", "Super User", " " }));
         add(userTypeCombo);
         userTypeCombo.setBounds(700, 280, 150, 30);
@@ -143,7 +143,7 @@ public class SignUpPanel extends JPanel {
          */
 
         // username label alignment (font, foreground, alignment, text and position)
-        usernameLabel.setFont(new Font("Arial", 1, 18)); // NOI18N
+        usernameLabel.setFont(new Font("Arial", 1, 18));
         usernameLabel.setForeground(new Color(255, 255, 255));
         usernameLabel.setHorizontalAlignment(SwingConstants.TRAILING);
         usernameLabel.setText("Username");
@@ -151,7 +151,7 @@ public class SignUpPanel extends JPanel {
         usernameLabel.setBounds(460, 250, 100, 30);
 
         // password label alignment (font, foreground, alignment, text and position)
-        passwordLabel.setFont(new Font("Arial", 1, 18)); // NOI18N
+        passwordLabel.setFont(new Font("Arial", 1, 18));
         passwordLabel.setForeground(new Color(255, 255, 255));
         passwordLabel.setHorizontalAlignment(SwingConstants.TRAILING);
         passwordLabel.setText("Password");
@@ -159,7 +159,7 @@ public class SignUpPanel extends JPanel {
         passwordLabel.setBounds(460, 300, 100, 30);
 
         // confirm password label alignment (font, foreground, alignment, text and position)
-        confirmPasswordLabel.setFont(new Font("Arial", 1, 18)); // NOI18N
+        confirmPasswordLabel.setFont(new Font("Arial", 1, 18));
         confirmPasswordLabel.setForeground(new Color(255, 255, 255));
         confirmPasswordLabel.setHorizontalAlignment(SwingConstants.TRAILING);
         confirmPasswordLabel.setText("Confirm Password");
@@ -167,7 +167,7 @@ public class SignUpPanel extends JPanel {
         confirmPasswordLabel.setBounds(380, 350, 180, 30);
 
         // email label alignment (font, foreground, alignment, text and position)
-        emailLabel.setFont(new Font("Arial", 1, 18)); // NOI18N
+        emailLabel.setFont(new Font("Arial", 1, 18));
         emailLabel.setForeground(new Color(255, 255, 255));
         emailLabel.setHorizontalAlignment(SwingConstants.TRAILING);
         emailLabel.setText("E-mail");
@@ -176,20 +176,20 @@ public class SignUpPanel extends JPanel {
         emailLabel.setBounds(460, 400, 100, 30);
 
         // superuser label alignment (font, foreground, alignment, text and position)
-        superuserLabel.setFont(new Font("Arial", 1, 18)); // NOI18N
+        superuserLabel.setFont(new Font("Arial", 1, 18));
         superuserLabel.setForeground(new Color(255, 255, 255));
         superuserLabel.setText("Super User Code");
         add(superuserLabel);
         superuserLabel.setBounds(410, 450, 150, 30);
 
 //        verificationCodeLabel.setBackground(new Color(240, 240, 240));
-//        verificationCodeLabel.setFont(new Font("Arial", 1, 12)); // NOI18N
+//        verificationCodeLabel.setFont(new Font("Arial", 1, 12));
 //        verificationCodeLabel.setText("E-mail Verification Code");
 //        add(verificationCodeLabel);
 //        verificationCodeLabel.setBounds(690, 400, 180, 30);
 
         // jlabel1 alignment (font, foreground, alignment, text and position)
-        jLabel1.setFont(new Font("Arial", 0, 12)); // NOI18N
+        jLabel1.setFont(new Font("Arial", 0, 12));
         jLabel1.setForeground(new Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(SwingConstants.CENTER);
         jLabel1.setText("Do you have an account?");
@@ -202,8 +202,8 @@ public class SignUpPanel extends JPanel {
         loginButton.setBounds(590, 600, 100, 30);
 
         // background alignment (font, icon and positioning)
-        background.setFont(new Font("Calibri", 0, 11)); // NOI18N
-        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg"))); // NOI18N
+        background.setFont(new Font("Calibri", 0, 11));
+        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg")));
         background.setMaximumSize(new Dimension(1280, 700));
         background.setMinimumSize(new Dimension(1280, 700));
         background.setPreferredSize(new Dimension(1280, 700));

@@ -42,7 +42,7 @@ public class UsersPanel extends JPanel {
 
         // usersLabel alignment
         usersLabel.setBackground(new Color(255, 255, 255));
-        usersLabel.setFont(new Font("Calibri", 1, 48)); // NOI18N
+        usersLabel.setFont(new Font("Calibri", 1, 48));
         usersLabel.setForeground(new Color(255, 255, 255));
         usersLabel.setText("USERS");
         add(usersLabel);
@@ -50,7 +50,7 @@ public class UsersPanel extends JPanel {
 
         // usersTable alignment
         usersTable.setBackground(new Color(88, 78, 69));
-        usersTable.setFont(new Font("Arial", 0, 18)); // NOI18N
+        usersTable.setFont(new Font("Arial", 0, 18));
         usersTable.setForeground(new Color(255, 255, 255));
         usersTable.setModel(new DefaultTableModel(
             new Object [][] {
@@ -77,7 +77,7 @@ public class UsersPanel extends JPanel {
         usersPane.setBounds(230, 180, 810, 320);
 
         // kick user button alignments
-        kickUserButton.setFont(new Font("Arial", 0, 18)); // NOI18N
+        kickUserButton.setFont(new Font("Arial", 0, 18));
         kickUserButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/cancel.png")));
         kickUserButton.setText("Kick User");
         kickUserButton.addActionListener(new ActionListener() {

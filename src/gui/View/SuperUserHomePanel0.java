@@ -46,30 +46,30 @@ public class SuperUserHomePanel0 extends JPanel {
         setLayout(null);
 
         // users button alignment (font, icon, text and position)
-        usersButton.setFont(new Font("Arial", 0, 24)); // NOI18N
-        usersButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/world-grid.png"))); // NOI18N
+        usersButton.setFont(new Font("Arial", 0, 24));
+        usersButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/world-grid.png")));
         usersButton.setText("Users");
         add(usersButton);
         usersButton.setBounds(440, 230, 400, 60);
 
         // super home label alignment (background, font, foreground, text and position)
         superHomeLabel.setBackground(new Color(255, 255, 255));
-        superHomeLabel.setFont(new Font("Calibri", 1, 48)); // NOI18N
+        superHomeLabel.setFont(new Font("Calibri", 1, 48));
         superHomeLabel.setForeground(new Color(255, 255, 255));
         superHomeLabel.setText("HOME");
         add(superHomeLabel);
         superHomeLabel.setBounds(575, 80, 130, 60);
 
         // challenges button alignment (font, icon, text and position)
-        challengesButton.setFont(new Font("Arial", 0, 24)); // NOI18N
-        challengesButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/note.png"))); // NOI18N
+        challengesButton.setFont(new Font("Arial", 0, 24));
+        challengesButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/note.png")));
         challengesButton.setText("Challenges");
         add(challengesButton);
         challengesButton.setBounds(440, 390, 400, 60);
 
         // total donations button alignment (font, icon, text and position)
-        totalDonationsButton.setFont(new Font("Arial", 0, 24)); // NOI18N
-        totalDonationsButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/donation.png"))); // NOI18N
+        totalDonationsButton.setFont(new Font("Arial", 0, 24));
+        totalDonationsButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/donation.png")));
         totalDonationsButton.setText("Total Donations");
         totalDonationsButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -80,21 +80,21 @@ public class SuperUserHomePanel0 extends JPanel {
         totalDonationsButton.setBounds(440, 310, 400, 60);
 
         // new code button alignment (font, icon, text and position)
-        newCodeButton.setFont(new Font("Arial", 0, 24)); // NOI18N
-        newCodeButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/key.png"))); // NOI18N
+        newCodeButton.setFont(new Font("Arial", 0, 24));
+        newCodeButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/key.png")));
         newCodeButton.setText("Create New Code");
         add(newCodeButton);
         newCodeButton.setBounds(440, 470, 400, 60);
 
         // log out button alignment (font, icon, text and position)
-        logOutButton.setFont(new Font("Arial", 0, 12)); // NOI18N
-        logOutButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/door.png"))); // NOI18N
+        logOutButton.setFont(new Font("Arial", 0, 12));
+        logOutButton.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/door.png")));
         logOutButton.setText("Log Out");
         add(logOutButton);
         logOutButton.setBounds(1140, 30, 110, 35);
 
         // background alignment (icon and positioning)
-        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg"))); // NOI18N
+        background.setIcon(new ImageIcon(getClass().getResource("/gui/icons and backgrounds/final.jpg")));
         background.setToolTipText("");
         background.setMaximumSize(new Dimension(1280, 700));
         background.setMinimumSize(new Dimension(1280, 700));
