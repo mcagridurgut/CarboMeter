@@ -8,3 +8,6 @@ JMenuMenu bar completed.
 Borderless frame applied. Exit button was put onto JMenuBar.
 Constants for questions fixed.
 New constants added.
+
+SignUpPagePanel reorganized.
+Pop-ups (JOptionPane) added to interact with the users (in some invalid input cases and changing password operation).
