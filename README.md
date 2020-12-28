@@ -25,10 +25,13 @@ Users can add friends by searching their username. They can see eachother's most
 Users can easily donate money as much as their carbopoint values (OR MORE!) as $ to a recommended non govermental organization on the Donation Page. Since Carbopoint is a carefully crafted algorithm's result, users won't have to worry about how much donation they have to donate anually. We are deviding their Carbopoint values by 7*. This indicates how many trees users should donate in dollars so that these trees compensate the damage that users cause to the atmosphere and the soil. We calculate this donation amount by multiply it with 10**, and show it to the user in Donation Panel.
 
 ### Challenges 
-In progress
+In progress...
 
 ### Recommandation 
-In progress
+In progress...
+
+#CarboData
+This is Carbodata. Carbodata contains some documents that provise the resources we use while preparing our Carbopoint algorithm. [Carbodata](https://1drv.ms/u/s!AnhrewFho4FHhU3VWHDO1FG6Y3O4?e=MlabSu)
 
 # References and Image Sources
 * Licensed background image and icons 
@@ -38,11 +41,9 @@ In progress
 * For Universal Data 
 [Kaggle](https://www.kaggle.com/) 
 [Combustion of Fuels](https://www.engineeringtoolbox.com/co2-emission-fuels-d_1085.html)
-[OTHERS](https://onedrive.live.com/view.aspx?resid=4781A361017B6B78!715&ithint=file%2cxlsx&authkey=!ACdOGUMpPUgqH14)
 
 * For Turkey's data
 [TUIK](https://www.tuik.gov.tr/) 
-[OTHERS](https://1drv.ms/w/s!AnhrewFho4FHhUZ21riZhzo57SKf?e=cMfJCO)
 
 ## Readme References
 * [*](https://ythakker.medium.com/how-many-new-trees-would-it-take-to-offset-our-carbon-emissions-13c78ccb09ab)
