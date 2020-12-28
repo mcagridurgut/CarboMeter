@@ -543,5 +543,6 @@ public class Gui extends JFrame{
         System.out.println(normalUser.getPreviousReport().getScore()+ " " + normalUser.getPreviousReport().getUser());
         System.out.println(normalUser.getCurrentReport().getScore()+ " " + normalUser.getCurrentReport().getUser());
         cardLayout.show(contentPanel, "reportPanel");
+        reportPanel.setBar((int)normalUser.getCurrentReport().getScore() /1000);
     }
 }

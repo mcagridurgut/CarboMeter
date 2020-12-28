@@ -17,7 +17,7 @@ public class ReportPanel extends JPanel {
     private JLabel background;
     private JLabel carbobarLabel;
     public JButton nextPageButton;
-    private JProgressBar reportBar;
+    public JProgressBar reportBar;
     private JLabel reportLabel;
     private JScrollPane reportPane;
     private JTable reportTable;
@@ -140,6 +140,9 @@ public class ReportPanel extends JPanel {
         background.setMinimumSize(new Dimension(1280, 700));
         add(background);
         background.setBounds(0, 0, 1282, 700);
+    }
+    public void setBar(int val){
+        reportBar.setValue(val);
     }
 
 
